@@ -599,9 +599,9 @@ import java.io.In
     
       <category term="web" scheme="https://rezeros.github.io/tags/web/"/>
     
-      <category term="csrf" scheme="https://rezeros.github.io/tags/csrf/"/>
-    
       <category term="session" scheme="https://rezeros.github.io/tags/session/"/>
+    
+      <category term="csrf" scheme="https://rezeros.github.io/tags/csrf/"/>
     
       <category term="token" scheme="https://rezeros.github.io/tags/token/"/>
     
