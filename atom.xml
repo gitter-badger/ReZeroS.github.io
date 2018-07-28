@@ -593,13 +593,13 @@ import java.io.In
       <category term="Security" scheme="http://rezeros.github.io/categories/Security/"/>
     
     
+      <category term="login" scheme="http://rezeros.github.io/tags/login/"/>
+    
       <category term="security" scheme="http://rezeros.github.io/tags/security/"/>
     
       <category term="web" scheme="http://rezeros.github.io/tags/web/"/>
     
       <category term="csrf" scheme="http://rezeros.github.io/tags/csrf/"/>
-    
-      <category term="login" scheme="http://rezeros.github.io/tags/login/"/>
     
       <category term="session" scheme="http://rezeros.github.io/tags/session/"/>
     
