@@ -599,9 +599,9 @@ import java.io.In
     
       <category term="web" scheme="https://rezeros.github.io/tags/web/"/>
     
-      <category term="session" scheme="https://rezeros.github.io/tags/session/"/>
-    
       <category term="csrf" scheme="https://rezeros.github.io/tags/csrf/"/>
+    
+      <category term="session" scheme="https://rezeros.github.io/tags/session/"/>
     
       <category term="token" scheme="https://rezeros.github.io/tags/token/"/>
     
@@ -632,13 +632,13 @@ import java.io.In
       <category term="Security" scheme="https://rezeros.github.io/categories/Security/"/>
     
     
+      <category term="git" scheme="https://rezeros.github.io/tags/git/"/>
+    
       <category term="blob" scheme="https://rezeros.github.io/tags/blob/"/>
     
       <category term="bomb" scheme="https://rezeros.github.io/tags/bomb/"/>
     
       <category term="exploding" scheme="https://rezeros.github.io/tags/exploding/"/>
-    
-      <category term="git" scheme="https://rezeros.github.io/tags/git/"/>
     
       <category term="memory" scheme="https://rezeros.github.io/tags/memory/"/>
     
