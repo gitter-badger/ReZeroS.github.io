@@ -1,0 +1,4714 @@
+<!DOCTYPE html>
+<html>
+    <!-- title -->
+
+
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" >
+    <meta name="author" content="ReZero">
+    <meta name="renderer" content="webkit">
+    <meta name="copyright" content="ReZero">
+    <meta name="keywords" content="ReZero | ReZero">
+    <meta name="description" content="窥万物穷其理，尽人欲之所在">
+    <meta name="Cache-Control" content="no-cache">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <title>Read Me! · rezero</title>
+    <style type="text/css">
+    @font-face {
+        font-family: 'Oswald-Regular';
+        src: url("/font/Oswald-Regular.ttf");
+    }
+
+    body {
+        margin: 0;
+    }
+
+    header,
+    footer,
+    .back-top,
+    .sidebar,
+    .container,
+    .site-intro-meta,
+    .toc-wrapper {
+        display: none;
+    }
+
+    .site-intro {
+        position: relative;
+        z-index: 3;
+        width: 100%;
+        /* height: 50vh; */
+        overflow: hidden;
+    }
+
+    .site-intro-placeholder {
+        position: absolute;
+        z-index: -2;
+        top: 0;
+        left: 0;
+        width: calc(100% + 300px);
+        height: 100%;
+        background: repeating-linear-gradient(-45deg, #444 0, #444 80px, #333 80px, #333 160px);
+        background-position: center center;
+        transform: translate3d(-226px, 0, 0);
+        animation: gradient-move 2.5s ease-out 0s 1;
+    }
+
+    @keyframes gradient-move {
+        0% {
+            transform: translate3d(-226px, 0, 0);
+        }
+        100% {
+            transform: translate3d(0, 0, 0);
+        }
+    }
+
+</style>
+
+    <link rel="preload" href= /css/style.css?v=20180721 as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <link rel="stylesheet" href= /css/mobile.css?v=20180721 media="(max-width: 980px)">
+    
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    
+    <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+/* This file is meant as a standalone workflow for
+- testing support for link[rel=preload]
+- enabling async CSS loading in browsers that do not support rel=preload
+- applying rel preload css once loaded, whether supported or not.
+*/ -->
+<script>
+(function( w ){
+	"use strict";
+	// rel=preload support test
+	if( !w.loadCSS ){
+		w.loadCSS = function(){};
+	}
+	// define on the loadCSS obj
+	var rp = loadCSS.relpreload = {};
+	// rel=preload feature support test
+	// runs once and returns a function for compat purposes
+	rp.support = (function(){
+		var ret;
+		try {
+			ret = w.document.createElement( "link" ).relList.supports( "preload" );
+		} catch (e) {
+			ret = false;
+		}
+		return function(){
+			return ret;
+		};
+	})();
+
+	// if preload isn't supported, get an asynchronous load by using a non-matching media attribute
+	// then change that media back to its intended value on load
+	rp.bindMediaToggle = function( link ){
+		// remember existing media attr for ultimate state, or default to 'all'
+		var finalMedia = link.media || "all";
+
+		function enableStylesheet(){
+			link.media = finalMedia;
+		}
+
+		// bind load handlers to enable media
+		if( link.addEventListener ){
+			link.addEventListener( "load", enableStylesheet );
+		} else if( link.attachEvent ){
+			link.attachEvent( "onload", enableStylesheet );
+		}
+
+		// Set rel and non-applicable media type to start an async request
+		// note: timeout allows this to happen async to let rendering continue in IE
+		setTimeout(function(){
+			link.rel = "stylesheet";
+			link.media = "only x";
+		});
+		// also enable media after 3 seconds,
+		// which will catch very old browsers (android 2.x, old firefox) that don't support onload on link
+		setTimeout( enableStylesheet, 3000 );
+	};
+
+	// loop through link elements in DOM
+	rp.poly = function(){
+		// double check this to prevent external calls from running
+		if( rp.support() ){
+			return;
+		}
+		var links = w.document.getElementsByTagName( "link" );
+		for( var i = 0; i < links.length; i++ ){
+			var link = links[ i ];
+			// qualify links to those with rel=preload and as=style attrs
+			if( link.rel === "preload" && link.getAttribute( "as" ) === "style" && !link.getAttribute( "data-loadcss" ) ){
+				// prevent rerunning on link
+				link.setAttribute( "data-loadcss", true );
+				// bind listeners to toggle media back
+				rp.bindMediaToggle( link );
+			}
+		}
+	};
+
+	// if unsupported, run the polyfill
+	if( !rp.support() ){
+		// run once at least
+		rp.poly();
+
+		// rerun poly on an interval until onload
+		var run = w.setInterval( rp.poly, 500 );
+		if( w.addEventListener ){
+			w.addEventListener( "load", function(){
+				rp.poly();
+				w.clearInterval( run );
+			} );
+		} else if( w.attachEvent ){
+			w.attachEvent( "onload", function(){
+				rp.poly();
+				w.clearInterval( run );
+			} );
+		}
+	}
+
+
+	// commonjs
+	if( typeof exports !== "undefined" ){
+		exports.loadCSS = loadCSS;
+	}
+	else {
+		w.loadCSS = loadCSS;
+	}
+}( typeof global !== "undefined" ? global : this ) );
+</script>
+
+    <link rel="icon" href= "/assets/favicon.ico" />
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js" as="script" />
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js" as="script" />
+    <link rel="preload" href="/scripts/main.js" as="script" />
+    <link rel="preload" as="font" href="/font/Oswald-Regular.ttf" crossorigin>
+    <link rel="preload" as="font" href="https://at.alicdn.com/t/font_327081_1dta1rlogw17zaor.woff" crossorigin>
+    
+    <!-- fancybox -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" defer></script>
+    <!-- 百度统计  -->
+    
+    <!-- 谷歌统计  -->
+    
+</head>
+
+    
+        <body class="post-body">
+    
+    
+<header class="header">
+
+    <div class="read-progress"></div>
+    <div class="header-sidebar-menu">&#xe775;</div>
+    <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/" >ReZero&#39;s Utopia.</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">Read Me!</a>
+            </div>
+    </div>
+    
+    <a class="home-link" href=/>ReZero's Utopia.</a>
+</header>
+    <div class="wrapper">
+        <div class="site-intro" style=
+
+
+
+
+
+
+
+
+height:50vh;
+
+>
+    
+    <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
+            
+    <div class="site-intro-placeholder"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/post-bg.jpg)"></div>
+    <div class="site-intro-meta">
+        <!-- 标题  -->
+        <h1 class="intro-title">
+            <!-- 主页  -->
+            
+            Read Me!
+            <!-- 404 -->
+            
+        </h1>
+        <!-- 副标题 -->
+        <p class="intro-subtitle">
+            <!-- 主页副标题  -->
+            
+            
+            <!-- 404 -->
+            
+        </p>
+        <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                    <div class= post-intro-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "web">web</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "coding">coding</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "programing">programing</a>
+    
+</div>
+                
+                
+                    <div class="post-intro-read">
+                        <span>Word count: <span class="post-count">3,215</span> / Reading time: <span class="post-count">20 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2017/06/14</span>
+                    
+                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                        <span class="iconfont-archer">&#xe602;</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
+        
+    </div>
+</div>
+        <script>
+ 
+  // get user agent
+  var browser = {
+    versions: function () {
+      var u = window.navigator.userAgent;
+      return {
+        userAgent: u,
+        trident: u.indexOf('Trident') > -1, //IE内核
+        presto: u.indexOf('Presto') > -1, //opera内核
+        webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
+        gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核
+        mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
+        ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
+        android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或者uc浏览器
+        iPhone: u.indexOf('iPhone') > -1 || u.indexOf('Mac') > -1, //是否为iPhone或者安卓QQ浏览器
+        iPad: u.indexOf('iPad') > -1, //是否为iPad
+        webApp: u.indexOf('Safari') == -1, //是否为web应用程序，没有头部与底部
+        weixin: u.indexOf('MicroMessenger') == -1, //是否为微信浏览器
+        uc: u.indexOf('UCBrowser') > -1 //是否为android下的UC浏览器
+      };
+    }()
+  }
+  console.log("userAgent:" + browser.versions.userAgent);
+
+  // callback
+  function fontLoaded() {
+    console.log('font loaded');
+    if (document.getElementsByClassName('site-intro-meta')) {
+      document.getElementsByClassName('intro-title')[0].classList.add('intro-fade-in');
+      document.getElementsByClassName('intro-subtitle')[0].classList.add('intro-fade-in');
+      var postIntros = document.getElementsByClassName('post-intros')[0]
+      if (postIntros) {
+        postIntros.classList.add('post-fade-in');
+      }
+    }
+  }
+
+  // UC不支持跨域，所以直接显示
+  function asyncCb(){
+    if (browser.versions.uc) {
+      console.log("UCBrowser");
+      fontLoaded();
+    } else {
+      WebFont.load({
+        custom: {
+          families: ['Oswald-Regular']
+        },
+        loading: function () {  //所有字体开始加载
+          // console.log('loading');
+        },
+        active: function () {  //所有字体已渲染
+          fontLoaded();
+        },
+        inactive: function () { //字体预加载失败，无效字体或浏览器不支持加载
+          console.log('inactive: timeout');
+          fontLoaded();
+        },
+        timeout: 5000 // Set the timeout to two seconds
+      });
+    }
+  }
+
+  function asyncErr(){
+    console.warn('script load from CDN failed, will load local script')
+  }
+
+  // load webfont-loader async, and add callback function
+  function async(u, cb, err) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (cb) { o.addEventListener('load', function (e) { cb(null, e); }, false); }
+    if (err) { o.addEventListener('error', function (e) { err(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+
+  var asyncLoadWithFallBack = function(arr, success, reject) {
+      var currReject = function(){
+        reject()
+        arr.shift()
+        if(arr.length)
+          async(arr[0], success, currReject)
+        }
+
+      async(arr[0], success, currReject)
+  }
+
+  asyncLoadWithFallBack([
+    "https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js", 
+    "https://cdn.bootcss.com/webfont/1.6.28/webfontloader.js",
+    "/lib/webfontloader.min.js"
+  ], asyncCb, asyncErr)
+</script>        
+        <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
+        <div class="container container-unloaded">
+            <main class="main post-page">
+    <article class="article-entry">
+        <h1 id="Best-websites-a-programmer-should-visit"><a href="#Best-websites-a-programmer-should-visit" class="headerlink" title="Best-websites-a-programmer-should-visit"></a>Best-websites-a-programmer-should-visit</h1><p><a href="https://github.com/sdmg15/Best-websites-a-programmer-should-visit" target="_blank" rel="noopener">https://github.com/sdmg15/Best-websites-a-programmer-should-visit</a> Some useful websites for programmers. When learning CS there are some useful sites you must know to get always informed in order to do your technologies eve and learn new things. Here is a non exhaustive list of some sites you should visit, this list will get updated as soon as I can get another link, but you can also contribute by adding those you know :wink:</p>
+<h3 id="Index"><a href="#Index" class="headerlink" title="Index"></a>Index</h3><ul>
+<li>When you get stuck</li>
+<li>News</li>
+<li>Coding practice for beginners</li>
+<li>For those who want to start a small project but cant find the ideas</li>
+<li>General Coding advice</li>
+<li>Coding Style</li>
+<li>General Tools</li>
+<li>Interview Preparation</li>
+<li>Documentaries</li>
+<li>MOOCs for learning something new</li>
+<li>Sites related to your preferred programming language (For me Java)</li>
+<li>Learn AI</li>
+<li>Seminar , research writing , talks etc</li>
+<li>Everything in one place</li>
+<li>YouTube Channels</li>
+<li>Good Articles</li>
+<li>Building a Simple Compiler/interpreter</li>
+<li>Watch others code</li>
+<li>What should a programmer know</li>
+<li>Competitive programming</li>
+<li>Computer Books</li>
+<li>Video Tutorials</li>
+<li>Online Compiler and Sharing Code snippets</li>
+<li>Blogs of Developers</li>
+<li>For improving your English</li>
+<li>When you get bored from CS related stuff</li>
+</ul>
+<h1 id="When-you-get-stuck"><a href="#When-you-get-stuck" class="headerlink" title="When you get stuck"></a>When you get stuck</h1><ul>
+<li><a href="http://stackoverflow.com/" target="_blank" rel="noopener">Stack Overflow</a> : subscribe to their weekly newsletter and any other topic which you find interesting</li>
+<li><a href="https://www.quora.com/" target="_blank" rel="noopener">Quora</a> : A place to share knowledge and better understand the world:</li>
+<li><a href="https://learn-anything.xyz/" target="_blank" rel="noopener">Learn Anything</a> : Community curated knowledge graph of best paths for learning anything</li>
+</ul>
+<h1 id="News"><a href="#News" class="headerlink" title="News"></a>News</h1><ul>
+<li><a href="https://news.ycombinator.com/" target="_blank" rel="noopener">Hacker News</a> : news aggregator for programmers where civility is king, try a newsletter to get top news to your inbox:</li>
+<li><a href="http://www.hackernewsletter.com/" target="_blank" rel="noopener">Hacker Newsletter</a> : curated by hand, delivered weekly</li>
+<li><a href="https://hndigest.com/" target="_blank" rel="noopener">Hacker News Digest</a> : curated automatically, delivered as frequently as you want</li>
+<li><a href="http://arstechnica.com/" target="_blank" rel="noopener">Ars Technica</a> : posts unique quality articles</li>
+<li><a href="http://technews.acm.org/" target="_blank" rel="noopener">ACM TechNews</a></li>
+<li><a href="https://lobste.rs/" target="_blank" rel="noopener">Lobsters</a> : Lobsters is a technology-focused community centered around link aggregation and discussion.</li>
+<li><a href="http://techcrunch.com/" target="_blank" rel="noopener">TechCrunch</a> : another good website for tech news</li>
+<li><a href="http://gsmarena.com/" target="_blank" rel="noopener">GSMArena.com</a> : news related to latest mobile phones and android.</li>
+<li><a href="https://www.producthunt.com/" target="_blank" rel="noopener">product hunt</a> : Discover your next favorite thing</li>
+<li><a href="https://alternativeto.net" target="_blank" rel="noopener">AlternativeTo</a> : Crowdsourced software recommendations</li>
+<li><a href="https://betterdev.link" target="_blank" rel="noopener">Better Dev Links</a> : Weekly links to help you become a better developer</li>
+</ul>
+<h1 id="Coding-practice-for-beginners"><a href="#Coding-practice-for-beginners" class="headerlink" title="Coding practice for beginners"></a>Coding practice for beginners</h1><ul>
+<li><a href="https://www.freecodecamp.com/" target="_blank" rel="noopener">freeCodeCamp</a> : Learn to code and build projects for nonprofits. Build your full stack web development portfolio today</li>
+<li><a href="http://www.reddit.com/r/dailyprogrammer" target="_blank" rel="noopener">Reddit.com/r/dailyprogrammer</a> : interesting programming challenges where you can learn from looking at other’s code , even if you are not able to solve code you can look at how others solved.</li>
+<li><a href="http://programmingbydoing.com/" target="_blank" rel="noopener">Programming by Doing</a> : very good site for those who want to start with absolute basics</li>
+<li><a href="http://codeabbey.com/" target="_blank" rel="noopener">CodeAbbey - a place where everyone can master programming</a> : Best place to begin with problems that start at the easiest and gradually increase difficulty with each problem.</li>
+<li><a href="http://exercism.io/" target="_blank" rel="noopener">Exercism.io</a> : download and solve practice problems in over 30 different languages, and share your solution with others.</li>
+<li><a href="http://rosettacode.org/wiki/Category:Programming_Tasks" target="_blank" rel="noopener">Programming Tasks</a> : large collection of small programs</li>
+<li><a href="https://github.com/karan/Projects-Solutions" target="_blank" rel="noopener">karan/Projects-Solutions</a> Solutions to most of the problems in the link above</li>
+<li><a href="http://lod-cloud.net/" target="_blank" rel="noopener">Lod - Cloud</a> : The Linking Open Data cloud diagram</li>
+<li><a href="https://caveofprogramming.com/" target="_blank" rel="noopener">Cave of programming</a> : Learn to program, Upgrade your skills.</li>
+<li><a href="https://www.codecademy.com/" target="_blank" rel="noopener">Codeacademy</a> : Learn to code interactively, for free.</li>
+</ul>
+<h1 id="For-those-who-want-to-start-a-small-project-but-can’t-find-the-ideas"><a href="#For-those-who-want-to-start-a-small-project-but-can’t-find-the-ideas" class="headerlink" title="For those who want to start a small project but can’t find the ideas"></a>For those who want to start a small project but can’t find the ideas</h1><ul>
+<li><a href="http://www.dreamincode.net/forums/topic/78802-martyr2s-mega-project-ideas-list/" target="_blank" rel="noopener">martyr2s-mega-project-ideas-list</a> : contains about 125 project ideas from beginner to intermediate level.</li>
+<li><a href="https://github.com/karan/Projects" target="_blank" rel="noopener">karan/Projects</a> : a large collection of small projects for beginners with</li>
+<li><a href="http://rodiongork.tumblr.com/post/108155476418/wrong-big-projects-for-beginners" target="_blank" rel="noopener">Wrong “big projects” for beginners</a> : How to choose where to start</li>
+<li><a href="https://github.com/vicky002/1000_Projects" target="_blank" rel="noopener">vicky002/1000-Projects</a> : Mega List of practical projects that one can solve in any programming language!</li>
+</ul>
+<h1 id="General-Coding-advice"><a href="#General-Coding-advice" class="headerlink" title="General Coding advice"></a>General Coding advice</h1><ul>
+<li><a href="https://medium.freecodecamp.com/things-i-wish-someone-had-told-me-when-i-was-learning-how-to-code-565fc9dcb329#.y5wbd3pj6" target="_blank" rel="noopener">Things I Wish Someone Had Told Me When I Was Learning How to Code — Free Code Camp</a></li>
+<li><a href="http://thecodist.com/article/lessons_from_a_lifetime_of_being_a_programmer" target="_blank" rel="noopener">Lessons From A Lifetime Of Being A Programmer</a></li>
+<li><a href="http://www.artima.com/weblogs/viewpost.jsp?thread=331531" target="_blank" rel="noopener">Principles of Good Programming</a></li>
+<li><a href="http://matt.might.net/articles/what-cs-majors-should-know/" target="_blank" rel="noopener">What every computer science major should know</a></li>
+<li><a href="https://okepi.wordpress.com/2014/08/21/how-to-become-a-programmer-or-the-art-of-googling-well/" target="_blank" rel="noopener">How to become a programmer, or the art of Googling well</a></li>
+<li><a href="http://kevinlondon.com/2015/05/05/code-review-best-practices.html" target="_blank" rel="noopener">Code Review Best Practices</a></li>
+<li><a href="https://stephenhaunts.com/2013/12/11/dieter-rams-10-principles-of-good-product-design/" target="_blank" rel="noopener">Dieter Rams : 10 Principles of Good Product Design</a></li>
+<li><a href="https://stephenhaunts.files.wordpress.com/2014/04/10-ways-to-be-a-better-developer.png" target="_blank" rel="noopener">10-ways-to-be-a-better-developer</a></li>
+<li><a href="https://henrikwarne.com/2012/12/12/working-as-a-software-developer/" target="_blank" rel="noopener">Working as a Software Developer</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Software_design_pattern" target="_blank" rel="noopener">Software design pattern</a> : The entire collection of Design Patterns.</li>
+<li><a href="https://sourcemaking.com/design_patterns" target="_blank" rel="noopener">Design Patterns</a> : Design Patterns explained in detail with examples.</li>
+</ul>
+<h1 id="Coding-Style"><a href="#Coding-Style" class="headerlink" title="Coding Style"></a>Coding Style</h1><ul>
+<li><a href="http://stanford.edu/class/archive/cs/cs106b/cs106b.1158/styleguide.shtml" target="_blank" rel="noopener">CS 106B Coding Style Guide</a> : must see for those who create spaghetti</li>
+<li><a href="https://google.github.io/styleguide/cppguide.html" target="_blank" rel="noopener">Google C++ Style Guide</a></li>
+<li><a href="https://github.com/airbnb/javascript" target="_blank" rel="noopener">Airbnb JS Style Guide</a> : A mostly reasonable approach to JavaScript</li>
+<li><a href="https://www.reddit.com/r/learnprogramming/comments/1i4ds4/what_are_some_bad_coding_habits_you_would/" target="_blank" rel="noopener">What are some bad coding habits you would recommend a beginner avoid getting into?</a></li>
+<li><a href="https://www.reddit.com/r/C_Programming/comments/1vuubw/good_c_programming_habits/" target="_blank" rel="noopener">Good C programming habits. • /r/C_Programming</a></li>
+<li><a href="http://www.chiark.greenend.org.uk/~sgtatham/bugs.html" target="_blank" rel="noopener">How to Report Bugs Effectively</a></li>
+<li><a href="http://www.umich.edu/~eecs381/generalFAQ/Debugging.html" target="_blank" rel="noopener">Debugging Faqs</a></li>
+<li><a href="http://codebetter.com/" target="_blank" rel="noopener">Stuff you need to Code Better!</a></li>
+<li><a href="https://github.com/open-source-society/computer-science" target="_blank" rel="noopener">Directory of Online CS Courses</a></li>
+<li><a href="https://github.com/prakhar1989/awesome-courses" target="_blank" rel="noopener">Directory of CS Courses (many with online lectures)</a></li>
+<li><a href="https://github.com/johnpapa/angular-styleguide/tree/master/a1" target="_blank" rel="noopener">Angular 1 Style Guide</a> : Officially endorsed style guide by John Pappa</li>
+</ul>
+<h1 id="General-Tools"><a href="#General-Tools" class="headerlink" title="General Tools"></a>General Tools</h1><h1 id="Interview-Preparation"><a href="#Interview-Preparation" class="headerlink" title="Interview Preparation"></a>Interview Preparation</h1><ul>
+<li><a href="http://www.geeksforgeeks.org/" target="_blank" rel="noopener">GeeksforGeeks | A computer science portal for geeks</a> : also subscribe to their feeds to get links to their new articles.</li>
+<li><a href="http://www.techinterview.org/" target="_blank" rel="noopener">A site for technical interview questions, brain teasers, puzzles, quizzles</a> : whatever the heck those are) and other things that make you think!</li>
+<li><a href="https://leetcode.com/problemset/algorithms/" target="_blank" rel="noopener">Problems | LeetCode OJ</a> : Coding practice for interviews</li>
+<li><a href="http://www.programmerinterview.com/" target="_blank" rel="noopener">Programmer And Software Interview Questions Answers</a></li>
+<li><a href="https://www.reddit.com/user/ashish2199/m/puzzles" target="_blank" rel="noopener">Reddit.com/user/ashish2199/m/puzzles</a> : Logic Puzzles</li>
+<li><a href="http://puzzles.nigelcoldwell.co.uk/" target="_blank" rel="noopener">A Collection of Quant Riddles With Answers</a></li>
+<li><a href="http://www.indiabix.com/" target="_blank" rel="noopener">Aptitude Questions and Answers</a> : Quant and aptitude preparation</li>
+<li><a href="http://javahonk.com/category/interview/" target="_blank" rel="noopener">Interview Archives - Java Honk</a></li>
+<li><a href="http://www.programcreek.com/2012/11/top-10-algorithms-for-coding-interview/" target="_blank" rel="noopener">Top 10 Algorithms for Coding Interview</a></li>
+<li><a href="http://www.hiredintech.com/algorithm-design/" target="_blank" rel="noopener">Algorithm design canvas</a>)</li>
+<li><a href="http://bigocheatsheet.com/#" target="_blank" rel="noopener">Big-O Algorithm Complexity Cheat Sheet</a></li>
+<li><a href="http://cheatsheetworld.com/programming/unix-linux-cheat-sheet/" target="_blank" rel="noopener">Unix / Linux Cheat Sheet</a></li>
+<li><a href="http://kelukelu.me/interview/index.html" target="_blank" rel="noopener">How to interview</a></li>
+<li><a href="http://www.palantir.com/2011/09/how-to-rock-an-algorithms-interview/" target="_blank" rel="noopener">How to Ace an Algorithms Interview</a></li>
+<li><a href="http://gurmeet.net/puzzles/" target="_blank" rel="noopener">Delightful Puzzles</a></li>
+<li><a href="http://visualgo.net/" target="_blank" rel="noopener">visualising data structures and algorithms through animation</a></li>
+<li><a href="https://www.reddit.com/r/cscareerquestions/comments/1jov24/heres_how_to_prepare_for_tech_interviews/" target="_blank" rel="noopener">Here’s How to Prepare for Tech Interviews • /r/cscareerquestions</a></li>
+<li><a href="http://www.kchodorow.com/blog/2013/02/28/guide-to-tech-interviews/" target="_blank" rel="noopener">Guide to Tech Interviews</a></li>
+<li><a href="https://www.reddit.com/r/cscareerquestions/comments/1b8wa3/why_you_make_less_money/" target="_blank" rel="noopener">Why You Make Less Money • /r/cscareerquestions</a></li>
+<li><a href="http://placement-iit2013.blogspot.in/" target="_blank" rel="noopener">IIT Delhi Placement Experience</a></li>
+<li><a href="https://www.reddit.com/r/cscareerquestions/comments/209rkq/what_are_your_goto_questions_for_the_do_you_have/" target="_blank" rel="noopener">what_are_your_goto_questions_for_the_do_you_have?</a></li>
+<li><a href="https://www.reddit.com/r/cscareerquestions/comments/20ahfq/heres_a_pretty_big_list_of_programming_interview/" target="_blank" rel="noopener">/r/cscareerquestions</a> : Here’s a pretty big list of programming interview questions I compiled while studying for big 4 interviews. I think you guys will find it useful! •</li>
+<li><a href="https://blogs.janestreet.com/interviewing-at-jane-street/" target="_blank" rel="noopener">Interviewing At Jane Street</a></li>
+<li><a href="http://se7so.blogspot.in/2014/01/how-to-prepare-for-interview-1.html" target="_blank" rel="noopener">How to prepare for an interview - 1</a></li>
+<li><a href="eulercoder.me/blog/career/Summer-Internship-the-ultimate-guide">Summer Internship: The Ultimate Guide</a></li>
+<li><a href="http://www.datsi.fi.upm.es/~frosal/docs/25mdq.html" target="_blank" rel="noopener">The 25 most difficult HR questions</a></li>
+<li><a href="http://lifehacker.com/tag/job-interviews" target="_blank" rel="noopener">Job interviews News, Videos, Reviews and Gossip - Lifehacker</a></li>
+<li><a href="http://www.icsjobportal.com/blog/job-interview-questions/" target="_blank" rel="noopener">How to Answer the Toughest 40 Job Interview Questions | ICS Job Portal</a></li>
+<li><a href="http://jobsearch.about.com/od/interviewquestionsanswers/a/interviewquest.htm" target="_blank" rel="noopener">Job Interview Questions and Best Answers</a></li>
+<li><a href="http://www.artofmanliness.com/2016/01/05/tell-me-a-little-about-yourself/" target="_blank" rel="noopener">How to Answer “Tell Me a Little About Yourself” | The Art of Manliness</a></li>
+<li><a href="http://www.artofmanliness.com/2012/08/06/how-to-ace-a-job-interview/" target="_blank" rel="noopener">Job Interview: How to Ace a Job Interview | The Art of Manliness</a></li>
+<li><a href="http://www.lifeclever.com/give-your-resume-a-face-lift/" target="_blank" rel="noopener">Give your résumé a face lift</a></li>
+<li><a href="http://ssp.impulsetrain.com/big-o.html" target="_blank" rel="noopener">BIG O Misconceptions</a></li>
+<li><a href="https://gist.github.com/dideler/2365607" target="_blank" rel="noopener">Bitwise tricks</a></li>
+<li><a href="http://javahonk.com/core-java-interview-questions/" target="_blank" rel="noopener">Core Java Interview questions - Interview question on each topic</a></li>
+<li><a href="http://adnjavainterview.blogspot.in" target="_blank" rel="noopener">Java Interview Questions and Answers</a></li>
+<li><a href="https://www.reddit.com/r/cscareerquestions/comments/2lzc4h/big_collection_of_interview_preparation_links/" target="_blank" rel="noopener">Big collection of interview preparation links • /r/cscareerquestions</a></li>
+<li><a href="https://www.reddit.com/r/india/comments/1clgdj/unsolicited_advice_for_job_seekers_and_employers/" target="_blank" rel="noopener">Unsolicited_advice_for_job_seekers_and_employers</a></li>
+<li><a href="https://sites.google.com/site/steveyegge2/five-essential-phone-screen-questions" target="_blank" rel="noopener">five-essential-phone-screen-questions - steveyegge2</a></li>
+<li><a href="http://web.stanford.edu/class/cs9/" target="_blank" rel="noopener">CS9: Problem-Solving for the CS Technical Interview</a></li>
+<li><a href="https://github.com/mission-peace/interview/wiki" target="_blank" rel="noopener">Mission-peace/interview problems</a> : A large collection of coding interview problems</li>
+<li><a href="http://stevestedman.com/wp-content/uploads/VennDiagram1.pdf" target="_blank" rel="noopener">SQL Joins explained using venn diagram</a></li>
+<li><a href="http://java67.blogspot.in/2013/04/10-frequently-asked-sql-query-interview-questions-answers-database.html" target="_blank" rel="noopener">10 Frequently asked SQL Query Interview Questions</a></li>
+<li><a href="http://www.essentialsql.com/get-ready-to-learn-sql-database-normalization-explained-in-simple-english/" target="_blank" rel="noopener">Get Ready to Learn SQL: 8. Database Normalization Explained in Simple English - Essential SQL</a></li>
+<li><a href="http://www.cmi.ac.in/~madhavan/courses/pl2006/lecturenotes/lecture-notes/lecture-notes.html" target="_blank" rel="noopener">Programming Language Concepts: Lecture Notes</a> : OOPs concepts and programming language concepts.</li>
+<li><a href="http://www.hiredintech.com/app" target="_blank" rel="noopener">We Help Coders Get Hired</a> : website offering courses on system design, interview strategies, soft skills etc</li>
+<li><a href="https://github.com/checkcheckzz/system-design-interview" target="_blank" rel="noopener">checkcheckzz/system-design-interview</a></li>
+<li><a href="http://haseebq.com/how-to-break-into-tech-job-hunting-and-interviews/" target="_blank" rel="noopener">How to Break Into the Tech Industry - a Guide to Job Hunting and Tech Interviews</a></li>
+<li><a href="http://placementsindia.blogspot.in/" target="_blank" rel="noopener">Freshers Interviews</a></li>
+<li><a href="http://www.gowrikumar.com/c/index.php" target="_blank" rel="noopener">C PUZZLES, Some interesting C problems</a></li>
+<li><a href="http://www.techinterview.org/" target="_blank" rel="noopener">A site for technical interview questions, brain teasers, puzzles, quizzles (whatever the heck those are) and other things that make you think!</a></li>
+<li><a href="https://www.ocf.berkeley.edu/~wwu/riddles/hard.shtml" target="_blank" rel="noopener">wu :: riddles(hard)</a> : logic puzzles and riddles</li>
+<li><a href="https://github.com/odino/interviews" target="_blank" rel="noopener">https://github.com/odino/interviews</a> : list of important questions for interview</li>
+<li><a href="https://github.com/svozniuk/java-interviews" target="_blank" rel="noopener">svozniuk/java-interviews</a> : Java interview questions</li>
+<li><a href="https://github.com/kimberli/interviews" target="_blank" rel="noopener">kimberli/interviews</a> : study sheet for Interview</li>
+<li><a href="http://stackoverflow.com/questions/11094330/determining-the-big-o-runtimes-of-these-different-loops" target="_blank" rel="noopener">Determining the big-O runtimes of these different loops?</a> : really good stackoverflow question that covers basics of calculating runtime complexity.</li>
+<li><a href="https://github.com/ChiperSoft/InterviewThis" target="_blank" rel="noopener">ChiperSoft/InterviewThis</a> : questions to ask during on a interview to know more about the company.</li>
+<li><a href="https://www.jitbit.com/news/181-jitbits-sql-interview-questions/" target="_blank" rel="noopener">SQL interview questions</a> : great SQL test</li>
+</ul>
+<h1 id="Documentaries"><a href="#Documentaries" class="headerlink" title="Documentaries"></a>Documentaries</h1><ul>
+<li>Machine that Changed the World - a very good documentary about history of computers  <ul>
+<li><a href="http://www.youtube.com/watch?v=rcR74y61xZk" target="_blank" rel="noopener">Part 1: Giant Brains</a></li>
+<li><a href="https://www.youtube.com/watch?v=0iPiYxjsYKk" target="_blank" rel="noopener">Part 2: Inventing the Future</a></li>
+<li><a href="https://www.youtube.com/watch?v=d7DKVfOXr54" target="_blank" rel="noopener">Part 3: The Paperback Computer</a></li>
+<li><a href="https://www.youtube.com/watch?v=enWWlx7-t0k" target="_blank" rel="noopener">Part 4: The Thinking Machine</a></li>
+<li><a href="https://www.youtube.com/watch?v=fLLXiP7diEo" target="_blank" rel="noopener">Part 5: The World at Your Fingertips</a></li>
+</ul>
+</li>
+<li><a href="https://www.youtube.com/playlist?list=PLn-Y3vvQbmHO5WUcBdIWqiUfNawhC1cn3" target="_blank" rel="noopener">Triumph of the Nerds</a> : Play-list</li>
+<li><a href="https://www.youtube.com/watch?v=a-49a_CjH0M" target="_blank" rel="noopener">Project Code Rush - The Beginnings of Netscape / Mozilla Documentary</a></li>
+<li><a href="https://www.youtube.com/watch?v=XMm0HsmOTFI" target="_blank" rel="noopener">The Code: Story of Linux documentary</a></li>
+<li><a href="https://www.youtube.com/watch?v=S23yie-779k" target="_blank" rel="noopener">Breaking the Code: Biography of Alan Turing</a></li>
+<li><a href="https://www.youtube.com/watch?v=s1i-dnAH9Y4" target="_blank" rel="noopener">Mechanical Computer (All Parts)</a> : a very good video from 1950s explaining how mechanical computers used to work without all the modern day electronics.</li>
+<li><a href="https://www.youtube.com/playlist?list=PL_IlIlrxhtPMqW4b0-v8OgLvFZQes6SoZ" target="_blank" rel="noopener">Download: The True Story of the Internet</a> : Play-list of discovery channel documentary on browser wars , dot com bubble and more.</li>
+<li><a href="https://teachyourselfcs.com/" target="_blank" rel="noopener">Teach Yourself Computer Science</a></li>
+<li><a href="https://www.youtube.com/watch?v=42KTvGYQYnA" target="_blank" rel="noopener">How does CPU execute program (video)</a></li>
+<li><a href="https://www.youtube.com/watch?v=Mv2XQgpbTNE" target="_blank" rel="noopener">Machine Code Instructions (video)</a></li>
+<li><a href="https://www.youtube.com/watch?v=iOq5kSKqeR4" target="_blank" rel="noopener">Harvard CS50 - Asymptotic Notation (video)</a></li>
+<li><a href="https://www.youtube.com/watch?v=4NIb9l3imAo" target="_blank" rel="noopener">Cracking The Code Interview</a></li>
+<li><a href="https://www.youtube.com/watch?v=Eg5-tdAwclo" target="_blank" rel="noopener">Cracking the Coding Interview - Fullstack Speaker Series</a></li>
+<li><a href="https://www.youtube.com/watch?v=1fqxMuPmGak" target="_blank" rel="noopener">Ask Me Anything: Gayle Laakmann McDowell (author of Cracking the Coding Interview)</a></li>
+</ul>
+<h1 id="MOOCs-for-learning-something-new"><a href="#MOOCs-for-learning-something-new" class="headerlink" title="MOOCs for learning something new"></a>MOOCs for learning something new</h1><ul>
+<li><a href="https://www.class-central.com" target="_blank" rel="noopener">Class Central</a> : a directory of 100,000+ student reviews of thousands of MOOCs.</li>
+<li><a href="https://onlinecourses.nptel.ac.in/explorer/search?category=COMP_SCI_ENGG" target="_blank" rel="noopener">NPTEL Vidoes COMP_SCI_ENGG</a></li>
+<li><a href="http://coursera.org/" target="_blank" rel="noopener">Coursera.org</a></li>
+<li><a href="http://edx.org/" target="_blank" rel="noopener">edX</a></li>
+<li><a href="http://mooc.fi/english.html" target="_blank" rel="noopener">MOOC.fi</a> : Free online courses from the University of Helsinki</li>
+<li><a href="http://udacity.com/" target="_blank" rel="noopener">Udacity</a></li>
+<li><a href="https://www.kadenze.com/courses?subjects%5B%5D=7" target="_blank" rel="noopener">Kadenze | Creative Programming</a>: Programming courses focused on art and creativity</li>
+<li><a href="https://www.youtube.com/user/UCBerkeley/videos" target="_blank" rel="noopener">UCBerkeley</a></li>
+<li><a href="http://ocw.mit.edu/courses/electrical-engineering-and-computer-science/" target="_blank" rel="noopener">MIT OCW Electrical Engineering and Computer Science</a></li>
+<li><a href="https://www.youtube.com/user/cs50tv/videos" target="_blank" rel="noopener">CS50</a></li>
+<li><a href="https://github.com/prakhar1989/awesome-courses/blob/master/README.md" target="_blank" rel="noopener">prakhar1989/awesome-CS-courses</a> : List containing large amount of CS courses</li>
+<li><a href="https://docs.google.com/spreadsheets/d/1BD8BJJUNaX63m2QmySWMGDp71nx4W4MyyiIBlfMoN3Q/htmlview?sle=true#" target="_blank" rel="noopener">Computer Science Resources</a> : list of MOOCs for autodidacts</li>
+<li><a href="https://github.com/prakhar1989/awesome-courses/blob/master/README.md" target="_blank" rel="noopener">https://github.com/prakhar1989/awesome-courses/blob/master/README.md</a> : collection of CS courses on Internet</li>
+</ul>
+<h1 id="Sites-related-to-your-preferred-programming-language-For-me-Java"><a href="#Sites-related-to-your-preferred-programming-language-For-me-Java" class="headerlink" title="Sites related to your preferred programming language (For me Java)"></a>Sites related to your preferred programming language (For me Java)</h1><ul>
+<li><a href="http://javarevisited.blogspot.in/" target="_blank" rel="noopener">Java Revisited</a> : good for learning about Java Language and interview preparation.</li>
+<li><a href="https://docs.oracle.com/javase/tutorial/" target="_blank" rel="noopener">The Java™ Tutorials</a> : The best tutorials for Java.</li>
+<li><a href="http://www.artima.com/java/index.html" target="_blank" rel="noopener">Java Corner at Artima.com</a></li>
+<li><a href="http://www.cs.princeton.edu/~cos126/java_visualize/" target="_blank" rel="noopener">Java Visualizer</a> : helps visualize references , values of variables ect</li>
+<li><a href="http://www.cafeaulait.org/course/" target="_blank" rel="noopener">Java Lecture Notes</a></li>
+<li><a href="http://chimera.labs.oreilly.com/books/1234000001805/index.html" target="_blank" rel="noopener">Learning Java</a> : a free online textbook for learning Java</li>
+<li><a href="http://www.artima.com/insidejvm/ed2/index.html" target="_blank" rel="noopener">Free Online Chapters of Inside the Java Virtual Machine by Bill Venners</a></li>
+<li><a href="http://www.cubrid.org/blog/dev-platform/understanding-jvm-internals/" target="_blank" rel="noopener">Understanding JVM Internals</a></li>
+<li><a href="http://www.dynatrace.com/en/javabook/how-garbage-collection-works.html" target="_blank" rel="noopener">How Garbage Collection Works</a></li>
+<li><a href="http://www.javaworld.com/" target="_blank" rel="noopener">Welcome to JavaWorld.com</a></li>
+<li><a href="http://www.cs.umd.edu/~pugh/java/memoryModel/" target="_blank" rel="noopener">The Java Memory Model</a></li>
+<li><a href="https://netbeans.org/project_downloads/usersguide/shortcuts-80.pdf" target="_blank" rel="noopener">Netbeans Keyboard Shortcuts</a> : Keyboard shortcuts to enhance your productivity when working in Netbeans.</li>
+<li><a href="http://www.xyzws.com/javafaq/page/1" target="_blank" rel="noopener">XyzWs Java FAQs</a> : large collection of java interview questions</li>
+<li><a href="http://www.docjar.com/" target="_blank" rel="noopener">Search Open Source Java API</a> : view source of java library and learn how things are implemented.</li>
+<li><a href="http://www.journaldev.com/" target="_blank" rel="noopener">JournalDev - Java, Java EE, Android, Web Development Tutorials</a></li>
+<li><a href="https://github.com/sherxon/AlgoDS" target="_blank" rel="noopener">Implementation of Algorithms and Data Structures, Interview Questions and Answers</a></li>
+<li><a href="https://plumbr.eu/handbook/what-is-garbage-collection" target="_blank" rel="noopener">what-is-garbage-collection</a> : Demystify the garbage collection</li>
+<li><a href="https://javahungry.blogspot.com/2014/02/best-books-for-learning-java-must-read.html" target="_blank" rel="noopener">Best books for learning java must read</a> : Get basics of Java</li>
+<li><a href="https://www.youtube.com/watch?v=StdfeXaKGEc&amp;list=PL-XXv-cvA_iAlnI-BQr9hjqADPBtujFJd&amp;index=25" target="_blank" rel="noopener">Garbage collection (Java); Augmenting data str (video)</a></li>
+<li><a href="https://www.youtube.com/playlist?list=PLO9y7hOkmmSGTy5z6HZ-W4k2y8WXF7Bff" target="_blank" rel="noopener">Compilers (video)</a></li>
+<li><a href="https://www.infoq.com/presentations/garbage-collection-benefits" target="_blank" rel="noopener">Deep Dive Java: Garbage Collection is Good!</a></li>
+<li><a href="http://www.stroustrup.com/C++.html" target="_blank" rel="noopener">The C++ Programming Language</a> : The C++ Programming Language.</li>
+<li><a href="http://www.stroustrup.com/bs_faq.html" target="_blank" rel="noopener">Bjarne Stroustrup’s FAQ</a> : The C++ FAQ</li>
+<li><a href="http://www.stroustrup.com/bs_faq2.html" target="_blank" rel="noopener">Bjarne Stroustrup’s C++ Style and Technique FAQ</a> : The C++ FAQ</li>
+<li><a href="http://www.stroustrup.com/C++11FAQ.html" target="_blank" rel="noopener">C++11 - the new ISO C++ standard</a> : The C++11 FAQ</li>
+</ul>
+<h1 id="Learn-AI"><a href="#Learn-AI" class="headerlink" title="Learn AI"></a>Learn AI</h1><ul>
+<li><a href="https://blog.openai.com/unsupervised-sentiment-neuron/" target="_blank" rel="noopener">Unsupervised Sentiment Neuron</a></li>
+<li><a href="https://blog.openai.com/robots-that-learn/" target="_blank" rel="noopener">Robots that learn</a></li>
+<li><a href="https://grakn.ai/" target="_blank" rel="noopener">grakn.ai</a></li>
+</ul>
+<h1 id="Seminar-research-writing-talks-etc"><a href="#Seminar-research-writing-talks-etc" class="headerlink" title="Seminar , research writing , talks etc"></a>Seminar , research writing , talks etc</h1><ul>
+<li><a href="http://www.cs.cmu.edu/~mleone/how-to.html" target="_blank" rel="noopener">Advice on Research and Writing</a></li>
+<li><a href="https://www.cse.iitb.ac.in/~ranade/communicationskills.html" target="_blank" rel="noopener">Seminar and reports</a></li>
+<li><a href="http://www.cse.iitd.ac.in/~srsarangi/articles.html" target="_blank" rel="noopener">PHD MS Articles</a></li>
+<li><a href="https://stephenhaunts.com/2015/10/02/practical-tips-for-talking-at-usergroups-and-conferences-part-1/" target="_blank" rel="noopener">Practical Tips for Talking at Usergroups and Conferences</a></li>
+<li><a href="https://stephenhaunts.com/2015/10/02/practical-tips-for-talking-at-usergroups-and-conferences-part-1/" target="_blank" rel="noopener">Giving presentation on software project to non-programmers</a></li>
+</ul>
+<h1 id="Everything-in-one-place"><a href="#Everything-in-one-place" class="headerlink" title="Everything in one place"></a>Everything in one place</h1><ul>
+<li><a href="https://www.reddit.com/user/ashish2199/m/cs_student_subs" target="_blank" rel="noopener">reddit.com/user/ashish2199/m/cs_student_subs</a> : a multisubreddit of all subreddits of topics related to computer science and programming.</li>
+</ul>
+<h1 id="YouTube-Channels"><a href="#YouTube-Channels" class="headerlink" title="YouTube Channels"></a>YouTube Channels</h1><ul>
+<li><a href="https://www.youtube.com/user/Computerphile/videos" target="_blank" rel="noopener">Computerphile</a> : Must watch for every CS student</li>
+<li><a href="https://www.youtube.com/user/ComputerHistory/videos" target="_blank" rel="noopener">ComputerHistory</a> : for those who like to know how we reached where we are.</li>
+<li><a href="https://www.youtube.com/user/GoogleTechTalks/videos" target="_blank" rel="noopener">GoogleTechTalks</a> : videos on trending topics and cool stuff happening in the tech industry.</li>
+<li><a href="https://www.youtube.com/user/PlacementGrid/videos" target="_blank" rel="noopener">Placement Grid</a> : Interview and campus placement experience</li>
+<li><a href="https://www.youtube.com/user/GoogleDevelopers/videos" target="_blank" rel="noopener">Google Developers</a></li>
+<li><a href="https://www.youtube.com/user/FacebookDevelopers/videos" target="_blank" rel="noopener">Facebook Developers</a></li>
+<li><a href="https://www.youtube.com/user/OreillyMedia/videos" target="_blank" rel="noopener">O’Reilly</a> : interviews and talks of world’s best technical writers.</li>
+<li><a href="https://www.youtube.com/user/java/videos" target="_blank" rel="noopener">Java</a> : talks related to java</li>
+<li><a href="https://www.youtube.com/channel/UCdDhYMT2USoLdh4SZIsu_1g/videos" target="_blank" rel="noopener">JavaOne</a> : Java Conference</li>
+<li><a href="https://www.youtube.com/user/CppCon/videos?shelf_id=0&amp;view=0&amp;sort=dd" target="_blank" rel="noopener">CppCon</a> : C++ Conference</li>
+<li><a href="https://www.youtube.com/channel/UC5e__RG9K3cHrPotPABnrwg" target="_blank" rel="noopener">C++Now (BoostCon)</a> : C++Now (previously BoostCon) conference</li>
+<li><a href="https://www.youtube.com/user/MeetingCPP/videos" target="_blank" rel="noopener">Meeting C++ YT Kanalseite</a> : Talks on C++</li>
+<li><a href="https://www.youtube.com/user/ThinMatrix/videos" target="_blank" rel="noopener">ThinMatrix</a> : blogs and tutorials developer making a 3d game in Java using opengl</li>
+<li><a href="https://www.youtube.com/user/technoparkcorp/videos" target="_blank" rel="noopener">yegor256</a></li>
+<li><a href="http://www.aristeia.com/presentations.html" target="_blank" rel="noopener">Scott Meyers: Past Talks</a></li>
+<li><a href="https://www.youtube.com/user/ThoughtbotVideo/videos" target="_blank" rel="noopener">thoughtbot</a> : talks on various topics</li>
+<li><a href="https://www.youtube.com/channel/UCU0Rt8VHO5-YNQXwIjkf-1g" target="_blank" rel="noopener">code::dive conference</a> : code::dive conference organized by NOKIA Wrocław Technology Center</li>
+<li><a href="https://www.youtube.com/user/HowToBecomeTV/videos" target="_blank" rel="noopener">HowToBecomeTV</a> : contains good interviews of developers and people related to tech industry.</li>
+<li><a href="https://www.youtube.com/user/itcuties/videos" target="_blank" rel="noopener">ITCuties</a></li>
+<li><a href="https://www.youtube.com/user/CodeBabes/videos" target="_blank" rel="noopener">CodeBabes</a> : For those who think CS lacks glamor :P</li>
+<li><a href="https://www.youtube.com/channel/UCGGRRqAjPm6sL3-WGBDnKJA/videos" target="_blank" rel="noopener">Netflix UI Engineering</a> : great videos to watch for web developers, mobile developers and those interested in some of Netflix’s tech stack</li>
+<li><a href="https://www.youtube.com/CodingBlocks" target="_blank" rel="noopener">Coding Blocks</a> : Tutorials, how to’s, tips and tricks</li>
+<li><a href="https://www.youtube.com/c/mpjmevideos" target="_blank" rel="noopener">Fun Fun Function</a> : A weekly series from Mattias Petter Johansson on an assortment of programming topics, including some not directly related to coding.</li>
+</ul>
+<h1 id="Good-Articles"><a href="#Good-Articles" class="headerlink" title="Good Articles"></a>Good Articles</h1><ul>
+<li><a href="http://blog.thefirehoseproject.com/posts/expectations-of-a-junior-developer/" target="_blank" rel="noopener">Expectations of a Junior Developer</a></li>
+<li><a href="http://blog.thefirehoseproject.com/posts/learn-to-code-and-be-self-reliant/" target="_blank" rel="noopener">The Key To Accelerating Your Coding Skills</a></li>
+<li><a href="https://stevewedig.com/2014/02/03/software-developers-reading-list/" target="_blank" rel="noopener">A Software Developer’s Reading List</a> : Some good books and links in there.</li>
+<li><a href="http://haseebq.com/how-to-break-into-tech-job-hunting-and-interviews/" target="_blank" rel="noopener">how-to-break-into-tech-job-hunting-and-interviews/</a></li>
+<li><a href="http://carlcheo.com/compsci" target="_blank" rel="noopener">40 Keys Computer Science Concepts Explained In Layman’s Terms</a></li>
+<li><a href="https://lwn.net/Articles/250967/" target="_blank" rel="noopener">What every programmer should know about memory, Part 1</a></li>
+<li><a href="http://multithreaded.stitchfix.com/" target="_blank" rel="noopener">We are reinventing the retail industry through innovative technology</a></li>
+<li><a href="https://www.joelonsoftware.com/2003/10/08/the-absolute-minimum-every-software-developer-absolutely-positively-must-know-about-unicode-and-character-sets-no-excuses/" target="_blank" rel="noopener">Unicode</a></li>
+<li><a href="http://kunststube.net/encoding/" target="_blank" rel="noopener">What every programmer absolutely, positively needs to know about encodings and character sets to work with text</a></li>
+<li><a href="https://www.wikiwand.com/en/List_of_algorithms" target="_blank" rel="noopener">List of algorithms</a></li>
+<li><a href="https://www.wikiwand.com/en/Java_bytecode" target="_blank" rel="noopener">Dive into the byte code</a></li>
+<li><a href="http://matt.might.net/articles/what-cs-majors-should-know/" target="_blank" rel="noopener">What every computer science major should know</a></li>
+<li><a href="https://teachyourselfcs.com/" target="_blank" rel="noopener">Teach Yourself Computer Science</a></li>
+<li><a href="https://fkcd.ca/b7d.svg" target="_blank" rel="noopener">Data Structure Map</a></li>
+<li><a href="https://dev.to/vaidehijoshi/a-gentle-introduction-to-graph-theory" target="_blank" rel="noopener">A Gentle Introduction To Graph Theory</a></li>
+<li><a href="https://0xax.gitbooks.io/linux-insides/content/Booting/linux-bootstrap-1.html" target="_blank" rel="noopener">Linux Inside</a></li>
+<li><a href="http://moonscript.org/" target="_blank" rel="noopener">A programmer friendly language that compiles to Lua.</a></li>
+</ul>
+<h1 id="Podcasts"><a href="#Podcasts" class="headerlink" title="Podcasts"></a>Podcasts</h1><ul>
+<li><a href="http://www.codingblocks.net/" target="_blank" rel="noopener">Coding Blocks - Learning principles, patterns and better practices on the go</a></li>
+<li><a href="http://msdevshow.com/" target="_blank" rel="noopener">MS Dev Show</a></li>
+<li><a href="http://cynicaldeveloper.com/" target="_blank" rel="noopener">The Cynical Developer</a></li>
+<li><a href="http://herdingcode.com/" target="_blank" rel="noopener">Herding Code</a></li>
+<li><a href="http://www.codenewbie.org/" target="_blank" rel="noopener">Code Newbie</a></li>
+<li><a href="http://www.se-radio.net/" target="_blank" rel="noopener">Software Engineering Radio</a></li>
+<li><a href="https://devchat.tv/js-jabber" target="_blank" rel="noopener">JavaScript Jabber</a></li>
+<li><a href="https://spec.fm/podcasts/developer-tea" target="_blank" rel="noopener">Developer Tea</a> : A podcast for developers designed to fit inside your tea break.</li>
+<li><a href="https://softwareengineeringdaily.com/" target="_blank" rel="noopener">Software Engineering Daily</a> : A daily technical interview about software topics</li>
+</ul>
+<h1 id="Building-a-Simple-Compiler-interpreter"><a href="#Building-a-Simple-Compiler-interpreter" class="headerlink" title="Building a Simple Compiler/interpreter"></a>Building a Simple Compiler/interpreter</h1><ul>
+<li><a href="http://c9x.me/compile/bib/" target="_blank" rel="noopener">Resources for Amateur Compiler Writers</a></li>
+<li><a href="https://github.com/thejameskyle/the-super-tiny-compiler" target="_blank" rel="noopener">:snowman: Possibly the smallest compiler ever</a></li>
+<li><a href="https://dev.to/fcpauldiaz/writing-my-first-compiler" target="_blank" rel="noopener">Writing My First Compiler</a></li>
+<li><a href="https://sarabander.github.io/sicp/html/index.xhtml" target="_blank" rel="noopener">Structure and Interpretation of Computer Programs</a></li>
+<li><a href="https://ruslanspivak.com/lsbasi-part1/" target="_blank" rel="noopener">Let’s Build A Simple Interpreter. Part 1.</a></li>
+<li><a href="http://www.cs.dartmouth.edu/~mckeeman/cs48/mxcom/gem/html/GrowingCompiler.html" target="_blank" rel="noopener">Growing a compiler</a></li>
+</ul>
+<h1 id="Tutorials"><a href="#Tutorials" class="headerlink" title="Tutorials"></a>Tutorials</h1><ul>
+<li><a href="https://www.subtle.press/course/poor-mans-ci/" target="_blank" rel="noopener">Subtle | Poor Man’s CI</a> : Learn how continuous integration platforms work under the hood, by building one of your own on top of git with Node.js</li>
+<li><a href="http://www.tutorialspoint.com/" target="_blank" rel="noopener">Tutorialspoint</a></li>
+<li><a href="http://www.w3schools.com/" target="_blank" rel="noopener">W3Schools Online Web Tutorials</a></li>
+<li><a href="http://opendatastructures.org/" target="_blank" rel="noopener">Open Data Structures</a> : Excellent resource for learning about DS and algos , provides code in various languages C++ , Java , pseudocode</li>
+<li><a href="http://oopweb.com/Algorithms/Documents/PLDS210/VolumeFrames.html" target="_blank" rel="noopener">Data Structures and Algorithms by John Morris</a> : another good source with code and its analysis</li>
+<li><a href="http://cs.lmu.edu/~ray/classes/dsa/" target="_blank" rel="noopener">CMSI 281: Data Structures</a> : light weight introduction to DS</li>
+<li><a href="http://cs.fit.edu/~mmahoney/cse2050/how2cpp.html" target="_blank" rel="noopener">How to Program in C++</a> : Good resource for revising C++ topics and STL</li>
+<li><a href="https://www.topcoder.com/community/data-science/data-science-tutorials/" target="_blank" rel="noopener">TopCoder Tutorials</a></li>
+<li><a href="http://wildlyinaccurate.com/a-hackers-guide-to-git/" target="_blank" rel="noopener">A Hacker’s Guide to Git</a> : for those wanting to learn git with a solid foundation</li>
+<li><a href="http://maryrosecook.com/blog/post/git-from-the-inside-out" target="_blank" rel="noopener">Git from the inside out</a></li>
+<li><a href="http://freeengineer.org/learnUNIXin10minutes.html" target="_blank" rel="noopener">Learn UNIX in 10 minutes</a></li>
+<li><a href="http://guide.bash.academy/" target="_blank" rel="noopener">The Bash Guide</a> : very good guide for learning the Bash Shell</li>
+<li><a href="http://ryanstutorials.net/linuxtutorial/" target="_blank" rel="noopener">Linux Tutorial</a> : good resource for learning Linux</li>
+<li><a href="http://www.ee.surrey.ac.uk/Teaching/Unix/unixintro.html" target="_blank" rel="noopener">UNIX Tutorial - Introduction</a></li>
+<li><a href="http://www.ee.surrey.ac.uk/Teaching/Unix/" target="_blank" rel="noopener">Linux Tutorial for Beginners</a></li>
+<li><a href="http://linuxcommand.org/learning_the_shell.php" target="_blank" rel="noopener">Learning the shell.</a></li>
+<li><a href="http://prismoskills.appspot.com/lessons/Dynamic_Programming/Chapter_01_-_Introduction.jsp" target="_blank" rel="noopener">Dynamic programming - PrismoSkills</a> : very good resource if want to learn how to solve DP problems.</li>
+<li><a href="http://www.slideshare.net/olvemaudal/deep-c" target="_blank" rel="noopener">Deep C</a> : very good presentation on C language</li>
+<li><a href="http://c-faq.com/index.html" target="_blank" rel="noopener">C programming language Frequently Asked Questions</a></li>
+<li><a href="https://www.cs.uic.edu/~jbell/CourseNotes/OperatingSystems/" target="_blank" rel="noopener">OS Course Notes</a> : Chapter wise course notes according to Galvin’s book</li>
+<li><a href="http://www.cheat-sheets.org/sites/sql.su/" target="_blank" rel="noopener">SQL (Structured Query Language) in one page : SQL.SU</a> : a very good SQL cheat sheet</li>
+<li><a href="http://www.le.ac.uk/users/rjm1/cotter/index.htm" target="_blank" rel="noopener">Introduction to C Programming</a></li>
+<li><a href="http://www.techotopia.com/index.php/MySQL_Essentials" target="_blank" rel="noopener">MySQL Essentials</a></li>
+<li><a href="http://www.mysqltutorial.org/" target="_blank" rel="noopener">http://www.mysqltutorial.org/</a></li>
+<li><a href="http://duartes.org/gustavo/blog/best-of/" target="_blank" rel="noopener">Best Of - Gustavo Duarte</a> : contains articles on various topics</li>
+<li><a href="http://overapi.com/" target="_blank" rel="noopener">Collecting all the cheat sheets</a> : cheat sheets for lots of programming languages</li>
+<li><a href="http://www.chiark.greenend.org.uk/~sgtatham/cdescent/" target="_blank" rel="noopener">The Descent to C</a> : for those moving to C from some higher programming language like java or python.</li>
+<li><a href="https://vimtutorplus.herokuapp.com/exercise/1" target="_blank" rel="noopener">VimTutor+</a> : learn VIM from browser itself</li>
+<li><a href="https://learn.hackerearth.com/tutorials/" target="_blank" rel="noopener">HackerEarth Tutorials</a> : Good resource for DS and Algos tutorial</li>
+<li><a href="https://linuxjourney.com/" target="_blank" rel="noopener">Linux Journey</a> : good site for learning linux</li>
+<li><a href="http://www.cs.cf.ac.uk/Dave/C/CE.html" target="_blank" rel="noopener">C Programming</a></li>
+<li><a href="http://www.cs.cornell.edu/courses/cs2112/2015fa/lectures/index.html" target="_blank" rel="noopener">CS 2112/ENGRD 2112 Fall 2015</a> : Good notes on data structures and algorithms.</li>
+<li><a href="https://guides.github.com/features/mastering-markdown/" target="_blank" rel="noopener">More about Github-flavored markdown</a></li>
+<li><a href="http://product.half.ebay.com/The-UNIX-Programming-Environment-by-Brian-W-Kernighan-and-Rob-Pike-1983-Other/54385&amp;tg=info" target="_blank" rel="noopener">The Unix Programming Environment</a></li>
+<li><a href="https://www.amazon.com/dp/1593273894/" target="_blank" rel="noopener">The Linux Command Line: A Complete Introduction</a></li>
+<li><a href="https://en.wikipedia.org/wiki/TCP/IP_Illustrated" target="_blank" rel="noopener">TCP/IP Illustrated Series</a></li>
+<li><a href="https://www.amazon.com/gp/product/0596007124/" target="_blank" rel="noopener">Head First Design Patterns</a></li>
+<li><a href="https://www.amazon.com/Design-Patterns-Elements-Reusable-Object-Oriented/dp/0201633612" target="_blank" rel="noopener">Design Patterns: Elements of Reusable Object-Oriented Software</a> : aka the “Gang Of Four” book, or GOF</li>
+<li><a href="https://www.amazon.com/UNIX-Linux-System-Administration-Handbook/dp/0131480057/" target="_blank" rel="noopener">UNIX and Linux System Administration Handbook, 4th Edition</a></li>
+<li><a href="https://dzone.com/" target="_blank" rel="noopener">Programming, Web Development, and DevOps news, tutorials and tools for beginners to experts</a></li>
+</ul>
+<h1 id="Watch-others-code"><a href="#Watch-others-code" class="headerlink" title="Watch others code"></a>Watch others code</h1><ul>
+<li><a href="https://www.liveedu.tv/" target="_blank" rel="noopener">LiveEdu.tv</a> : screencast of people building application, websites, games, ect.</li>
+</ul>
+<h1 id="What-should-a-programmer-know"><a href="#What-should-a-programmer-know" class="headerlink" title="What should a programmer know"></a>What should a programmer know</h1><ul>
+<li><a href="http://sijinjoseph.com/programmer-competency-matrix/" target="_blank" rel="noopener">Programmer Competency Matrix</a> : article for knowing what our level as a programmer is.</li>
+<li><a href="https://github.com/" target="_blank" rel="noopener">GitHub.com Build software better, together</a> : Place to showcase your project and collaborate with others. (Must know Git in order to use it effectively)</li>
+<li><a href="https://gitlab.com" target="_blank" rel="noopener">Gitlab offers free unlimited (private) repositories and unlimited collaborators</a>.</li>
+</ul>
+<h1 id="Competitive-programming"><a href="#Competitive-programming" class="headerlink" title="Competitive programming"></a>Competitive programming</h1><ul>
+<li><a href="http://hackerrank.com/" target="_blank" rel="noopener">HackerRank</a></li>
+<li><a href="http://codeforces.com/" target="_blank" rel="noopener">Codeforces</a></li>
+<li><a href="http://topcoder.com/" target="_blank" rel="noopener">topcoder</a></li>
+<li><a href="https://uva.onlinejudge.org" target="_blank" rel="noopener">UVa Online Judge</a> : hundreds of problems supporting multiple languages.</li>
+<li><a href="http://hackerearth.com/" target="_blank" rel="noopener">HackerEarth - Programming challenges and Developer jobs</a></li>
+<li><a href="http://codechef.com/" target="_blank" rel="noopener">CodeChef</a></li>
+<li><a href="http://poj.org/problemlist" target="_blank" rel="noopener">PKU ACM ICPC Practice problems</a></li>
+<li><a href="https://projecteuler.net/archives" target="_blank" rel="noopener">Archived Problems - Project Euler</a></li>
+<li><a href="https://code.google.com/codejam/contests.html" target="_blank" rel="noopener">Google Code Jam Practice and</a> : past contest problems for practice</li>
+<li><a href="http://www.spoj.com/" target="_blank" rel="noopener">Sphere Online Judge (SPOJ)</a></li>
+<li><a href="https://artofproblemsolving.com/" target="_blank" rel="noopener">Art of Problem Solving</a></li>
+<li><a href="https://www.riddles.io" target="_blank" rel="noopener">Riddles.io AI Games</a> : Compete with your bot and dominate the leaderboards!</li>
+<li><a href="https://www.codingame.com" target="_blank" rel="noopener">Codingame</a> : Learn coding through games and challenges!</li>
+<li><a href="https://www.codewars.com/" target="_blank" rel="noopener">Codewars</a> : Rank up by completing code kata</li>
+</ul>
+<h1 id="Computer-Books"><a href="#Computer-Books" class="headerlink" title="Computer Books"></a>Computer Books</h1><ul>
+<li><a href="http://it-ebooks.info/" target="_blank" rel="noopener">IT eBooks - Free Download - Big Library</a> : website for downloading ebooks without any advertisement and instant downloads.</li>
+<li><a href="https://github.com/vhf/free-programming-books/blob/master/free-programming-books.md" target="_blank" rel="noopener">github.com/vhf/free-programming-books</a> : More than 500 free ebooks on almost any language you can think of</li>
+<li><a href="http://www.sciencebooksonline.info/computer-science.html" target="_blank" rel="noopener">Computer Science Books Online</a> : about 150 computer free ebooks</li>
+<li><a href="http://gatecse.in/wiki/Best_books_for_CSE#Best_Books_for_GATE_in_CSE" target="_blank" rel="noopener">Best books for GATE CSE</a></li>
+<li><a href="https://cses.fi/book.html" target="_blank" rel="noopener">https://cses.fi/book.html</a></li>
+<li><a href="gen.lib.rus.ec">Library Genesis</a> : Almost any ebook you can think of, including countless CS texts and manuals.</li>
+</ul>
+<h1 id="Video-Tutorials"><a href="#Video-Tutorials" class="headerlink" title="Video Tutorials"></a>Video Tutorials</h1><ul>
+<li><a href="https://www.youtube.com/user/tusharroy2525/videos" target="_blank" rel="noopener">Tushar Roy</a> : Algorithm and Data structure tutorial by an Indian Youtuber.</li>
+<li><a href="https://www.youtube.com/user/derekbanas/videos" target="_blank" rel="noopener">Derek Banas</a> : good quality tutorials</li>
+<li><a href="https://www.youtube.com/user/thenewboston/videos" target="_blank" rel="noopener">thenewboston</a> : good but with too much talk as compared to actual content</li>
+<li><a href="https://www.youtube.com/user/mycodeschool/videos" target="_blank" rel="noopener">mycodeschool</a> : Data structures and algorithms tutorials</li>
+<li><a href="https://www.youtube.com/channel/UCJYhP1lceSUc1bg0LRBUvqA/videos" target="_blank" rel="noopener">CodeGeek</a></li>
+<li><a href="https://www.youtube.com/user/CodingMadeEasy/videos" target="_blank" rel="noopener">CodingMadeEasy</a> : C++ tutorials</li>
+<li><a href="http://xda-university.com/" target="_blank" rel="noopener">XDA-University - Helping You Learn Android Development</a></li>
+<li><a href="https://www.youtube.com/user/DevTipsForDesigners/videos" target="_blank" rel="noopener">DevTips</a> : web dev tutorials</li>
+<li><a href="https://www.youtube.com/channel/UCJUmE61LxhbhudzUugHL2wQ/videos" target="_blank" rel="noopener">codedamn</a> : front end web dev tutorials</li>
+<li><a href="http://openclassroom.stanford.edu/MainFolder/CoursePage.php?course=IntroToAlgorithms" target="_blank" rel="noopener">Design and Analysis of Algorithms</a></li>
+<li><a href="http://derekwyatt.org/vim/tutorials/index.html" target="_blank" rel="noopener">Vim Tutorial Videos - Flarfnoogins</a> : good video tutorial for learning vim</li>
+<li><a href="https://www.youtube.com/playlist?list=PL6B940F08B9773B9F" target="_blank" rel="noopener">CS1: Higher Computing - Richard Buckland UNSW</a> : a very good introductory CS course</li>
+<li><a href="https://www.youtube.com/channel/UC4DwZ2VXM2KWtzHjVk9M_xg/videos" target="_blank" rel="noopener">Kathryn Hodge</a> : Has good videos for beginners</li>
+</ul>
+<h1 id="Online-Compiler-and-Sharing-Code-snippets"><a href="#Online-Compiler-and-Sharing-Code-snippets" class="headerlink" title="Online Compiler and Sharing Code snippets"></a>Online Compiler and Sharing Code snippets</h1><ul>
+<li><a href="https://codepad.remoteinterview.io/" target="_blank" rel="noopener">CodePad</a> : Code editor to try, test and run 25+ languages</li>
+<li><a href="https://jsfiddle.net/" target="_blank" rel="noopener">JSFiddle</a> : Test your JavaScript, CSS, HTML or CoffeeScript with online code editor</li>
+<li><a href="https://ideone.com/" target="_blank" rel="noopener">Ideone.com</a></li>
+<li><a href="http://pastebin.com/" target="_blank" rel="noopener">Pastebin.com</a></li>
+<li><a href="https://godbolt.org/" target="_blank" rel="noopener">Godbolt.org</a> : Excellent tool for exploring the assembly output of different compilers with and without optimization.</li>
+</ul>
+<h1 id="Blogs-of-Developers"><a href="#Blogs-of-Developers" class="headerlink" title="Blogs of Developers"></a>Blogs of Developers</h1><ul>
+<li><a href="http://blog.codinghorror.com/" target="_blank" rel="noopener">Coding Horror</a> : one the best coding blog</li>
+<li><a href="http://http://www.wildml.com/" target="_blank" rel="noopener">WildMl</a> : A blog for machine learning.</li>
+<li><a href="http://lucumr.pocoo.org/" target="_blank" rel="noopener">Armin Ronacher’s Thoughts and Writings</a> : blog on Python and open source</li>
+<li><a href="http://eli.thegreenplace.net/" target="_blank" rel="noopener">Eli Bendersky</a> : everything from Python to LLVM</li>
+<li><a href="http://joelonsoftware.com/" target="_blank" rel="noopener">Joel on Software</a></li>
+<li><a href="https://stephenhaunts.com/" target="_blank" rel="noopener">Stephen Haunts { Coding in the Trenches }</a></li>
+<li><a href="http://prog21.dadgum.com/" target="_blank" rel="noopener">Programming in the 21st Century</a></li>
+<li><a href="http://blog.cleancoder.com/" target="_blank" rel="noopener">Clean Coder Blog</a> : blog of author of book “Clean Code”</li>
+<li><a href="http://www.yegor256.com/" target="_blank" rel="noopener">Programming Blog</a> : programming blog of Yegor Bugayenko</li>
+<li><a href="https://codeahoy.com" target="_blank" rel="noopener">CodeAhoy</a> : Blog on software and human factors. 100% Tested on Humans.</li>
+<li><a href="http://stevehanov.ca/blog/" target="_blank" rel="noopener">http://stevehanov.ca/blog/</a></li>
+<li><a href="https://avidullu.wordpress.com/" target="_blank" rel="noopener">Geek Land</a></li>
+<li><a href="https://latedev.wordpress.com/" target="_blank" rel="noopener">Late Developer</a></li>
+<li><a href="http://rodiongork.tumblr.com/" target="_blank" rel="noopener">IT Enthusiast</a></li>
+<li><a href="http://matt.might.net/articles/" target="_blank" rel="noopener">blog.might.net</a></li>
+<li><a href="http://www.cseblog.com/" target="_blank" rel="noopener">CSE Blog - quant, math, computer science puzzles</a></li>
+<li><a href="https://www.nayuki.io/category/programming" target="_blank" rel="noopener">Small Programming Challenges and Puzzles</a></li>
+<li><a href="http://www.mytechinterviews.com/" target="_blank" rel="noopener">My Tech Interviews</a></li>
+<li><a href="http://blog.hackerearth.com/" target="_blank" rel="noopener">HackerEarth Blog</a></li>
+<li><a href="http://algo-geeks.blogspot.in/" target="_blank" rel="noopener">Algo-Geeks</a></li>
+<li><a href="http://www.codergears.com/Blog/" target="_blank" rel="noopener">CoderGears Blog Insights from</a> : the CoderGears Team</li>
+<li><a href="https://tianrunhe.wordpress.com/" target="_blank" rel="noopener">Runhe Tian Coding Practice</a></li>
+<li><a href="http://www.paulgraham.com/articles.html" target="_blank" rel="noopener">Paul Graham Essays</a></li>
+<li><a href="http://dandreamsofcoding.com/" target="_blank" rel="noopener">Dan Dreams of Coding</a></li>
+<li><a href="http://code.antonio081014.com/" target="_blank" rel="noopener">Antonio081014’s Algorithms Codes</a></li>
+<li><a href="http://jeremykun.com/" target="_blank" rel="noopener">Math ∩ Programming</a></li>
+<li><a href="http://blog.takipi.com/" target="_blank" rel="noopener">Takipi Blog</a> : mainly focuses on Java and JVM languages</li>
+<li><a href="http://coding-geek.com/" target="_blank" rel="noopener">Coding Geek - A blog about IT, programming and Java</a></li>
+<li><a href="http://www.daedtech.com/" target="_blank" rel="noopener">Daedtech.com</a> : Stories about software</li>
+<li><a href="http://www.askamanager.org/archives" target="_blank" rel="noopener">Archives — Ask a Manager</a> : HR related stuff</li>
+</ul>
+<h1 id="For-improving-your-English"><a href="#For-improving-your-English" class="headerlink" title="For improving your English"></a>For improving your English</h1><ul>
+<li><a href="https://www.quia.com/shared/english/" target="_blank" rel="noopener">Quia - English</a></li>
+<li><a href="http://www.grammarbook.com/english_rules.asp" target="_blank" rel="noopener">Punctuation and Capitalization Rules</a></li>
+<li><a href="http://grammar.ccc.commnet.edu/grammar/" target="_blank" rel="noopener">Guide to Grammar and Writing</a></li>
+<li><a href="https://owl.english.purdue.edu/" target="_blank" rel="noopener">Purdue University Online Writing Lab (OWL)</a></li>
+<li><a href="https://www.englishclub.com/learn-english.htm" target="_blank" rel="noopener">Englishclub.com/learn-english</a></li>
+</ul>
+<h1 id="When-you-get-bored-from-CS-related-stuff"><a href="#When-you-get-bored-from-CS-related-stuff" class="headerlink" title="When you get bored from CS related stuff"></a>When you get bored from CS related stuff</h1><ul>
+<li><a href="https://www.reddit.com/r/ProgrammerHumor/" target="_blank" rel="noopener">r/ProgrammerHumor</a> : Subreddit dedicated to exactly what it sounds like</li>
+<li><a href="http://grammar.ccc.commnet.edu/grammar/" target="_blank" rel="noopener">Guide to Grammar and Writing</a> for those who want to improve their english language skills</li>
+<li><a href="https://www.youtube.com/user/Vsauce/videos" target="_blank" rel="noopener">Vsauce</a> : The best youtube channel</li>
+<li><a href="https://www.youtube.com/user/TEDtalksDirector/videos" target="_blank" rel="noopener">TED</a> : Great talks about technology, entertainment, and design</li>
+<li><a href="https://www.youtube.com/user/crashcourse/videos" target="_blank" rel="noopener">CrashCourse</a> : small courses on various subjects</li>
+<li><a href="https://www.youtube.com/user/NationalGeographic/videos" target="_blank" rel="noopener">National Geographic</a> : High volume of high quality content from all over the world</li>
+<li><a href="https://www.youtube.com/user/barcroftmedia/featured" target="_blank" rel="noopener">Barcroft TV</a> : Daily short documentaries about the incredible variety of people that make up the world</li>
+<li><a href="https://www.youtube.com/user/coldfustion/videos" target="_blank" rel="noopener">ColdFusion</a> : Past, present, and future of technology</li>
+<li><a href="https://www.youtube.com/user/destinws2/videos" target="_blank" rel="noopener">SmarterEveryDay</a> : Lots of amazing scientific information about the world around us, usually captured with a high-speed camera</li>
+<li><a href="https://www.youtube.com/user/scishow/videos" target="_blank" rel="noopener">SciShow</a> : Answers to interesting questions that you’ve always wondered about</li>
+<li><a href="https://www.youtube.com/user/bigthink/videos" target="_blank" rel="noopener">Big Think</a> : Expert driven, actionable, educational content, featuring experts ranging from Bill Clinton to Bill Nye</li>
+<li><a href="https://www.youtube.com/user/everyframeapainting/videos" target="_blank" rel="noopener">Every Frame a Painting</a> : High quality analysis of films and filmmaking</li>
+<li><a href="https://www.youtube.com/user/TestTubeNetwork/videos" target="_blank" rel="noopener">TestTube News</a> : Interesting information about news from around the world</li>
+<li><a href="http://reddit.com/" target="_blank" rel="noopener">Reddit the front page of the internet</a> : Where free time goes to die <strong><em>Maintained with :heart: by sdmg15 &amp; al</em></strong></li>
+</ul>
+<p>3 3</p>
+<p>3</p>
+<p>&lt;![CDATA[ $(function () { $(‘pre.prettyprint code’).each(function () { var lines = $(this).text().split(‘\n’).length; var $numbering = $(‘<ul>‘).addClass(‘pre-numbering’).hide(); $(this).addClass(‘has-numbering’).parent().append($numbering); for (i = 1; i &lt;= lines; i++) { $numbering.append($(‘<li>‘).text(i)); }; $numbering.fadeIn(1700); }); }); ]]&gt;</li></ul></p>
+
+    </article>
+    <!-- license  -->
+    
+        <div class="license-wrapper">
+            <p>原文作者: <a href="http://rezeros.github.io">ReZero</a>
+            <p>原文链接: <a href="http://rezeros.github.io/2017/06/14/readme/">http://rezeros.github.io/2017/06/14/readme/</a>
+            <p>发表日期: <a href="http://rezeros.github.io/2017/06/14/readme/">June 14th 2017, 10:20:00 pm</a>
+            <p>版权声明: 本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
+        </div>
+    
+    <!-- paginator  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+                <div class="nextSlogan">Next Post</div>
+                <a href= "/2017/06/15/cannotreadproperty-27glob-27ofnull/" title= Cannot read property 'glob' of null >
+                    <div class="nextTitle">Cannot read property 'glob' of null</div>
+                </a>
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href= "/2017/05/25/403forbidden-28spidererror-29/" title= 403 forbidden(Spider error) >
+                    <div class="prevTitle">403 forbidden(Spider error)</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
+    
+    
+    <!--PC和WAP自适应版-->
+
+    <!--PC版-->
+
+
+    
+    
+
+    <!-- 评论 -->
+</main>
+            <!-- profile -->
+            
+        </div>
+        <footer class="footer footer-unloaded">
+    <!-- social  -->
+    
+    <div class="social">
+        
+    
+        
+            
+                <a href="mailto:ljrezero@gmail.com" class="iconfont-archer email" title=email ></a>
+            
+        
+    
+        
+            
+                <a href="//github.com/rezeros" class="iconfont-archer github" target="_blank" title=github></a>
+            
+        
+    
+        
+            
+                <span class="iconfont-archer wechat" title=wechat>
+                  
+                  <img class="profile-qr" src="/assets/wechat.png" />
+                </span>
+            
+        
+    
+        
+            
+                <span class="iconfont-archer qq" title=qq>
+                  
+                  <img class="profile-qr" src="/assets/qq.png" />
+                </span>
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+            
+                <a href="//twitter.com/T21ck" class="iconfont-archer twitter" target="_blank" title=twitter></a>
+            
+        
+    
+        
+            
+                <a href="//instagram.com/xer0sesss" class="iconfont-archer instagram" target="_blank" title=instagram></a>
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+            
+                <a href="//space.bilibili.com/22340853/#/" class="iconfont-archer bilibili" target="_blank" title=bilibili></a>
+            
+        
+    
+        
+    
+        
+    
+        
+    
+
+    </div>
+    
+    <!-- powered by Hexo  -->
+    <div class="copyright">
+        <span id="hexo-power">Powered by <a href="https://hexo.io/" target="_blank">Hexo</a></span><span class="iconfont-archer power">&#xe635;</span><span id="theme-info">theme <a href="https://github.com/fi3ework/hexo-theme-archer" target="_blank">Archer</a></span>
+    </div>
+    <!-- 不蒜子  -->
+    
+    <div class="busuanzi-container">
+    
+     
+    <span id="busuanzi_container_site_pv">PV: <span id="busuanzi_value_site_pv"></span> :)</span>
+    
+    </div>
+    
+</footer>
+    </div>
+    <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Best-websites-a-programmer-should-visit"><span class="toc-number">1.</span> <span class="toc-text">Best-websites-a-programmer-should-visit</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Index"><span class="toc-number">1.0.1.</span> <span class="toc-text">Index</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#When-you-get-stuck"><span class="toc-number">2.</span> <span class="toc-text">When you get stuck</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#News"><span class="toc-number">3.</span> <span class="toc-text">News</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Coding-practice-for-beginners"><span class="toc-number">4.</span> <span class="toc-text">Coding practice for beginners</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#For-those-who-want-to-start-a-small-project-but-can’t-find-the-ideas"><span class="toc-number">5.</span> <span class="toc-text">For those who want to start a small project but can’t find the ideas</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#General-Coding-advice"><span class="toc-number">6.</span> <span class="toc-text">General Coding advice</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Coding-Style"><span class="toc-number">7.</span> <span class="toc-text">Coding Style</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#General-Tools"><span class="toc-number">8.</span> <span class="toc-text">General Tools</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Interview-Preparation"><span class="toc-number">9.</span> <span class="toc-text">Interview Preparation</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Documentaries"><span class="toc-number">10.</span> <span class="toc-text">Documentaries</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#MOOCs-for-learning-something-new"><span class="toc-number">11.</span> <span class="toc-text">MOOCs for learning something new</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Sites-related-to-your-preferred-programming-language-For-me-Java"><span class="toc-number">12.</span> <span class="toc-text">Sites related to your preferred programming language (For me Java)</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Learn-AI"><span class="toc-number">13.</span> <span class="toc-text">Learn AI</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Seminar-research-writing-talks-etc"><span class="toc-number">14.</span> <span class="toc-text">Seminar , research writing , talks etc</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Everything-in-one-place"><span class="toc-number">15.</span> <span class="toc-text">Everything in one place</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#YouTube-Channels"><span class="toc-number">16.</span> <span class="toc-text">YouTube Channels</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Good-Articles"><span class="toc-number">17.</span> <span class="toc-text">Good Articles</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Podcasts"><span class="toc-number">18.</span> <span class="toc-text">Podcasts</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Building-a-Simple-Compiler-interpreter"><span class="toc-number">19.</span> <span class="toc-text">Building a Simple Compiler/interpreter</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Tutorials"><span class="toc-number">20.</span> <span class="toc-text">Tutorials</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Watch-others-code"><span class="toc-number">21.</span> <span class="toc-text">Watch others code</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#What-should-a-programmer-know"><span class="toc-number">22.</span> <span class="toc-text">What should a programmer know</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Competitive-programming"><span class="toc-number">23.</span> <span class="toc-text">Competitive programming</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Computer-Books"><span class="toc-number">24.</span> <span class="toc-text">Computer Books</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Video-Tutorials"><span class="toc-number">25.</span> <span class="toc-text">Video Tutorials</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Online-Compiler-and-Sharing-Code-snippets"><span class="toc-number">26.</span> <span class="toc-text">Online Compiler and Sharing Code snippets</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Blogs-of-Developers"><span class="toc-number">27.</span> <span class="toc-text">Blogs of Developers</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#For-improving-your-English"><span class="toc-number">28.</span> <span class="toc-text">For improving your English</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#When-you-get-bored-from-CS-related-stuff"><span class="toc-number">29.</span> <span class="toc-text">When you get bored from CS related stuff</span></a></li></ol>
+    </div>
+    
+    <div class="back-top iconfont-archer">&#xe639;</div>
+    <div class="sidebar sidebar-hide">
+    <ul class="sidebar-tabs sidebar-tabs-active-0">
+        <li class="sidebar-tab-archives"><span class="iconfont-archer">&#xe67d;</span><span class="tab-name">Archive</span></li>
+        <li class="sidebar-tab-tags"><span class="iconfont-archer">&#xe61b;</span><span class="tab-name">Tag</span></li>
+        <li class="sidebar-tab-categories"><span class="iconfont-archer">&#xe666;</span><span class="tab-name">Cate</span></li>
+    </ul>
+    <div class="sidebar-content sidebar-content-show-archive">
+          <div class="sidebar-panel-archives">
+    <!-- 在ejs中将archive按照时间排序 -->
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="total-and-search">
+        <div class="total-archive">
+        Total : 132
+        </div>
+        <!-- search  -->
+        
+    </div>
+    
+    <div class="post-archive">
+    
+    
+    
+    
+    <div class="archive-year"> 2018 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/08</span><a class="archive-post-title" href= "/2018/05/08/llone/" >LL(1) Parser</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/04</span><a class="archive-post-title" href= "/2018/04/04/win-userful-tools/" >Win Userful Tools</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/20</span><a class="archive-post-title" href= "/2018/02/20/archlinux-change-gdm-background/" >ArchLinux change gdm background</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/20</span><a class="archive-post-title" href= "/2018/02/20/arch-enable-bbr/" >Arch enable BBR</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/11</span><a class="archive-post-title" href= "/2018/02/11/custom-classloader/" >Custom ClassLoader</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/23</span><a class="archive-post-title" href= "/2018/01/23/messy-code-issue/" >Messy code issue</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2017 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/25</span><a class="archive-post-title" href= "/2017/12/25/books-collection/" >Books Collection</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/24</span><a class="archive-post-title" href= "/2017/12/24/linux-note0x02/" >Linux note0x02</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/24</span><a class="archive-post-title" href= "/2017/12/24/linux-note0x01/" >Linux note0x01</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/24</span><a class="archive-post-title" href= "/2017/12/24/linux-note0x00/" >Linux note0x00</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/03</span><a class="archive-post-title" href= "/2017/12/03/sicp-lec1b-computing-process/" >SICP lec1b: # Computing process</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/03</span><a class="archive-post-title" href= "/2017/12/03/sicp-lec1a-lisp-overview/" >SICP lec1a: # Lisp overview</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/02</span><a class="archive-post-title" href= "/2017/12/02/initial-build-pl-js/" >[Initial] Build: PL By: JS</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/02</span><a class="archive-post-title" href= "/2017/12/02/parser-build-pl-byjs/" >[Parser] Build: PL By:JS</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/28</span><a class="archive-post-title" href= "/2017/10/28/e8-bd-ac-int-e6-8c-87-e4-bb-a4-e9-9b-86/" >(转) INT 指令集</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2017/10/14/e5-a6-82-e4-bd-95-e5-ae-9e-e7-8e-b0-e4-b8-80-e4-b8-aa-e5-ae-89-e5-85-a8-e7-9a-84web-e7-99-bb-e5-bd-95/" >如何实现一个安全的Web登录</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2017/10/14/e6-84-8f-e5-a4-a7-e5-88-a9-e7-82-ae-e5-be-85-e5-91-bd-e4-b8-ad/" >意大利炮待命中（密码我QQ）</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/13</span><a class="archive-post-title" href= "/2017/10/13/exploding-git-repositories/" >Exploding Git Repositories</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/01</span><a class="archive-post-title" href= "/2017/10/01/master-horse-training-standard/" >Master horse training standard</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/23</span><a class="archive-post-title" href= "/2017/09/23/e8-bd-acregex/" >(转)Regex</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/10</span><a class="archive-post-title" href= "/2017/09/10/andrid-compress/" >(转)Android-Compress</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/09</span><a class="archive-post-title" href= "/2017/09/09/server-http-resources/" >Server & Http Resources</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/08</span><a class="archive-post-title" href= "/2017/09/08/java-interview/" >Java & Android Interview</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/06</span><a class="archive-post-title" href= "/2017/09/06/e8-bd-ac-struts2-052-e6-bc-8f-e6-b4-9e/" >(转) struts2-052漏洞</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/03</span><a class="archive-post-title" href= "/2017/09/03/593-2/" >You Don't Need jQuery</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/25</span><a class="archive-post-title" href= "/2017/08/25/css-diner/" >CSS Diner</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/21</span><a class="archive-post-title" href= "/2017/08/21/ftp-service-setup/" >FTP Service Setup</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/20</span><a class="archive-post-title" href= "/2017/08/20/vue-vs-react/" >Vue Vs React</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/08</span><a class="archive-post-title" href= "/2017/08/08/e6-96-87-e4-bb-b6-e6-8c-82-e8-bd-bd-e7-9a-84-e9-85-8d-e7-bd-ae-e6-96-87-e4-bb-b6-ef-bc-9aetcfstab/" >文件挂载的配置文件：/etc/fstab</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/05</span><a class="archive-post-title" href= "/2017/08/05/poiplayer-500/" >PoiPlayer 500</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/01</span><a class="archive-post-title" href= "/2017/08/01/aquatone-a-tool-for-domain-flyovers/" >AQUATONE: A tool for domain flyovers</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/01</span><a class="archive-post-title" href= "/2017/08/01/nsa-tools/" >NSA tools</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/27</span><a class="archive-post-title" href= "/2017/07/27/nodebb-e5-ae-89-e8-a3-85/" >NodeBB 安装</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/09</span><a class="archive-post-title" href= "/2017/07/09/ananimationlikelightcard/" >An animation like light card</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/03</span><a class="archive-post-title" href= "/2017/07/03/webshellandthreatintelligence/" >WebShell and Threat Intelligence</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/02</span><a class="archive-post-title" href= "/2017/07/02/atommeasures/" >Atom measures</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/15</span><a class="archive-post-title" href= "/2017/06/15/cannotreadproperty-27glob-27ofnull/" >Cannot read property 'glob' of null</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/14</span><a class="archive-post-title" href= "/2017/06/14/readme/" >Read Me!</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/25</span><a class="archive-post-title" href= "/2017/05/25/403forbidden-28spidererror-29/" >403 forbidden(Spider error)</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/14</span><a class="archive-post-title" href= "/2017/05/14/strategypattern/" >Strategy Pattern</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/09</span><a class="archive-post-title" href= "/2017/05/09/csslayout/" >CSS Layout</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/01</span><a class="archive-post-title" href= "/2017/05/01/msqli-2apreventsqlinjection/" >msqli_* prevent SQL injection</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/29</span><a class="archive-post-title" href= "/2017/04/29/kaliinstallpip3/" >kali install pip3</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/28</span><a class="archive-post-title" href= "/2017/04/28/cdntorealip/" >CDN to Real IP</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/23</span><a class="archive-post-title" href= "/2017/04/23/php-e5-8f-8d-e5-ba-8f-e5-88-97-e5-8c-96-e6-bc-8f-e6-b4-9e-e6-a6-82-e8-a7-88/" >php 反序列化漏洞概览</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2017/04/20/phpstorm-e9-85-8d-e7-bd-aephp7-0-e7-8e-af-e5-a2-83/" >PhpStorm 配置php7.0环境</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/09</span><a class="archive-post-title" href= "/2017/04/09/php-e6-81-b6-e5-bf-83-e7-9a-84-e9-97-ad-e5-90-88-e6-a0-87-e7-ad-be/" >php 恶心的闭合标签</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/08</span><a class="archive-post-title" href= "/2017/04/08/https-e5-8d-87-e7-ba-a7-28free-29/" >Https 升级(free)</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/02</span><a class="archive-post-title" href= "/2017/04/02/seleniumqzone-e7-99-bb-e9-99-86/" >Selenium Qzone登陆</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/18</span><a class="archive-post-title" href= "/2017/03/18/scrapy-e5-88-9d-e7-aa-a5-e7-ac-94-e8-ae-b0/" >Scrapy 初窥笔记</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/18</span><a class="archive-post-title" href= "/2017/03/18/github-e9-83-a8-e7-bd-b2hexo-e5-8d-9a-e5-ae-a2-e6-97-a0-e6-95-88/" >github 部署hexo博客无效</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/15</span><a class="archive-post-title" href= "/2017/03/15/linux-e4-bf-ae-e6-94-b9-e4-b8-bb-e6-9c-ba-e5-90-8d/" >linux 修改主机名</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/14</span><a class="archive-post-title" href= "/2017/03/14/android-e7-ac-ac-e4-b8-89-e6-96-b9-e5-ba-93-e6-96-b9-e5-90-91-e7-b4-a2-e5-bc-95/" >Android 第三方库方向索引</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/04</span><a class="archive-post-title" href= "/2017/03/04/androidpermissionlatestversion/" >Android Permission latest version</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/26</span><a class="archive-post-title" href= "/2017/02/26/jetbrains-e6-bf-80-e6-b4-bb-e7-a0-81/" >JetBrains 激活码</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/16</span><a class="archive-post-title" href= "/2017/02/16/e6-b8-97-e9-80-8f-e8-8f-9c-e9-b8-9f-e6-a6-82-e8-a7-88/" >渗透菜鸟概览</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/12</span><a class="archive-post-title" href= "/2017/02/12/e8-bd-af-e4-bb-b6-e5-a4-87-e4-bb-bd/" >软件备份</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/10</span><a class="archive-post-title" href= "/2017/02/10/ef-bc-88-e5-85-ab-ef-bc-89-e5-ad-98-e5-82-a8-e6-95-b0-e6-8d-ae/" >（八）存储数据</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/09</span><a class="archive-post-title" href= "/2017/02/09/ef-bc-88-e4-b8-83-ef-bc-89-e6-89-a9-e5-b1-95-e9-a1-b5-e9-9d-a2-e9-80-9a-e4-bf-a1/" >（七）扩展页面通信</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/08</span><a class="archive-post-title" href= "/2017/02/08/sympy-e8-a7-a3-e6-96-b9-e7-a8-8b/" >Sympy 解方程</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/08</span><a class="archive-post-title" href= "/2017/02/08/e5-9b-be-e8-af-b4android/" >图说Android</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/01</span><a class="archive-post-title" href= "/2017/02/01/ef-bc-88-e4-ba-94-ef-bc-89-e5-b8-b8-e9-a9-bb-e5-90-8e-e5-8f-b0/" >（五）常驻后台</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/01</span><a class="archive-post-title" href= "/2017/02/01/ef-bc-88-e5-85-ad-ef-bc-89-e9-80-89-e9-a1-b9-e5-8d-a1-e7-9a-84-e8-ae-be-e7-bd-ae/" >（六）选项卡的设置</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/01</span><a class="archive-post-title" href= "/2017/02/01/ef-bc-88-e5-9b-9b-ef-bc-89-e8-b7-a8-e5-9f-9f-e8-af-b7-e6-b1-82/" >（四）跨域请求</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/01</span><a class="archive-post-title" href= "/2017/02/01/ef-bc-88-e4-b8-89-ef-bc-89-e6-93-8d-e4-bd-9c-e7-94-a8-e6-88-b7-e5-bd-93-e5-89-8d-e6-b5-8f-e8-a7-88-e9-a1-b5-e9-9d-a2/" >（三）操作用户当前浏览页面</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/01</span><a class="archive-post-title" href= "/2017/02/01/28-e4-ba-8c-29manifest-e6-96-87-e4-bb-b6-e7-bb-93-e6-9e-84/" >(二)Manifest文件结构</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/01</span><a class="archive-post-title" href= "/2017/02/01/ef-bc-88-e4-b8-80-ef-bc-89myblock/" >（一）MyBlock</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/27</span><a class="archive-post-title" href= "/2017/01/27/fluxion-e4-bd-bf-e7-94-a8/" >fluxion使用</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/26</span><a class="archive-post-title" href= "/2017/01/26/e6-ad-a3-e5-88-99-e8-a1-a8-e8-be-be-e5-bc-8fip/" >正则表达式IP</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/26</span><a class="archive-post-title" href= "/2017/01/26/ennote/" >EnNote</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/26</span><a class="archive-post-title" href= "/2017/01/26/kali-e6-bc-8f-e6-b4-9e-e5-88-a9-e7-94-a8/" >kali 漏洞利用</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/25</span><a class="archive-post-title" href= "/2017/01/25/kali-e6-89-ab-e6-8f-8f-e7-af-87/" >kali 扫描篇</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/24</span><a class="archive-post-title" href= "/2017/01/24/kalicommandnote/" >kali command note</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/24</span><a class="archive-post-title" href= "/2017/01/24/pyhonsocket/" >PyhonSocket</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/11</span><a class="archive-post-title" href= "/2017/01/11/e7-94-98-e6-96-87-e8-bf-aa/" >甘文迪</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/10</span><a class="archive-post-title" href= "/2017/01/10/jquery-e9-87-8d-e4-bf-ae-e5-9f-ba-e7-a1-80-e5-ad-a6-e4-b9-a0/" >Jquery重修基础学习</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/04</span><a class="archive-post-title" href= "/2017/01/04/githubpush-e5-a4-b1-e8-b4-a5/" >github Push失败</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2016 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/26</span><a class="archive-post-title" href= "/2016/12/26/chapter-one/" >Chapter_one</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/10</span><a class="archive-post-title" href= "/2016/12/10/jsp-e5-86-85-e7-bd-ae-e5-af-b9-e8-b1-a1/" >JSP内置对象</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/08</span><a class="archive-post-title" href= "/2016/12/08/php-e8-b6-85-e5-85-a8-e5-b1-80-e6-95-b0-e7-bb-84/" >php超全局数组</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/30</span><a class="archive-post-title" href= "/2016/11/30/python-e9-97-af-e5-85-b3/" >Python 闯关</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/30</span><a class="archive-post-title" href= "/2016/11/30/pythonbz2/" >Python bz2</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/29</span><a class="archive-post-title" href= "/2016/11/29/python-e9-80-86-e5-90-91-e6-92-ad-e6-94-begif/" >python 逆向播放gif</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/27</span><a class="archive-post-title" href= "/2016/11/27/python-e9-97-af-e5-85-b3-2/" >Python闯关</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/27</span><a class="archive-post-title" href= "/2016/11/27/python-e9-97-af-e5-85-b3pickle/" >Python闯关pickle</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/26</span><a class="archive-post-title" href= "/2016/11/26/e7-bc-96-e7-a0-81-e8-a7-84-e8-8c-83/" >编码规范</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/26</span><a class="archive-post-title" href= "/2016/11/26/e5-85-b3-e4-ba-8ep-e6-a0-87-e7-ad-be-e4-b8-8d-e5-af-b9-e9-bd-90-e9-97-ae-e9-a2-98/" >关于p标签不对齐问题</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/26</span><a class="archive-post-title" href= "/2016/11/26/html-3cbase-3e-e6-a0-87-e7-ad-be/" >HTML标签</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/25</span><a class="archive-post-title" href= "/2016/11/25/python-e9-97-af-e5-85-b32/" >Python闯关2</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/25</span><a class="archive-post-title" href= "/2016/11/25/http-e5-8f-88-e6-9d-a5-e4-ba-86/" >http又来了</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/21</span><a class="archive-post-title" href= "/2016/11/21/2016-11-21/" >2016.11.21</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/19</span><a class="archive-post-title" href= "/2016/11/19/e6-95-b0-e8-ae-ba-ef-bc-88-e6-8c-87-e6-95-b0-e5-8f-96-e4-bd-99-ef-bc-89/" >数论（指数取余）</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/18</span><a class="archive-post-title" href= "/2016/11/18/2016-11-18/" >2016.11.18</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/17</span><a class="archive-post-title" href= "/2016/11/17/2016-11-17/" >2016.11.17</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/15</span><a class="archive-post-title" href= "/2016/11/15/2016-11-15/" >2016.11.15</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/14</span><a class="archive-post-title" href= "/2016/11/14/2016-11-14/" >2016.11.14</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/14</span><a class="archive-post-title" href= "/2016/11/14/2016-11-13/" >2016.11.13</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/13</span><a class="archive-post-title" href= "/2016/11/13/e5-87-af-e6-92-92-e5-af-86-e7-a0-81-ef-bc-88python-ef-bc-89/" >凯撒密码（Python）</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/13</span><a class="archive-post-title" href= "/2016/11/13/2016-11-12/" >2016.11.12</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/13</span><a class="archive-post-title" href= "/2016/11/13/css-e5-ae-9a-e4-bd-8d-e5-ad-a6-e4-b9-a0/" >CSS定位学习</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/13</span><a class="archive-post-title" href= "/2016/11/13/http-e5-8d-8f-e8-ae-ae-e5-b0-8f-e7-9f-a5-e8-af-86/" >HTTP协议小知识</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/12</span><a class="archive-post-title" href= "/2016/11/12/e5-9e-82-e7-9b-b4-e8-8f-9c-e5-8d-95-e5-ad-a6-e4-b9-a0css/" >垂直菜单学习css</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/11</span><a class="archive-post-title" href= "/2016/11/11/e9-9b-86-e8-a3-85-e7-ae-b1-e9-97-ae-e9-a2-98/" >集装箱问题</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/11</span><a class="archive-post-title" href= "/2016/11/11/2016-11-11/" >2016.11.11</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/10</span><a class="archive-post-title" href= "/2016/11/10/toplistfile/" >ToPlistFile</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/10</span><a class="archive-post-title" href= "/2016/11/10/2016-11-10/" >2016.11.10</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/09</span><a class="archive-post-title" href= "/2016/11/09/e7-82-ae-e5-8f-b0-e5-9d-90-e6-a0-87-e5-87-86-e5-a4-87/" >炮台坐标准备</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/09</span><a class="archive-post-title" href= "/2016/11/09/2016-11-9/" >2016.11.9</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/08</span><a class="archive-post-title" href= "/2016/11/08/e9-ad-94-e6-96-b9-e5-ad-a6-e4-b9-a0/" >魔方学习</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/04</span><a class="archive-post-title" href= "/2016/11/04/python-e8-a7-a347-e5-85-83-e6-96-b9-e7-a8-8b-e7-bb-84/" >python解47元方程组</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/04</span><a class="archive-post-title" href= "/2016/11/04/http-e5-ad-a6-e4-b9-a0-e8-ae-b0-e5-bd-95/" >http学习记录</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/03</span><a class="archive-post-title" href= "/2016/11/03/u-e7-9b-98-e5-bf-ab-e6-8d-b7-e6-96-b9-e5-bc-8f-e7-97-85-e6-af-92-e4-bf-ae-e5-a4-8d/" >U盘快捷方式病毒修复</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/03</span><a class="archive-post-title" href= "/2016/11/03/python-e6-ad-a3-e5-88-99-e8-a1-a8-e8-be-be-e5-bc-8f-e5-ad-a6-e4-b9-a0/" >Python正则表达式学习</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/02</span><a class="archive-post-title" href= "/2016/11/02/e7-ae-80-e5-8d-95-e7-88-ac-e5-8f-96-e5-a6-b9-e5-ad-90-e5-9b-be/" >简单爬取妹子图</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/02</span><a class="archive-post-title" href= "/2016/11/02/e5-87-bb-e9-bc-93-e4-bc-a0-e8-8a-b1/" >击鼓传花</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/02</span><a class="archive-post-title" href= "/2016/11/02/e6-9c-89-e5-ba-8f-e6-a0-91-e8-bd-ac-e4-ba-8c-e5-8f-89-e6-a0-91-e6-b1-82-e6-b7-b1-e5-ba-a6/" >有序树转二叉树求深度</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/02</span><a class="archive-post-title" href= "/2016/11/02/redoorundo/" >Redo or Undo</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/02</span><a class="archive-post-title" href= "/2016/11/02/e6-b1-82-e5-90-8e-e7-bc-80-e8-a1-a8-e8-be-be-e5-bc-8f/" >求后缀表达式</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/30</span><a class="archive-post-title" href= "/2016/10/30/e5-93-88-e5-a4-ab-e6-9b-bc-e7-bc-96-e7-a0-81/" >哈夫曼编码</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/29</span><a class="archive-post-title" href= "/2016/10/29/python-e8-a3-85-e9-a5-b0-e5-99-a8/" >Python装饰器</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/25</span><a class="archive-post-title" href= "/2016/10/25/e5-9d-90-e5-9c-a8-e9-a9-ac-e6-a1-b6-e4-b8-8a-e7-9c-8b-e7-ae-97-e6-b3-95-ef-bc-9a-e5-8f-aa-e6-9c-89-e4-ba-94-e8-a1-8c-e7-9a-84floyd-e6-9c-80-e7-9f-ad-e8-b7-af-e7-ae-97-e6-b3-95/" >坐在马桶上看算法：只有五行的Floyd最短路算法</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/23</span><a class="archive-post-title" href= "/2016/10/23/e6-8b-93-e6-89-91-e6-8e-92-e5-ba-8f-e9-97-ae-e9-a2-98-28-e9-98-9f-e5-88-97-e5-ae-9e-e7-8e-b0-29/" >拓扑排序问题(队列实现)</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/23</span><a class="archive-post-title" href= "/2016/10/23/html5-28a-e6-a0-87-e7-ad-be-e7-af-87-29/" >HTML5(a标签篇)</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/22</span><a class="archive-post-title" href= "/2016/10/22/e9-80-9a-e7-95-85-e5-b7-a5-e7-a8-8b-e9-97-ae-e9-a2-98/" >通畅工程问题</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> Invalid date </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2018/07/28/hello-world/" >Hello World</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2016 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/22</span><a class="archive-post-title" href= "/2016/10/22/e5-b9-b6-e6-9f-a5-e9-9b-86/" >(转)并查集</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/21</span><a class="archive-post-title" href= "/2016/10/21/e5-85-ab-e7-9a-87-e5-90-8e-e9-97-ae-e9-a2-98/" >八皇后问题</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2016/10/14/e6-a8-a1-e6-8b-9f-e7-99-bb-e9-99-86/" >模拟登陆</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/13</span><a class="archive-post-title" href= "/2016/10/13/e7-b3-97-e4-ba-8b-e7-99-be-e7-a7-91spider-e4-bb-a3-e7-a0-81-e4-bc-98-e5-8c-96/" >糗事百科Spider代码优化</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/13</span><a class="archive-post-title" href= "/2016/10/13/spider-e7-99-be-e5-ba-a6-e8-b4-b4-e5-90-a7-e5-b8-96-e5-ad-90/" >Spider百度贴吧帖子</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/12</span><a class="archive-post-title" href= "/2016/10/12/e5-ae-9e-e6-88-981-e7-b3-97-e4-ba-8b-e7-99-be-e7-a7-91spider/" >实战1-糗事百科Spider</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/12</span><a class="archive-post-title" href= "/2016/10/12/e7-88-ac-e8-99-ab-e5-ad-a6-e4-b9-a0/" >爬虫学习</a>
+        </li>
+    
+    </div>
+  </div>
+        <div class="sidebar-panel-tags">
+    <div class="sidebar-tags-name">
+    
+        <span class="sidebar-tag-name" data-tags="Story"><span class="iconfont-archer">&#xe606;</span>Story</span>
+    
+        <span class="sidebar-tag-name" data-tags="chrome"><span class="iconfont-archer">&#xe606;</span>chrome</span>
+    
+        <span class="sidebar-tag-name" data-tags="json"><span class="iconfont-archer">&#xe606;</span>json</span>
+    
+        <span class="sidebar-tag-name" data-tags="manifest"><span class="iconfont-archer">&#xe606;</span>manifest</span>
+    
+        <span class="sidebar-tag-name" data-tags="http2-0"><span class="iconfont-archer">&#xe606;</span>http2-0</span>
+    
+        <span class="sidebar-tag-name" data-tags="python"><span class="iconfont-archer">&#xe606;</span>python</span>
+    
+        <span class="sidebar-tag-name" data-tags="requests"><span class="iconfont-archer">&#xe606;</span>requests</span>
+    
+        <span class="sidebar-tag-name" data-tags="spider"><span class="iconfont-archer">&#xe606;</span>spider</span>
+    
+        <span class="sidebar-tag-name" data-tags="淘宝网"><span class="iconfont-archer">&#xe606;</span>淘宝网</span>
+    
+        <span class="sidebar-tag-name" data-tags="3d"><span class="iconfont-archer">&#xe606;</span>3d</span>
+    
+        <span class="sidebar-tag-name" data-tags="animation"><span class="iconfont-archer">&#xe606;</span>animation</span>
+    
+        <span class="sidebar-tag-name" data-tags="css"><span class="iconfont-archer">&#xe606;</span>css</span>
+    
+        <span class="sidebar-tag-name" data-tags="javascript"><span class="iconfont-archer">&#xe606;</span>javascript</span>
+    
+        <span class="sidebar-tag-name" data-tags="arch"><span class="iconfont-archer">&#xe606;</span>arch</span>
+    
+        <span class="sidebar-tag-name" data-tags="bbr"><span class="iconfont-archer">&#xe606;</span>bbr</span>
+    
+        <span class="sidebar-tag-name" data-tags="google"><span class="iconfont-archer">&#xe606;</span>google</span>
+    
+        <span class="sidebar-tag-name" data-tags="linux"><span class="iconfont-archer">&#xe606;</span>linux</span>
+    
+        <span class="sidebar-tag-name" data-tags="network"><span class="iconfont-archer">&#xe606;</span>network</span>
+    
+        <span class="sidebar-tag-name" data-tags="speed"><span class="iconfont-archer">&#xe606;</span>speed</span>
+    
+        <span class="sidebar-tag-name" data-tags="tcp"><span class="iconfont-archer">&#xe606;</span>tcp</span>
+    
+        <span class="sidebar-tag-name" data-tags="archlinux"><span class="iconfont-archer">&#xe606;</span>archlinux</span>
+    
+        <span class="sidebar-tag-name" data-tags="gdm"><span class="iconfont-archer">&#xe606;</span>gdm</span>
+    
+        <span class="sidebar-tag-name" data-tags="shell"><span class="iconfont-archer">&#xe606;</span>shell</span>
+    
+        <span class="sidebar-tag-name" data-tags="themes"><span class="iconfont-archer">&#xe606;</span>themes</span>
+    
+        <span class="sidebar-tag-name" data-tags="atom"><span class="iconfont-archer">&#xe606;</span>atom</span>
+    
+        <span class="sidebar-tag-name" data-tags="angular"><span class="iconfont-archer">&#xe606;</span>angular</span>
+    
+        <span class="sidebar-tag-name" data-tags="angularjs2"><span class="iconfont-archer">&#xe606;</span>angularjs2</span>
+    
+        <span class="sidebar-tag-name" data-tags="npm"><span class="iconfont-archer">&#xe606;</span>npm</span>
+    
+        <span class="sidebar-tag-name" data-tags="cdn"><span class="iconfont-archer">&#xe606;</span>cdn</span>
+    
+        <span class="sidebar-tag-name" data-tags="ip"><span class="iconfont-archer">&#xe606;</span>ip</span>
+    
+        <span class="sidebar-tag-name" data-tags="网络安全"><span class="iconfont-archer">&#xe606;</span>网络安全</span>
+    
+        <span class="sidebar-tag-name" data-tags="selector"><span class="iconfont-archer">&#xe606;</span>selector</span>
+    
+        <span class="sidebar-tag-name" data-tags="classLoader"><span class="iconfont-archer">&#xe606;</span>classLoader</span>
+    
+        <span class="sidebar-tag-name" data-tags="findClass"><span class="iconfont-archer">&#xe606;</span>findClass</span>
+    
+        <span class="sidebar-tag-name" data-tags="java"><span class="iconfont-archer">&#xe606;</span>java</span>
+    
+        <span class="sidebar-tag-name" data-tags="八皇后"><span class="iconfont-archer">&#xe606;</span>八皇后</span>
+    
+        <span class="sidebar-tag-name" data-tags="html"><span class="iconfont-archer">&#xe606;</span>html</span>
+    
+        <span class="sidebar-tag-name" data-tags="标签"><span class="iconfont-archer">&#xe606;</span>标签</span>
+    
+        <span class="sidebar-tag-name" data-tags="凯撒密码"><span class="iconfont-archer">&#xe606;</span>凯撒密码</span>
+    
+        <span class="sidebar-tag-name" data-tags="击鼓传花"><span class="iconfont-archer">&#xe606;</span>击鼓传花</span>
+    
+        <span class="sidebar-tag-name" data-tags="数据结构"><span class="iconfont-archer">&#xe606;</span>数据结构</span>
+    
+        <span class="sidebar-tag-name" data-tags="算法"><span class="iconfont-archer">&#xe606;</span>算法</span>
+    
+        <span class="sidebar-tag-name" data-tags="数据结构与算法"><span class="iconfont-archer">&#xe606;</span>数据结构与算法</span>
+    
+        <span class="sidebar-tag-name" data-tags="编码"><span class="iconfont-archer">&#xe606;</span>编码</span>
+    
+        <span class="sidebar-tag-name" data-tags="android"><span class="iconfont-archer">&#xe606;</span>android</span>
+    
+        <span class="sidebar-tag-name" data-tags="android studio"><span class="iconfont-archer">&#xe606;</span>android studio</span>
+    
+        <span class="sidebar-tag-name" data-tags="布局"><span class="iconfont-archer">&#xe606;</span>布局</span>
+    
+        <span class="sidebar-tag-name" data-tags="思维导图"><span class="iconfont-archer">&#xe606;</span>思维导图</span>
+    
+        <span class="sidebar-tag-name" data-tags="嗅事百科"><span class="iconfont-archer">&#xe606;</span>嗅事百科</span>
+    
+        <span class="sidebar-tag-name" data-tags="illegal"><span class="iconfont-archer">&#xe606;</span>illegal</span>
+    
+        <span class="sidebar-tag-name" data-tags="拓扑排序"><span class="iconfont-archer">&#xe606;</span>拓扑排序</span>
+    
+        <span class="sidebar-tag-name" data-tags="课程安排"><span class="iconfont-archer">&#xe606;</span>课程安排</span>
+    
+        <span class="sidebar-tag-name" data-tags="gcd"><span class="iconfont-archer">&#xe606;</span>gcd</span>
+    
+        <span class="sidebar-tag-name" data-tags="rsa"><span class="iconfont-archer">&#xe606;</span>rsa</span>
+    
+        <span class="sidebar-tag-name" data-tags="fstab"><span class="iconfont-archer">&#xe606;</span>fstab</span>
+    
+        <span class="sidebar-tag-name" data-tags="mount"><span class="iconfont-archer">&#xe606;</span>mount</span>
+    
+        <span class="sidebar-tag-name" data-tags="后缀表达式"><span class="iconfont-archer">&#xe606;</span>后缀表达式</span>
+    
+        <span class="sidebar-tag-name" data-tags="apache"><span class="iconfont-archer">&#xe606;</span>apache</span>
+    
+        <span class="sidebar-tag-name" data-tags="security"><span class="iconfont-archer">&#xe606;</span>security</span>
+    
+        <span class="sidebar-tag-name" data-tags="web server"><span class="iconfont-archer">&#xe606;</span>web server</span>
+    
+        <span class="sidebar-tag-name" data-tags="渗透"><span class="iconfont-archer">&#xe606;</span>渗透</span>
+    
+        <span class="sidebar-tag-name" data-tags="cocos"><span class="iconfont-archer">&#xe606;</span>cocos</span>
+    
+        <span class="sidebar-tag-name" data-tags="cocos2dx"><span class="iconfont-archer">&#xe606;</span>cocos2dx</span>
+    
+        <span class="sidebar-tag-name" data-tags="game"><span class="iconfont-archer">&#xe606;</span>game</span>
+    
+        <span class="sidebar-tag-name" data-tags="story"><span class="iconfont-archer">&#xe606;</span>story</span>
+    
+        <span class="sidebar-tag-name" data-tags="utf-8"><span class="iconfont-archer">&#xe606;</span>utf-8</span>
+    
+        <span class="sidebar-tag-name" data-tags="爬虫"><span class="iconfont-archer">&#xe606;</span>爬虫</span>
+    
+        <span class="sidebar-tag-name" data-tags="备份"><span class="iconfont-archer">&#xe606;</span>备份</span>
+    
+        <span class="sidebar-tag-name" data-tags="数据"><span class="iconfont-archer">&#xe606;</span>数据</span>
+    
+        <span class="sidebar-tag-name" data-tags="algorithm"><span class="iconfont-archer">&#xe606;</span>algorithm</span>
+    
+        <span class="sidebar-tag-name" data-tags="extensions"><span class="iconfont-archer">&#xe606;</span>extensions</span>
+    
+        <span class="sidebar-tag-name" data-tags="前端"><span class="iconfont-archer">&#xe606;</span>前端</span>
+    
+        <span class="sidebar-tag-name" data-tags="api"><span class="iconfont-archer">&#xe606;</span>api</span>
+    
+        <span class="sidebar-tag-name" data-tags="扩展"><span class="iconfont-archer">&#xe606;</span>扩展</span>
+    
+        <span class="sidebar-tag-name" data-tags="通信"><span class="iconfont-archer">&#xe606;</span>通信</span>
+    
+        <span class="sidebar-tag-name" data-tags="函数"><span class="iconfont-archer">&#xe606;</span>函数</span>
+    
+        <span class="sidebar-tag-name" data-tags="english"><span class="iconfont-archer">&#xe606;</span>english</span>
+    
+        <span class="sidebar-tag-name" data-tags="funnny"><span class="iconfont-archer">&#xe606;</span>funnny</span>
+    
+        <span class="sidebar-tag-name" data-tags="blob"><span class="iconfont-archer">&#xe606;</span>blob</span>
+    
+        <span class="sidebar-tag-name" data-tags="bomb"><span class="iconfont-archer">&#xe606;</span>bomb</span>
+    
+        <span class="sidebar-tag-name" data-tags="exploding"><span class="iconfont-archer">&#xe606;</span>exploding</span>
+    
+        <span class="sidebar-tag-name" data-tags="git"><span class="iconfont-archer">&#xe606;</span>git</span>
+    
+        <span class="sidebar-tag-name" data-tags="memory"><span class="iconfont-archer">&#xe606;</span>memory</span>
+    
+        <span class="sidebar-tag-name" data-tags="tree"><span class="iconfont-archer">&#xe606;</span>tree</span>
+    
+        <span class="sidebar-tag-name" data-tags="php5"><span class="iconfont-archer">&#xe606;</span>php5</span>
+    
+        <span class="sidebar-tag-name" data-tags="wifi"><span class="iconfont-archer">&#xe606;</span>wifi</span>
+    
+        <span class="sidebar-tag-name" data-tags="ftp"><span class="iconfont-archer">&#xe606;</span>ftp</span>
+    
+        <span class="sidebar-tag-name" data-tags="service"><span class="iconfont-archer">&#xe606;</span>service</span>
+    
+        <span class="sidebar-tag-name" data-tags="github"><span class="iconfont-archer">&#xe606;</span>github</span>
+    
+        <span class="sidebar-tag-name" data-tags="hexo"><span class="iconfont-archer">&#xe606;</span>hexo</span>
+    
+        <span class="sidebar-tag-name" data-tags="博客"><span class="iconfont-archer">&#xe606;</span>博客</span>
+    
+        <span class="sidebar-tag-name" data-tags="库"><span class="iconfont-archer">&#xe606;</span>库</span>
+    
+        <span class="sidebar-tag-name" data-tags="html5"><span class="iconfont-archer">&#xe606;</span>html5</span>
+    
+        <span class="sidebar-tag-name" data-tags="web"><span class="iconfont-archer">&#xe606;</span>web</span>
+    
+        <span class="sidebar-tag-name" data-tags="网络"><span class="iconfont-archer">&#xe606;</span>网络</span>
+    
+        <span class="sidebar-tag-name" data-tags="http"><span class="iconfont-archer">&#xe606;</span>http</span>
+    
+        <span class="sidebar-tag-name" data-tags="https"><span class="iconfont-archer">&#xe606;</span>https</span>
+    
+        <span class="sidebar-tag-name" data-tags="ubuntu"><span class="iconfont-archer">&#xe606;</span>ubuntu</span>
+    
+        <span class="sidebar-tag-name" data-tags="阿里云"><span class="iconfont-archer">&#xe606;</span>阿里云</span>
+    
+        <span class="sidebar-tag-name" data-tags="js"><span class="iconfont-archer">&#xe606;</span>js</span>
+    
+        <span class="sidebar-tag-name" data-tags="language"><span class="iconfont-archer">&#xe606;</span>language</span>
+    
+        <span class="sidebar-tag-name" data-tags="parser"><span class="iconfont-archer">&#xe606;</span>parser</span>
+    
+        <span class="sidebar-tag-name" data-tags="idea"><span class="iconfont-archer">&#xe606;</span>idea</span>
+    
+        <span class="sidebar-tag-name" data-tags="JetBrains"><span class="iconfont-archer">&#xe606;</span>JetBrains</span>
+    
+        <span class="sidebar-tag-name" data-tags="pycharm"><span class="iconfont-archer">&#xe606;</span>pycharm</span>
+    
+        <span class="sidebar-tag-name" data-tags="注册码"><span class="iconfont-archer">&#xe606;</span>注册码</span>
+    
+        <span class="sidebar-tag-name" data-tags="激活码"><span class="iconfont-archer">&#xe606;</span>激活码</span>
+    
+        <span class="sidebar-tag-name" data-tags="kali"><span class="iconfont-archer">&#xe606;</span>kali</span>
+    
+        <span class="sidebar-tag-name" data-tags="scan"><span class="iconfont-archer">&#xe606;</span>scan</span>
+    
+        <span class="sidebar-tag-name" data-tags="tools"><span class="iconfont-archer">&#xe606;</span>tools</span>
+    
+        <span class="sidebar-tag-name" data-tags="medusa"><span class="iconfont-archer">&#xe606;</span>medusa</span>
+    
+        <span class="sidebar-tag-name" data-tags="pip3"><span class="iconfont-archer">&#xe606;</span>pip3</span>
+    
+        <span class="sidebar-tag-name" data-tags="python3"><span class="iconfont-archer">&#xe606;</span>python3</span>
+    
+        <span class="sidebar-tag-name" data-tags="dev"><span class="iconfont-archer">&#xe606;</span>dev</span>
+    
+        <span class="sidebar-tag-name" data-tags="file"><span class="iconfont-archer">&#xe606;</span>file</span>
+    
+        <span class="sidebar-tag-name" data-tags="su"><span class="iconfont-archer">&#xe606;</span>su</span>
+    
+        <span class="sidebar-tag-name" data-tags="sudo"><span class="iconfont-archer">&#xe606;</span>sudo</span>
+    
+        <span class="sidebar-tag-name" data-tags="system"><span class="iconfont-archer">&#xe606;</span>system</span>
+    
+        <span class="sidebar-tag-name" data-tags="usage"><span class="iconfont-archer">&#xe606;</span>usage</span>
+    
+        <span class="sidebar-tag-name" data-tags="user"><span class="iconfont-archer">&#xe606;</span>user</span>
+    
+        <span class="sidebar-tag-name" data-tags="lvm"><span class="iconfont-archer">&#xe606;</span>lvm</span>
+    
+        <span class="sidebar-tag-name" data-tags="raid"><span class="iconfont-archer">&#xe606;</span>raid</span>
+    
+        <span class="sidebar-tag-name" data-tags="firewall"><span class="iconfont-archer">&#xe606;</span>firewall</span>
+    
+        <span class="sidebar-tag-name" data-tags="firewalld"><span class="iconfont-archer">&#xe606;</span>firewalld</span>
+    
+        <span class="sidebar-tag-name" data-tags="iptables"><span class="iconfont-archer">&#xe606;</span>iptables</span>
+    
+        <span class="sidebar-tag-name" data-tags="protocol"><span class="iconfont-archer">&#xe606;</span>protocol</span>
+    
+        <span class="sidebar-tag-name" data-tags="strategy"><span class="iconfont-archer">&#xe606;</span>strategy</span>
+    
+        <span class="sidebar-tag-name" data-tags="firstSet"><span class="iconfont-archer">&#xe606;</span>firstSet</span>
+    
+        <span class="sidebar-tag-name" data-tags="FollowSet"><span class="iconfont-archer">&#xe606;</span>FollowSet</span>
+    
+        <span class="sidebar-tag-name" data-tags="ll1"><span class="iconfont-archer">&#xe606;</span>ll1</span>
+    
+        <span class="sidebar-tag-name" data-tags="table"><span class="iconfont-archer">&#xe606;</span>table</span>
+    
+        <span class="sidebar-tag-name" data-tags="acm"><span class="iconfont-archer">&#xe606;</span>acm</span>
+    
+        <span class="sidebar-tag-name" data-tags="injection"><span class="iconfont-archer">&#xe606;</span>injection</span>
+    
+        <span class="sidebar-tag-name" data-tags="mysqli"><span class="iconfont-archer">&#xe606;</span>mysqli</span>
+    
+        <span class="sidebar-tag-name" data-tags="php"><span class="iconfont-archer">&#xe606;</span>php</span>
+    
+        <span class="sidebar-tag-name" data-tags="sql注入"><span class="iconfont-archer">&#xe606;</span>sql注入</span>
+    
+        <span class="sidebar-tag-name" data-tags="nodebb"><span class="iconfont-archer">&#xe606;</span>nodebb</span>
+    
+        <span class="sidebar-tag-name" data-tags="腾讯云"><span class="iconfont-archer">&#xe606;</span>腾讯云</span>
+    
+        <span class="sidebar-tag-name" data-tags="论坛"><span class="iconfont-archer">&#xe606;</span>论坛</span>
+    
+        <span class="sidebar-tag-name" data-tags="exploit"><span class="iconfont-archer">&#xe606;</span>exploit</span>
+    
+        <span class="sidebar-tag-name" data-tags="NSA"><span class="iconfont-archer">&#xe606;</span>NSA</span>
+    
+        <span class="sidebar-tag-name" data-tags="安全"><span class="iconfont-archer">&#xe606;</span>安全</span>
+    
+        <span class="sidebar-tag-name" data-tags="序列化与反序列化"><span class="iconfont-archer">&#xe606;</span>序列化与反序列化</span>
+    
+        <span class="sidebar-tag-name" data-tags="微信"><span class="iconfont-archer">&#xe606;</span>微信</span>
+    
+        <span class="sidebar-tag-name" data-tags="phpstorm"><span class="iconfont-archer">&#xe606;</span>phpstorm</span>
+    
+        <span class="sidebar-tag-name" data-tags="xampp"><span class="iconfont-archer">&#xe606;</span>xampp</span>
+    
+        <span class="sidebar-tag-name" data-tags="xdebug"><span class="iconfont-archer">&#xe606;</span>xdebug</span>
+    
+        <span class="sidebar-tag-name" data-tags="环境配置"><span class="iconfont-archer">&#xe606;</span>环境配置</span>
+    
+        <span class="sidebar-tag-name" data-tags="curl"><span class="iconfont-archer">&#xe606;</span>curl</span>
+    
+        <span class="sidebar-tag-name" data-tags="PoiPlayer"><span class="iconfont-archer">&#xe606;</span>PoiPlayer</span>
+    
+        <span class="sidebar-tag-name" data-tags="wordpress"><span class="iconfont-archer">&#xe606;</span>wordpress</span>
+    
+        <span class="sidebar-tag-name" data-tags="socket"><span class="iconfont-archer">&#xe606;</span>socket</span>
+    
+        <span class="sidebar-tag-name" data-tags="正则表达式"><span class="iconfont-archer">&#xe606;</span>正则表达式</span>
+    
+        <span class="sidebar-tag-name" data-tags="permission"><span class="iconfont-archer">&#xe606;</span>permission</span>
+    
+        <span class="sidebar-tag-name" data-tags="正则"><span class="iconfont-archer">&#xe606;</span>正则</span>
+    
+        <span class="sidebar-tag-name" data-tags="flex"><span class="iconfont-archer">&#xe606;</span>flex</span>
+    
+        <span class="sidebar-tag-name" data-tags="layout"><span class="iconfont-archer">&#xe606;</span>layout</span>
+    
+        <span class="sidebar-tag-name" data-tags="csrf"><span class="iconfont-archer">&#xe606;</span>csrf</span>
+    
+        <span class="sidebar-tag-name" data-tags="login"><span class="iconfont-archer">&#xe606;</span>login</span>
+    
+        <span class="sidebar-tag-name" data-tags="session"><span class="iconfont-archer">&#xe606;</span>session</span>
+    
+        <span class="sidebar-tag-name" data-tags="token"><span class="iconfont-archer">&#xe606;</span>token</span>
+    
+        <span class="sidebar-tag-name" data-tags="uid"><span class="iconfont-archer">&#xe606;</span>uid</span>
+    
+        <span class="sidebar-tag-name" data-tags="xss"><span class="iconfont-archer">&#xe606;</span>xss</span>
+    
+        <span class="sidebar-tag-name" data-tags="join"><span class="iconfont-archer">&#xe606;</span>join</span>
+    
+        <span class="sidebar-tag-name" data-tags="优化"><span class="iconfont-archer">&#xe606;</span>优化</span>
+    
+        <span class="sidebar-tag-name" data-tags="电话"><span class="iconfont-archer">&#xe606;</span>电话</span>
+    
+        <span class="sidebar-tag-name" data-tags="编程"><span class="iconfont-archer">&#xe606;</span>编程</span>
+    
+        <span class="sidebar-tag-name" data-tags="assembly"><span class="iconfont-archer">&#xe606;</span>assembly</span>
+    
+        <span class="sidebar-tag-name" data-tags="instructions"><span class="iconfont-archer">&#xe606;</span>instructions</span>
+    
+        <span class="sidebar-tag-name" data-tags="int"><span class="iconfont-archer">&#xe606;</span>int</span>
+    
+        <span class="sidebar-tag-name" data-tags="指令"><span class="iconfont-archer">&#xe606;</span>指令</span>
+    
+        <span class="sidebar-tag-name" data-tags="汇编"><span class="iconfont-archer">&#xe606;</span>汇编</span>
+    
+        <span class="sidebar-tag-name" data-tags="魔方"><span class="iconfont-archer">&#xe606;</span>魔方</span>
+    
+        <span class="sidebar-tag-name" data-tags="http-equiv"><span class="iconfont-archer">&#xe606;</span>http-equiv</span>
+    
+        <span class="sidebar-tag-name" data-tags="http协议"><span class="iconfont-archer">&#xe606;</span>http协议</span>
+    
+        <span class="sidebar-tag-name" data-tags="jquery"><span class="iconfont-archer">&#xe606;</span>jquery</span>
+    
+        <span class="sidebar-tag-name" data-tags="jsp"><span class="iconfont-archer">&#xe606;</span>jsp</span>
+    
+        <span class="sidebar-tag-name" data-tags="ANSI"><span class="iconfont-archer">&#xe606;</span>ANSI</span>
+    
+        <span class="sidebar-tag-name" data-tags="ASCII"><span class="iconfont-archer">&#xe606;</span>ASCII</span>
+    
+        <span class="sidebar-tag-name" data-tags="decode"><span class="iconfont-archer">&#xe606;</span>decode</span>
+    
+        <span class="sidebar-tag-name" data-tags="encode"><span class="iconfont-archer">&#xe606;</span>encode</span>
+    
+        <span class="sidebar-tag-name" data-tags="ISO-8859-1"><span class="iconfont-archer">&#xe606;</span>ISO-8859-1</span>
+    
+        <span class="sidebar-tag-name" data-tags="messy code"><span class="iconfont-archer">&#xe606;</span>messy code</span>
+    
+        <span class="sidebar-tag-name" data-tags="zipfile"><span class="iconfont-archer">&#xe606;</span>zipfile</span>
+    
+        <span class="sidebar-tag-name" data-tags="PIL"><span class="iconfont-archer">&#xe606;</span>PIL</span>
+    
+        <span class="sidebar-tag-name" data-tags="pickle"><span class="iconfont-archer">&#xe606;</span>pickle</span>
+    
+        <span class="sidebar-tag-name" data-tags="序列化"><span class="iconfont-archer">&#xe606;</span>序列化</span>
+    
+        <span class="sidebar-tag-name" data-tags="撤销"><span class="iconfont-archer">&#xe606;</span>撤销</span>
+    
+        <span class="sidebar-tag-name" data-tags="call-back"><span class="iconfont-archer">&#xe606;</span>call-back</span>
+    
+        <span class="sidebar-tag-name" data-tags="Request"><span class="iconfont-archer">&#xe606;</span>Request</span>
+    
+        <span class="sidebar-tag-name" data-tags="scrapy"><span class="iconfont-archer">&#xe606;</span>scrapy</span>
+    
+        <span class="sidebar-tag-name" data-tags="qzone"><span class="iconfont-archer">&#xe606;</span>qzone</span>
+    
+        <span class="sidebar-tag-name" data-tags="selenium"><span class="iconfont-archer">&#xe606;</span>selenium</span>
+    
+        <span class="sidebar-tag-name" data-tags="webdriver"><span class="iconfont-archer">&#xe606;</span>webdriver</span>
+    
+        <span class="sidebar-tag-name" data-tags="black box"><span class="iconfont-archer">&#xe606;</span>black box</span>
+    
+        <span class="sidebar-tag-name" data-tags="lisp"><span class="iconfont-archer">&#xe606;</span>lisp</span>
+    
+        <span class="sidebar-tag-name" data-tags="module"><span class="iconfont-archer">&#xe606;</span>module</span>
+    
+        <span class="sidebar-tag-name" data-tags="scheme"><span class="iconfont-archer">&#xe606;</span>scheme</span>
+    
+        <span class="sidebar-tag-name" data-tags="sicp"><span class="iconfont-archer">&#xe606;</span>sicp</span>
+    
+        <span class="sidebar-tag-name" data-tags="case"><span class="iconfont-archer">&#xe606;</span>case</span>
+    
+        <span class="sidebar-tag-name" data-tags="condition"><span class="iconfont-archer">&#xe606;</span>condition</span>
+    
+        <span class="sidebar-tag-name" data-tags="hanoi"><span class="iconfont-archer">&#xe606;</span>hanoi</span>
+    
+        <span class="sidebar-tag-name" data-tags="recursion"><span class="iconfont-archer">&#xe606;</span>recursion</span>
+    
+        <span class="sidebar-tag-name" data-tags="策略模式"><span class="iconfont-archer">&#xe606;</span>策略模式</span>
+    
+        <span class="sidebar-tag-name" data-tags="设计模式"><span class="iconfont-archer">&#xe606;</span>设计模式</span>
+    
+        <span class="sidebar-tag-name" data-tags="symbol"><span class="iconfont-archer">&#xe606;</span>symbol</span>
+    
+        <span class="sidebar-tag-name" data-tags="u盘"><span class="iconfont-archer">&#xe606;</span>u盘</span>
+    
+        <span class="sidebar-tag-name" data-tags="病毒"><span class="iconfont-archer">&#xe606;</span>病毒</span>
+    
+        <span class="sidebar-tag-name" data-tags="webshell"><span class="iconfont-archer">&#xe606;</span>webshell</span>
+    
+        <span class="sidebar-tag-name" data-tags="effective"><span class="iconfont-archer">&#xe606;</span>effective</span>
+    
+        <span class="sidebar-tag-name" data-tags="win10"><span class="iconfont-archer">&#xe606;</span>win10</span>
+    
+        <span class="sidebar-tag-name" data-tags="windows"><span class="iconfont-archer">&#xe606;</span>windows</span>
+    
+        <span class="sidebar-tag-name" data-tags="二叉树"><span class="iconfont-archer">&#xe606;</span>二叉树</span>
+    
+        <span class="sidebar-tag-name" data-tags="有序树"><span class="iconfont-archer">&#xe606;</span>有序树</span>
+    
+        <span class="sidebar-tag-name" data-tags="索引"><span class="iconfont-archer">&#xe606;</span>索引</span>
+    
+        <span class="sidebar-tag-name" data-tags="domain"><span class="iconfont-archer">&#xe606;</span>domain</span>
+    
+        <span class="sidebar-tag-name" data-tags="scan-tools"><span class="iconfont-archer">&#xe606;</span>scan-tools</span>
+    
+        <span class="sidebar-tag-name" data-tags="sub-domain"><span class="iconfont-archer">&#xe606;</span>sub-domain</span>
+    
+        <span class="sidebar-tag-name" data-tags="castby"><span class="iconfont-archer">&#xe606;</span>castby</span>
+    
+        <span class="sidebar-tag-name" data-tags="code"><span class="iconfont-archer">&#xe606;</span>code</span>
+    
+        <span class="sidebar-tag-name" data-tags="regular"><span class="iconfont-archer">&#xe606;</span>regular</span>
+    
+        <span class="sidebar-tag-name" data-tags="baidu"><span class="iconfont-archer">&#xe606;</span>baidu</span>
+    
+        <span class="sidebar-tag-name" data-tags="tieba"><span class="iconfont-archer">&#xe606;</span>tieba</span>
+    
+        <span class="sidebar-tag-name" data-tags="expression"><span class="iconfont-archer">&#xe606;</span>expression</span>
+    
+        <span class="sidebar-tag-name" data-tags="lanauage"><span class="iconfont-archer">&#xe606;</span>lanauage</span>
+    
+        <span class="sidebar-tag-name" data-tags="operator"><span class="iconfont-archer">&#xe606;</span>operator</span>
+    
+        <span class="sidebar-tag-name" data-tags="parse"><span class="iconfont-archer">&#xe606;</span>parse</span>
+    
+        <span class="sidebar-tag-name" data-tags="precedence"><span class="iconfont-archer">&#xe606;</span>precedence</span>
+    
+        <span class="sidebar-tag-name" data-tags="dom"><span class="iconfont-archer">&#xe606;</span>dom</span>
+    
+        <span class="sidebar-tag-name" data-tags="frontdesign"><span class="iconfont-archer">&#xe606;</span>frontdesign</span>
+    
+        <span class="sidebar-tag-name" data-tags="match"><span class="iconfont-archer">&#xe606;</span>match</span>
+    
+        <span class="sidebar-tag-name" data-tags="regex"><span class="iconfont-archer">&#xe606;</span>regex</span>
+    
+        <span class="sidebar-tag-name" data-tags="test"><span class="iconfont-archer">&#xe606;</span>test</span>
+    
+        <span class="sidebar-tag-name" data-tags="tutorial"><span class="iconfont-archer">&#xe606;</span>tutorial</span>
+    
+        <span class="sidebar-tag-name" data-tags="react"><span class="iconfont-archer">&#xe606;</span>react</span>
+    
+        <span class="sidebar-tag-name" data-tags="react-native"><span class="iconfont-archer">&#xe606;</span>react-native</span>
+    
+        <span class="sidebar-tag-name" data-tags="vue.js"><span class="iconfont-archer">&#xe606;</span>vue.js</span>
+    
+        <span class="sidebar-tag-name" data-tags="coding"><span class="iconfont-archer">&#xe606;</span>coding</span>
+    
+        <span class="sidebar-tag-name" data-tags="programing"><span class="iconfont-archer">&#xe606;</span>programing</span>
+    
+        <span class="sidebar-tag-name" data-tags="books"><span class="iconfont-archer">&#xe606;</span>books</span>
+    
+    </div>
+    <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
+    <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
+    缺失模块。<br/>
+    1、请确保node版本大于6.2<br/>
+    2、在博客根目录（注意不是archer根目录）执行以下命令：<br/>
+    <span style="color: #f75357; font-size: 1rem; line-height: 2rem;">npm i hexo-generator-json-content --save</span><br/>
+    3、在根目录_config.yml里添加配置：
+    <pre style="color: #787878; font-size: 0.6rem;">
+jsonContent:
+  meta: false
+  pages: false
+  posts:
+    title: true
+    date: true
+    path: true
+    text: false
+    raw: false
+    content: false
+    slug: false
+    updated: false
+    comments: false
+    link: false
+    permalink: false
+    excerpt: false
+    categories: true
+    tags: true</pre>
+    </div> 
+    <div class="sidebar-tags-list"></div>
+</div>
+        <div class="sidebar-panel-categories">
+    <div class="sidebar-categories-name">
+    
+        <span class="sidebar-category-name" data-categories="Story"><span class="iconfont-archer">&#xe60a;</span>Story</span>
+    
+        <span class="sidebar-category-name" data-categories="Chrome"><span class="iconfont-archer">&#xe60a;</span>Chrome</span>
+    
+        <span class="sidebar-category-name" data-categories="Security"><span class="iconfont-archer">&#xe60a;</span>Security</span>
+    
+        <span class="sidebar-category-name" data-categories="FrontPage"><span class="iconfont-archer">&#xe60a;</span>FrontPage</span>
+    
+        <span class="sidebar-category-name" data-categories="Linux"><span class="iconfont-archer">&#xe60a;</span>Linux</span>
+    
+        <span class="sidebar-category-name" data-categories="BackStage"><span class="iconfont-archer">&#xe60a;</span>BackStage</span>
+    
+        <span class="sidebar-category-name" data-categories="Algorithm"><span class="iconfont-archer">&#xe60a;</span>Algorithm</span>
+    
+        <span class="sidebar-category-name" data-categories="Python"><span class="iconfont-archer">&#xe60a;</span>Python</span>
+    
+        <span class="sidebar-category-name" data-categories="Android"><span class="iconfont-archer">&#xe60a;</span>Android</span>
+    
+        <span class="sidebar-category-name" data-categories="Cocos"><span class="iconfont-archer">&#xe60a;</span>Cocos</span>
+    
+        <span class="sidebar-category-name" data-categories="Design"><span class="iconfont-archer">&#xe60a;</span>Design</span>
+    
+        <span class="sidebar-category-name" data-categories="Parser-amp-language"><span class="iconfont-archer">&#xe60a;</span>Parser-amp-language</span>
+    
+        <span class="sidebar-category-name" data-categories="Assembly"><span class="iconfont-archer">&#xe60a;</span>Assembly</span>
+    
+    </div>
+    <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>
+    <div class="sidebar-categories-list"></div>
+</div>
+    </div>
+</div> 
+    <script>
+    var siteMeta = {
+        root: "/",
+        author: "ReZero"
+    }
+</script>
+    <!-- CDN failover -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+    <script type="text/javascript">
+        if (typeof window.$ === 'undefined')
+        {
+            console.warn('jquery load from jsdelivr failed, will load local script')
+            document.write('<script src="/lib/jquery.min.js">\x3C/script>')
+        }
+    </script>
+    <script src="/scripts/main.js"></script>
+    <!-- algolia -->
+    
+    <!-- busuanzi  -->
+    
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+    <!-- CNZZ  -->
+    
+    </div>
+    <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
+     
+    </body>
+</html>
+
+
