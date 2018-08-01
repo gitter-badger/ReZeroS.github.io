@@ -273,7 +273,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>Word count: <span class="post-count">2,952</span> / Reading time: <span class="post-count">18 min</span></span>
+                        <span>Word count: <span class="post-count">3,711</span> / Reading time: <span class="post-count">23 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -402,7 +402,8 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <h2 id="You-Do-not-Need-jQuery"><a href="#You-Do-not-Need-jQuery" class="headerlink" title="You Do not Need jQuery "></a>You Do not Need jQuery <a href="https://travis-ci.org/oneuijs/You-Dont-Need-jQuery" target="_blank" rel="noopener"><img src="https://travis-ci.org/oneuijs/You-Dont-Need-jQuery.svg" alt="Build Status"></a></h2><p>Frontend environments evolve rapidly nowadays, modern browsers have already implemented a great deal of DOM/BOM APIs which are good enough. We don’t have to learn jQuery from scratch for DOM manipulation or events. In the meantime, thanks to the prevailing of frontend libraries such as React, Angular and Vue, manipulating DOM directly becomes anti-pattern, jQuery has never been less important. This project summarizes most of the jQuery method alternatives in native implementation, with IE 10+ support.</p>
+        <p>REPRINT:<br><a href="https://travis-ci.org/oneuijs/You-Dont-Need-jQuery" target="_blank" rel="noopener">https://travis-ci.org/oneuijs/You-Dont-Need-jQuery</a></p>
+<h2 id="You-Do-not-Need-jQuery"><a href="#You-Do-not-Need-jQuery" class="headerlink" title="You Do not Need jQuery "></a>You Do not Need jQuery <a href="https://travis-ci.org/oneuijs/You-Dont-Need-jQuery" target="_blank" rel="noopener"><img src="https://travis-ci.org/oneuijs/You-Dont-Need-jQuery.svg" alt="Build Status"></a></h2><p>Frontend environments evolve rapidly nowadays, modern browsers have already implemented a great deal of DOM/BOM APIs which are good enough. We don’t have to learn jQuery from scratch for DOM manipulation or events. In the meantime, thanks to the prevailing of frontend libraries such as React, Angular and Vue, manipulating DOM directly becomes anti-pattern, jQuery has never been less important. This project summarizes most of the jQuery method alternatives in native implementation, with IE 10+ support.</p>
 <h2 id="Table-of-Contents"><a href="#Table-of-Contents" class="headerlink" title="Table of Contents"></a>Table of Contents</h2><ol>
 <li><a href="http://#translations" target="_blank" rel="noopener">Translations</a></li>
 <li><a href="http://#query-selector" target="_blank" rel="noopener">Query Selector</a></li>
@@ -422,357 +423,160 @@ height:50vh;
 </blockquote>
 <ul>
 <li><p><a href="http://#1.0" target="_blank" rel="noopener">1.0</a> Query by selector</p>
-<pre><code>// jQuery
-$(&apos;selector&apos;);
-
-// Native
-document.querySelectorAll(&apos;selector&apos;);
-</code></pre></li>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// jQuery</span></span><br><span class="line">$(<span class="string">'selector'</span>);</span><br><span class="line">    </span><br><span class="line"><span class="comment">// Native</span></span><br><span class="line"><span class="built_in">document</span>.querySelectorAll(<span class="string">'selector'</span>);</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
 <ul>
 <li><p><a href="http://#1.1" target="_blank" rel="noopener">1.1</a> Query by class</p>
-<pre><code>// jQuery
-$(&apos;.class&apos;);
-
-// Native
-document.querySelectorAll(&apos;.class&apos;);
-
-// or
-document.getElementsByClassName(&apos;class&apos;);
-</code></pre></li>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// jQuery</span></span><br><span class="line">$(<span class="string">'.class'</span>);</span><br><span class="line">    </span><br><span class="line"><span class="comment">// Native</span></span><br><span class="line"><span class="built_in">document</span>.querySelectorAll(<span class="string">'.class'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// or</span></span><br><span class="line"><span class="built_in">document</span>.getElementsByClassName(<span class="string">'class'</span>);</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
 <ul>
 <li><p><a href="http://#1.2" target="_blank" rel="noopener">1.2</a> Query by id</p>
-<pre><code>// jQuery
-$(&apos;#id&apos;);
-
-// Native
-document.querySelector(&apos;#id&apos;);
-
-// or
-document.getElementById(&apos;id&apos;);
-</code></pre></li>
-</ul>
-<ul>
-<li><p><a href="http://#1.3" target="_blank" rel="noopener">1.3</a> Query by attribute</p>
-<pre><code>// jQuery
-$(&apos;a[target=_blank]&apos;);
-
-// Native
-document.querySelectorAll(&apos;a[target=_blank]&apos;);
-</code></pre></li>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">    <span class="comment">// jQuery</span></span><br><span class="line">    $(<span class="string">'#id'</span>);</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// Native</span></span><br><span class="line">    <span class="built_in">document</span>.querySelector(<span class="string">'#id'</span>);</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// or</span></span><br><span class="line">    <span class="built_in">document</span>.getElementById(<span class="string">'id'</span>);</span><br><span class="line">    <span class="string">``</span><span class="string">` </span></span><br><span class="line"><span class="string">    </span></span><br><span class="line"><span class="string">*   [1.3](http://#1.3) Query by attribute</span></span><br><span class="line"><span class="string">    </span></span><br><span class="line"><span class="string">    `</span><span class="string">``</span>javascript</span><br><span class="line">    <span class="comment">// jQuery</span></span><br><span class="line">    $(<span class="string">'a[target=_blank]'</span>);</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// Native</span></span><br><span class="line">    <span class="built_in">document</span>.querySelectorAll(<span class="string">'a[target=_blank]'</span>);</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
 <ul>
 <li><p><a href="http://#1.4" target="_blank" rel="noopener">1.4</a> Query in descendants</p>
-<pre><code>// jQuery
-$el.find(&apos;li&apos;);
-
-// Native
-el.querySelectorAll(&apos;li&apos;);
-</code></pre></li>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// jQuery</span></span><br><span class="line">$el.find(<span class="string">'li'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Native</span></span><br><span class="line">el.querySelectorAll(<span class="string">'li'</span>);</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
 <ul>
 <li><p><a href="http://#1.5" target="_blank" rel="noopener">1.5</a> Sibling/Previous/Next Elements</p>
 <ul>
 <li><p>Sibling elements</p>
-<p>// jQuery<br>$el.siblings();</p>
-<p>// Native - latest, Edge13+<br>[…el.parentNode.children].filter((child) =&gt;<br>  child !== el<br>);<br>// Native (alternative) - latest, Edge13+<br>Array.from(el.parentNode.children).filter((child) =&gt;<br>  child !== el<br>);<br>// Native - IE10+<br>Array.prototype.filter.call(el.parentNode.children, (child) =&gt;<br>  child !== el<br>);</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// jQuery</span></span><br><span class="line">$el.siblings();</span><br><span class="line"></span><br><span class="line"><span class="comment">// Native - latest, Edge13+</span></span><br><span class="line">[...el.parentNode.children].filter(<span class="function">(<span class="params">child</span>) =&gt;</span></span><br><span class="line">child !== el</span><br><span class="line">);</span><br><span class="line"><span class="comment">// Native (alternative) - latest, Edge13+</span></span><br><span class="line"><span class="built_in">Array</span>.from(el.parentNode.children).filter(<span class="function">(<span class="params">child</span>) =&gt;</span></span><br><span class="line">child !== el</span><br><span class="line">);</span><br><span class="line"><span class="comment">// Native - IE10+</span></span><br><span class="line"><span class="built_in">Array</span>.prototype.filter.call(el.parentNode.children, (child) =&gt;</span><br><span class="line">child !== el</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
 </ul>
 <pre><code>*   Previous elements
 
-    // jQuery
-    $el.prev();
-
-    // Native
-    el.previousElementSibling;
-
-
-*   Next elements
-
-    // jQuery
-    $el.next();
-
-    // Native
-    el.nextElementSibling;
+    <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">    <span class="comment">// jQuery</span></span><br><span class="line">    $el.prev();</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// Native</span></span><br><span class="line">    el.previousElementSibling;</span><br><span class="line">    <span class="string">``</span><span class="string">` </span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">*   Next elements</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    `</span><span class="string">``</span>javascript</span><br><span class="line">    <span class="comment">// jQuery</span></span><br><span class="line">    $el.next();</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// Native</span></span><br><span class="line">    el.nextElementSibling;</span><br></pre></td></tr></table></figure>
 </code></pre><ul>
 <li><p><a href="http://#1.6" target="_blank" rel="noopener">1.6</a> Closest Return the first matched element by provided selector, traversing from current element to document.</p>
-<pre><code>// jQuery
-$el.closest(selector);
-
-// Native - Only latest, NO IE
-el.closest(selector);
-
-// Native - IE10+
-function closest(el, selector) {
-const matchesSelector = el.matches || el.webkitMatchesSelector || el.mozMatchesSelector || el.msMatchesSelector;
-
-while (el) {
-  if (matchesSelector.call(el, selector)) {
-    return el;
-  } else {
-    el = el.parentElement;
-  }
-}
-return null;
-}
-</code></pre></li>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// jQuery</span></span><br><span class="line">$el.closest(selector);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Native - Only latest, NO IE</span></span><br><span class="line">el.closest(selector);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Native - IE10+</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">closest</span>(<span class="params">el, selector</span>) </span>&#123;</span><br><span class="line"><span class="keyword">const</span> matchesSelector = el.matches || el.webkitMatchesSelector || el.mozMatchesSelector || el.msMatchesSelector;</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> (el) &#123;</span><br><span class="line">    <span class="keyword">if</span> (matchesSelector.call(el, selector)) &#123;</span><br><span class="line">    <span class="keyword">return</span> el;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    el = el.parentElement;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
 <ul>
 <li><p><a href="http://#1.7" target="_blank" rel="noopener">1.7</a> Parents Until Get the ancestors of each element in the current set of matched elements, up to but not including the element matched by the selector, DOM node, or jQuery object.</p>
-<pre><code>// jQuery
-$el.parentsUntil(selector, filter);
-
-// Native
-function parentsUntil(el, selector, filter) {
-const result = [];
-const matchesSelector = el.matches || el.webkitMatchesSelector || el.mozMatchesSelector || el.msMatchesSelector;
-
-// match start from parent
-el = el.parentElement;
-while (el &amp;&amp; !matchesSelector.call(el, selector)) {
-  if (!filter) {
-    result.push(el);
-  } else {
-    if (matchesSelector.call(el, filter)) {
-      result.push(el);
-    }
-  }
-  el = el.parentElement;
-}
-return result;
-}
-</code></pre></li>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">// jQuery</span></span><br><span class="line">$el.parentsUntil(selector, filter);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Native</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">parentsUntil</span>(<span class="params">el, selector, filter</span>) </span>&#123;</span><br><span class="line"><span class="keyword">const</span> result = [];</span><br><span class="line"><span class="keyword">const</span> matchesSelector = el.matches || el.webkitMatchesSelector || el.mozMatchesSelector || el.msMatchesSelector;</span><br><span class="line"></span><br><span class="line"><span class="comment">// match start from parent</span></span><br><span class="line">el = el.parentElement;</span><br><span class="line"><span class="keyword">while</span> (el &amp;&amp; !matchesSelector.call(el, selector)) &#123;</span><br><span class="line">    <span class="keyword">if</span> (!filter) &#123;</span><br><span class="line">    result.push(el);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (matchesSelector.call(el, filter)) &#123;</span><br><span class="line">        result.push(el);</span><br><span class="line">    &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    el = el.parentElement;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
 <ul>
 <li><p><a href="http://#1.8" target="_blank" rel="noopener">1.8</a> Form</p>
 <ul>
 <li><p>Input/Textarea</p>
-<p>// jQuery<br>$(‘#my-input’).val();</p>
-<p>// Native<br>document.querySelector(‘#my-input’).value;</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// jQuery</span></span><br><span class="line">$(<span class="string">'#my-input'</span>).val();</span><br><span class="line"></span><br><span class="line"><span class="comment">// Native</span></span><br><span class="line"><span class="built_in">document</span>.querySelector(<span class="string">'#my-input'</span>).value;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
 </ul>
 <pre><code>*   Get index of e.currentTarget between `.radio`
 
-    // jQuery
-    $(&apos;.radio&apos;).index(e.currentTarget);
-
-    // Native
-    Array.prototype.indexOf.call(document.querySelectorAll(&apos;.radio&apos;), e.currentTarget);
+    <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// jQuery</span></span><br><span class="line">$(<span class="string">'.radio'</span>).index(e.currentTarget);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Native</span></span><br><span class="line"><span class="built_in">Array</span>.prototype.indexOf.call(<span class="built_in">document</span>.querySelectorAll(<span class="string">'.radio'</span>), e.currentTarget);</span><br></pre></td></tr></table></figure>
 </code></pre><ul>
 <li><p><a href="http://#1.9" target="_blank" rel="noopener">1.9</a> Iframe Contents <code>$(&#39;iframe&#39;).contents()</code> returns <code>contentDocument</code> for this specific iframe</p>
 <ul>
 <li><p>Iframe contents</p>
-<p>// jQuery<br>$iframe.contents();</p>
-<p>// Native<br>iframe.contentDocument;</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">    <span class="comment">// jQuery</span></span><br><span class="line">    $iframe.contents();</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// Native</span></span><br><span class="line">    iframe.contentDocument;</span><br><span class="line">    <span class="string">``</span><span class="string">`    </span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">*   Iframe Query</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    `</span><span class="string">``</span>javascript</span><br><span class="line">    <span class="comment">// jQuery</span></span><br><span class="line">    $iframe.contents().find(<span class="string">'.css'</span>);</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// Native</span></span><br><span class="line">    iframe.contentDocument.querySelectorAll(<span class="string">'.css'</span>);</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
 </ul>
-<pre><code>*   Iframe Query
-
-    // jQuery
-    $iframe.contents().find(&apos;.css&apos;);
-
-    // Native
-    iframe.contentDocument.querySelectorAll(&apos;.css&apos;);
-</code></pre><ul>
+<ul>
 <li><p><a href="http://#1.10" target="_blank" rel="noopener">1.10</a> Get body</p>
-<pre><code>// jQuery
-$(&apos;body&apos;);
-
-// Native
-document.body;
-</code></pre></li>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// jQuery</span></span><br><span class="line">$(<span class="string">'body'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Native</span></span><br><span class="line"><span class="built_in">document</span>.body;</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
 <ul>
 <li><p><a href="http://#1.11" target="_blank" rel="noopener">1.11</a> Attribute getter and setter</p>
 <ul>
 <li><p>Get an attribute</p>
-<p>// jQuery<br>$el.attr(‘foo’);</p>
-<p>// Native<br>el.getAttribute(‘foo’);</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// jQuery</span></span><br><span class="line">$el.attr(<span class="string">'foo'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Native</span></span><br><span class="line">el.getAttribute(<span class="string">'foo'</span>);</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
 </ul>
 <pre><code>*   Set an attribute
 
-    // jQuery, note that this works in memory without change the DOM
-    $el.attr(&apos;foo&apos;, &apos;bar&apos;);
-
-    // Native
-    el.setAttribute(&apos;foo&apos;, &apos;bar&apos;);
+    <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// jQuery, note that this works in memory without change the DOM</span></span><br><span class="line">$el.attr(<span class="string">'foo'</span>, <span class="string">'bar'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Native</span></span><br><span class="line">el.setAttribute(<span class="string">'foo'</span>, <span class="string">'bar'</span>);</span><br></pre></td></tr></table></figure>
 
 
 *   Get a `data-` attribute
 
-    // jQuery
-    $el.data(&apos;foo&apos;);
-
-    // Native (use `getAttribute`)
-    el.getAttribute(&apos;data-foo&apos;);
-
-    // Native (use `dataset` if only need to support IE 11+)
-    el.dataset[&apos;foo&apos;];
+    <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// jQuery</span></span><br><span class="line">$el.data(<span class="string">'foo'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Native (use `getAttribute`)</span></span><br><span class="line">el.getAttribute(<span class="string">'data-foo'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Native (use `dataset` if only need to support IE 11+)</span></span><br><span class="line">el.dataset[<span class="string">'foo'</span>];</span><br></pre></td></tr></table></figure>
 </code></pre><p><strong><a href="http://#table-of-contents" target="_blank" rel="noopener">⬆ back to top</a></strong></p>
 <h2 id="CSS-amp-Style"><a href="#CSS-amp-Style" class="headerlink" title="CSS &amp; Style"></a>CSS &amp; Style</h2><ul>
 <li><p><a href="http://#2.1" target="_blank" rel="noopener">2.1</a> CSS</p>
 <ul>
 <li><p>Get style</p>
-<p>// jQuery<br>$el.css(‘color’);</p>
-<p>// Native<br>// NOTE: Known bug, will return ‘auto’ if style value is ‘auto’<br>const win = el.ownerDocument.defaultView;</p>
-<p>// null means not to return pseudo styles<br>win.getComputedStyle(el, null).color;</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// jQuery</span></span><br><span class="line">$el.css(<span class="string">'color'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Native</span></span><br><span class="line"><span class="comment">// <span class="doctag">NOTE:</span> Known bug, will return 'auto' if style value is 'auto'</span></span><br><span class="line"><span class="keyword">const</span> win = el.ownerDocument.defaultView;</span><br><span class="line"></span><br><span class="line"><span class="comment">// null means not to return pseudo styles</span></span><br><span class="line">win.getComputedStyle(el, <span class="literal">null</span>).color;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
 </ul>
 <pre><code>*   Set style
 
-    // jQuery
-    $el.css({ color: &apos;#f01&apos; });
+    <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">    <span class="comment">// jQuery</span></span><br><span class="line">    $el.css(&#123; <span class="attr">color</span>: <span class="string">'#f01'</span> &#125;);</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// Native</span></span><br><span class="line">    el.style.color = <span class="string">'#f01'</span>;</span><br><span class="line">    <span class="string">``</span><span class="string">`    </span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">*   Get/Set Styles</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">Note that if you want to set multiple styles once, you could refer to [setStyles](https://github.com/oneuijs/oui-dom-utils/blob/master/src/index.js#L194) method in oui-dom-utils package.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">*   Add class</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    `</span><span class="string">``</span>javascript</span><br><span class="line">    <span class="comment">// jQuery</span></span><br><span class="line">    $el.addClass(className);</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// Native</span></span><br><span class="line">    el.classList.add(className);</span><br></pre></td></tr></table></figure>
 
-    // Native
-    el.style.color = &apos;#f01&apos;;
-
-
-*   Get/Set Styles
-
-Note that if you want to set multiple styles once, you could refer to [setStyles](https://github.com/oneuijs/oui-dom-utils/blob/master/src/index.js#L194) method in oui-dom-utils package.
-
-*   Add class
-
-    // jQuery
-    $el.addClass(className);
-
-    // Native
-    el.classList.add(className);
 
 
 *   Remove class
 
-    // jQuery
-    $el.removeClass(className);
-
-    // Native
-    el.classList.remove(className);
+    <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// jQuery</span></span><br><span class="line">$el.removeClass(className);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Native</span></span><br><span class="line">el.classList.remove(className);</span><br></pre></td></tr></table></figure>
 
 
 *   has class
 
-    // jQuery
-    $el.hasClass(className);
+    <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// jQuery</span></span><br><span class="line">$el.hasClass(className);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Native</span></span><br><span class="line">el.classList.contains(className);</span><br></pre></td></tr></table></figure>
 
-    // Native
-    el.classList.contains(className);
 
 
 *   Toggle class
 
-    // jQuery
-    $el.toggleClass(className);
-
-    // Native
-    el.classList.toggle(className);
+    <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// jQuery</span></span><br><span class="line">$el.toggleClass(className);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Native</span></span><br><span class="line">el.classList.toggle(className);</span><br></pre></td></tr></table></figure>
 </code></pre><ul>
 <li><p><a href="http://#2.2" target="_blank" rel="noopener">2.2</a> Width &amp; Height Width and Height are theoretically identical, take Height as example:</p>
 <ul>
-<li><p>Window height</p>
-<p>// window height<br>$(window).height();</p>
-<p>// with scrollbar<br>window.document.documentElement.clientHeight;</p>
-<p>// without scrollbar, behaves like jQuery<br>window.innerHeight;</p>
+<li>Window height<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// window height</span></span><br><span class="line">$(<span class="built_in">window</span>).height();</span><br><span class="line"></span><br><span class="line"><span class="comment">// with scrollbar</span></span><br><span class="line"><span class="built_in">window</span>.document.documentElement.clientHeight;</span><br><span class="line"></span><br><span class="line"><span class="comment">// without scrollbar, behaves like jQuery</span></span><br><span class="line"><span class="built_in">window</span>.innerHeight;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
 </ul>
 <pre><code>*   Document height
 
-    // jQuery
-    $(document).height();
+    <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// jQuery</span></span><br><span class="line">$(<span class="built_in">document</span>).height();</span><br><span class="line"></span><br><span class="line"><span class="comment">// Native</span></span><br><span class="line"><span class="keyword">const</span> body = <span class="built_in">document</span>.body;</span><br><span class="line"><span class="keyword">const</span> html = <span class="built_in">document</span>.documentElement;</span><br><span class="line"><span class="keyword">const</span> height = <span class="built_in">Math</span>.max(</span><br><span class="line">  body.offsetHeight,</span><br><span class="line">  body.scrollHeight,</span><br><span class="line">  html.clientHeight,</span><br><span class="line">  html.offsetHeight,</span><br><span class="line">  html.scrollHeight</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
 
-    // Native
-    const body = document.body;
-    const html = document.documentElement;
-    const height = Math.max(
-      body.offsetHeight,
-      body.scrollHeight,
-      html.clientHeight,
-      html.offsetHeight,
-      html.scrollHeight
-    );
 
 
 *   Element height
 
-    // jQuery
-    $el.height();
-
-    // Native
-    function getHeight(el) {
-      const styles = window.getComputedStyle(el);
-      const height = el.offsetHeight;
-      const borderTopWidth = parseFloat(styles.borderTopWidth);
-      const borderBottomWidth = parseFloat(styles.borderBottomWidth);
-      const paddingTop = parseFloat(styles.paddingTop);
-      const paddingBottom = parseFloat(styles.paddingBottom);
-      return height - borderBottomWidth - borderTopWidth - paddingTop - paddingBottom;
-    }
-
-    // accurate to integer（when `border-box`, it&apos;s `height - border`; when `content-box`, it&apos;s `height + padding`）
-    el.clientHeight;
-
-    // accurate to decimal（when `border-box`, it&apos;s `height`; when `content-box`, it&apos;s `height + padding + border`）
-    el.getBoundingClientRect().height;
+   <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// jQuery</span></span><br><span class="line">$el.height();</span><br><span class="line"></span><br><span class="line"><span class="comment">// Native</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getHeight</span>(<span class="params">el</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> styles = <span class="built_in">window</span>.getComputedStyle(el);</span><br><span class="line">  <span class="keyword">const</span> height = el.offsetHeight;</span><br><span class="line">  <span class="keyword">const</span> borderTopWidth = <span class="built_in">parseFloat</span>(styles.borderTopWidth);</span><br><span class="line">  <span class="keyword">const</span> borderBottomWidth = <span class="built_in">parseFloat</span>(styles.borderBottomWidth);</span><br><span class="line">  <span class="keyword">const</span> paddingTop = <span class="built_in">parseFloat</span>(styles.paddingTop);</span><br><span class="line">  <span class="keyword">const</span> paddingBottom = <span class="built_in">parseFloat</span>(styles.paddingBottom);</span><br><span class="line">  <span class="keyword">return</span> height - borderBottomWidth - borderTopWidth - paddingTop - paddingBottom;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// accurate to integer（when `border-box`, it's `height - border`; when `content-box`, it's `height + padding`）</span></span><br><span class="line">el.clientHeight;</span><br><span class="line"></span><br><span class="line"><span class="comment">// accurate to decimal（when `border-box`, it's `height`; when `content-box`, it's `height + padding + border`）</span></span><br><span class="line">el.getBoundingClientRect().height;</span><br></pre></td></tr></table></figure>
 </code></pre><ul>
 <li><p><a href="http://#2.3" target="_blank" rel="noopener">2.3</a> Position &amp; Offset</p>
 <ul>
 <li>Position</li>
 </ul>
 <p>Get the current coordinates of the element relative to the offset parent.</p>
-<pre><code>// jQuery
-$el.position();
-
-// Native
-{ left: el.offsetLeft, top: el.offsetTop }
-</code></pre></li>
+   <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// jQuery</span></span><br><span class="line">$el.position();</span><br><span class="line"></span><br><span class="line"><span class="comment">// Native</span></span><br><span class="line">&#123; <span class="attr">left</span>: el.offsetLeft, <span class="attr">top</span>: el.offsetTop &#125;</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
 <pre><code>*   Offset
 
 Get the current coordinates of the element relative to the document.
 
-    // jQuery
-    $el.offset();
-
-    // Native
-    function getOffset (el) {
-      const box = el.getBoundingClientRect();
-
-      return {
-        top: box.top + window.pageYOffset - document.documentElement.clientTop,
-        left: box.left + window.pageXOffset - document.documentElement.clientLeft
-      };
-    }
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// jQuery</span></span><br><span class="line">$el.offset();</span><br><span class="line"></span><br><span class="line"><span class="comment">// Native</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getOffset</span> (<span class="params">el</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> box = el.getBoundingClientRect();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">    top: box.top + <span class="built_in">window</span>.pageYOffset - <span class="built_in">document</span>.documentElement.clientTop,</span><br><span class="line">    left: box.left + <span class="built_in">window</span>.pageXOffset - <span class="built_in">document</span>.documentElement.clientLeft</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </code></pre><ul>
 <li><p><a href="http://#2.4" target="_blank" rel="noopener">2.4</a> Scroll Top Get the current vertical position of the scroll bar for the element.</p>
-<pre><code>// jQuery
-$(window).scrollTop();
-
-// Native
-(document.documentElement &amp;&amp; document.documentElement.scrollTop) || document.body.scrollTop;
-</code></pre></li>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// jQuery</span></span><br><span class="line">$(<span class="built_in">window</span>).scrollTop();</span><br><span class="line"></span><br><span class="line"><span class="comment">// Native</span></span><br><span class="line">(<span class="built_in">document</span>.documentElement &amp;&amp; <span class="built_in">document</span>.documentElement.scrollTop) || <span class="built_in">document</span>.body.scrollTop;</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
 <p><strong><a href="http://#table-of-contents" target="_blank" rel="noopener">⬆ back to top</a></strong></p>
 <h2 id="DOM-Manipulation"><a href="#DOM-Manipulation" class="headerlink" title="DOM Manipulation"></a>DOM Manipulation</h2><ul>
 <li><p><a href="http://#3.1" target="_blank" rel="noopener">3.1</a> Remove Remove the element from the DOM.</p>
-<pre><code>// jQuery
-$el.remove();
-
-// Native
-el.parentNode.removeChild(el);
-</code></pre></li>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// jQuery</span></span><br><span class="line">$el.remove();</span><br><span class="line"></span><br><span class="line"><span class="comment">// Native</span></span><br><span class="line">el.parentNode.removeChild(el);</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
 <ul>
 <li><p><a href="http://#3.2" target="_blank" rel="noopener">3.2</a> Text</p>
@@ -780,253 +584,109 @@ el.parentNode.removeChild(el);
 <li>Get text</li>
 </ul>
 <p>Get the combined text contents of the element including their descendants,</p>
-<pre><code>// jQuery
-$el.text();
-
-// Native
-el.textContent;
-</code></pre></li>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// jQuery</span></span><br><span class="line">$el.text();</span><br><span class="line"></span><br><span class="line"><span class="comment">// Native</span></span><br><span class="line">el.textContent;</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
 <pre><code>*   Set text
 
 Set the content of the element to the specified text.
 
-    // jQuery
-    $el.text(string);
-
-    // Native
-    el.textContent = string;
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// jQuery</span></span><br><span class="line">$el.text(string);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Native</span></span><br><span class="line">el.textContent = string;</span><br></pre></td></tr></table></figure>
 </code></pre><ul>
 <li><p><a href="http://#3.3" target="_blank" rel="noopener">3.3</a> HTML</p>
 <ul>
 <li><p>Get HTML</p>
-<p>// jQuery<br>$el.html();</p>
-<p>// Native<br>el.innerHTML;</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// jQuery</span></span><br><span class="line">$el.html();</span><br><span class="line"></span><br><span class="line"><span class="comment">// Native</span></span><br><span class="line">el.innerHTML;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
 </ul>
 <pre><code>*   Set HTML
 
-    // jQuery
-    $el.html(htmlString);
-
-    // Native
-    el.innerHTML = htmlString;
+    <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// jQuery</span></span><br><span class="line">$el.html(htmlString);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Native</span></span><br><span class="line">el.innerHTML = htmlString;</span><br></pre></td></tr></table></figure>
 </code></pre><ul>
 <li><p><a href="http://#3.4" target="_blank" rel="noopener">3.4</a> Append Append child element after the last child of parent element</p>
-<pre><code>// jQuery
-$el.append(&apos;&lt;div id=&quot;container&quot;&gt;Hello World&lt;/div&gt;&apos;);
-
-// Native (HTML string)
-el.insertAdjacentHTML(&apos;beforeend&apos;, &apos;&lt;div id=&quot;container&quot;&gt;Hello World&lt;/div&gt;&apos;);
-
-// Native (Element)
-el.appendChild(newEl);
-</code></pre></li>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// jQuery</span></span><br><span class="line">$el.append(<span class="string">'&lt;div id="container"&gt;Hello World&lt;/div&gt;'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Native (HTML string)</span></span><br><span class="line">el.insertAdjacentHTML(<span class="string">'beforeend'</span>, <span class="string">'&lt;div id="container"&gt;Hello World&lt;/div&gt;'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Native (Element)</span></span><br><span class="line">el.appendChild(newEl);</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
 <ul>
 <li><p><a href="http://#3.5" target="_blank" rel="noopener">3.5</a> Prepend</p>
-<pre><code>// jQuery
-$el.prepend(&apos;&lt;div id=&quot;container&quot;&gt;Hello World&lt;/div&gt;&apos;);
-
-// Native (HTML string)
-el.insertAdjacentHTML(&apos;afterbegin&apos;, &apos;&lt;div id=&quot;container&quot;&gt;Hello World&lt;/div&gt;&apos;);
-
-// Native (Element)
-el.insertBefore(newEl, el.firstChild);
-</code></pre></li>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// jQuery</span></span><br><span class="line">$el.prepend(<span class="string">'&lt;div id="container"&gt;Hello World&lt;/div&gt;'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Native (HTML string)</span></span><br><span class="line">el.insertAdjacentHTML(<span class="string">'afterbegin'</span>, <span class="string">'&lt;div id="container"&gt;Hello World&lt;/div&gt;'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Native (Element)</span></span><br><span class="line">el.insertBefore(newEl, el.firstChild);</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
 <ul>
 <li><p><a href="http://#3.6" target="_blank" rel="noopener">3.6</a> insertBefore Insert a new node before the selected elements</p>
-<pre><code>// jQuery
-$newEl.insertBefore(selector);
-
-// Native (HTML string)
-el.insertAdjacentHTML(&apos;beforebegin &apos;, &apos;&lt;div id=&quot;container&quot;&gt;Hello World&lt;/div&gt;&apos;);
-
-// Native (Element)
-const el = document.querySelector(selector);
-if (el.parentNode) {
-el.parentNode.insertBefore(newEl, el);
-}
-</code></pre></li>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// jQuery</span></span><br><span class="line">$newEl.insertBefore(selector);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Native (HTML string)</span></span><br><span class="line">el.insertAdjacentHTML(<span class="string">'beforebegin '</span>, <span class="string">'&lt;div id="container"&gt;Hello World&lt;/div&gt;'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Native (Element)</span></span><br><span class="line"><span class="keyword">const</span> el = <span class="built_in">document</span>.querySelector(selector);</span><br><span class="line"><span class="keyword">if</span> (el.parentNode) &#123;</span><br><span class="line">el.parentNode.insertBefore(newEl, el);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
 <ul>
 <li><p><a href="http://#3.7" target="_blank" rel="noopener">3.7</a> insertAfter Insert a new node after the selected elements</p>
-<pre><code>// jQuery
-$newEl.insertAfter(selector);
-
-// Native (HTML string)
-el.insertAdjacentHTML(&apos;afterend&apos;, &apos;&lt;div id=&quot;container&quot;&gt;Hello World&lt;/div&gt;&apos;);
-
-// Native (Element)
-const el = document.querySelector(selector);
-if (el.parentNode) {
-el.parentNode.insertBefore(newEl, el.nextSibling);
-}
-</code></pre></li>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// jQuery</span></span><br><span class="line">$newEl.insertAfter(selector);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Native (HTML string)</span></span><br><span class="line">el.insertAdjacentHTML(<span class="string">'afterend'</span>, <span class="string">'&lt;div id="container"&gt;Hello World&lt;/div&gt;'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Native (Element)</span></span><br><span class="line"><span class="keyword">const</span> el = <span class="built_in">document</span>.querySelector(selector);</span><br><span class="line"><span class="keyword">if</span> (el.parentNode) &#123;</span><br><span class="line">el.parentNode.insertBefore(newEl, el.nextSibling);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
 <ul>
 <li><p><a href="http://#3.8" target="_blank" rel="noopener">3.8</a> is Return <code>true</code> if it matches the query selector</p>
-<pre><code>// jQuery - Notice `is` also work with `function` or `elements` which is not concerned here
-$el.is(selector);
-
-// Native
-el.matches(selector);
-</code></pre></li>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// jQuery - Notice `is` also work with `function` or `elements` which is not concerned here</span></span><br><span class="line">$el.is(selector);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Native</span></span><br><span class="line">el.matches(selector);</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
 <ul>
 <li><p><a href="http://#3.9" target="_blank" rel="noopener">3.9</a> clone Create a deep copy of that element</p>
-<pre><code>// jQuery
-$el.clone();
-
-// Native
-el.cloneNode();
-
-// For Deep clone , set param as `true`
-</code></pre></li>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// jQuery</span></span><br><span class="line">$el.clone();</span><br><span class="line"></span><br><span class="line"><span class="comment">// Native</span></span><br><span class="line">el.cloneNode();</span><br><span class="line"></span><br><span class="line"><span class="comment">// For Deep clone , set param as `true`</span></span><br></pre></td></tr></table></figure>
+</li>
 </ul>
 <ul>
 <li><p><a href="http://#3.10" target="_blank" rel="noopener">3.10</a> empty Remove all child nodes</p>
-<pre><code>// jQuery
-$el.empty();
-
-// Native
-el.innerHTML = &apos;&apos;;
-</code></pre></li>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// jQuery</span></span><br><span class="line">$el.empty();</span><br><span class="line"></span><br><span class="line"><span class="comment">// Native</span></span><br><span class="line">el.innerHTML = <span class="string">''</span>;</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
 <ul>
 <li><p><a href="http://#3.11" target="_blank" rel="noopener">3.11</a> wrap Wrap an HTML structure around each element</p>
-<pre><code>// jQuery
-$(&apos;.inner&apos;).wrap(&apos;&lt;div class=&quot;wrapper&quot;&gt;&lt;/div&gt;&apos;);
-
-// Native
-Array.prototype.forEach.call(document.querySelectorAll(&apos;.inner&apos;), (el) =&gt; {
-const wrapper = document.createElement(&apos;div&apos;);
-wrapper.className = &apos;wrapper&apos;;
-el.parentNode.insertBefore(wrapper, el);
-el.parentNode.removeChild(el);
-wrapper.appendChild(el);
-});
-</code></pre></li>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// jQuery</span></span><br><span class="line">$(<span class="string">'.inner'</span>).wrap(<span class="string">'&lt;div class="wrapper"&gt;&lt;/div&gt;'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Native</span></span><br><span class="line"><span class="built_in">Array</span>.prototype.forEach.call(<span class="built_in">document</span>.querySelectorAll(<span class="string">'.inner'</span>), (el) =&gt; &#123;</span><br><span class="line"><span class="keyword">const</span> wrapper = <span class="built_in">document</span>.createElement(<span class="string">'div'</span>);</span><br><span class="line">wrapper.className = <span class="string">'wrapper'</span>;</span><br><span class="line">el.parentNode.insertBefore(wrapper, el);</span><br><span class="line">el.parentNode.removeChild(el);</span><br><span class="line">wrapper.appendChild(el);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
 <ul>
 <li><p><a href="http://#3.12" target="_blank" rel="noopener">3.12</a> unwrap Remove the parents of the set of matched elements from the DOM</p>
-<pre><code>// jQuery
-$(&apos;.inner&apos;).unwrap();
-
-// Native
-Array.prototype.forEach.call(document.querySelectorAll(&apos;.inner&apos;), (el) =&gt; {
-Array.prototype.forEach.call(el.childNodes, (child) =&gt; {
-  el.parentNode.insertBefore(child, el);
-});
-el.parentNode.removeChild(el);
-});
-</code></pre></li>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// jQuery</span></span><br><span class="line">$(<span class="string">'.inner'</span>).unwrap();</span><br><span class="line"></span><br><span class="line"><span class="comment">// Native</span></span><br><span class="line"><span class="built_in">Array</span>.prototype.forEach.call(<span class="built_in">document</span>.querySelectorAll(<span class="string">'.inner'</span>), (el) =&gt; &#123;</span><br><span class="line"><span class="built_in">Array</span>.prototype.forEach.call(el.childNodes, (child) =&gt; &#123;</span><br><span class="line">    el.parentNode.insertBefore(child, el);</span><br><span class="line">&#125;);</span><br><span class="line">el.parentNode.removeChild(el);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
 <ul>
 <li><p><a href="http://#3.13" target="_blank" rel="noopener">3.13</a> replaceWith Replace each element in the set of matched elements with the provided new content</p>
-<pre><code>// jQuery
-$(&apos;.inner&apos;).replaceWith(&apos;&lt;div class=&quot;outer&quot;&gt;&lt;/div&gt;&apos;);
-
-// Native
-Array.prototype.forEach.call(document.querySelectorAll(&apos;.inner&apos;), (el) =&gt; {
-const outer = document.createElement(&apos;div&apos;);
-outer.className = &apos;outer&apos;;
-el.parentNode.insertBefore(outer, el);
-el.parentNode.removeChild(el);
-});
-</code></pre></li>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// jQuery</span></span><br><span class="line">$(<span class="string">'.inner'</span>).replaceWith(<span class="string">'&lt;div class="outer"&gt;&lt;/div&gt;'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Native</span></span><br><span class="line"><span class="built_in">Array</span>.prototype.forEach.call(<span class="built_in">document</span>.querySelectorAll(<span class="string">'.inner'</span>), (el) =&gt; &#123;</span><br><span class="line"><span class="keyword">const</span> outer = <span class="built_in">document</span>.createElement(<span class="string">'div'</span>);</span><br><span class="line">outer.className = <span class="string">'outer'</span>;</span><br><span class="line">el.parentNode.insertBefore(outer, el);</span><br><span class="line">el.parentNode.removeChild(el);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
 <ul>
 <li><p><a href="http://#3.14" target="_blank" rel="noopener">3.14</a> simple parse Parse a string into HTML/SVG/XML</p>
-<pre><code>// jQuery
-$(`&lt;ol&gt;
-&lt;li&gt;a&lt;/li&gt;
-&lt;li&gt;b&lt;/li&gt;
-&lt;/ol&gt;
-&lt;ol&gt;
-&lt;li&gt;c&lt;/li&gt;
-&lt;li&gt;d&lt;/li&gt;
-&lt;/ol&gt;`);
-
-// Native
-range = document.createRange();
-parse = range.createContextualFragment.bind(range);
-
-parse(`&lt;ol&gt;
-&lt;li&gt;a&lt;/li&gt;
-&lt;li&gt;b&lt;/li&gt;
-&lt;/ol&gt;
-&lt;ol&gt;
-&lt;li&gt;c&lt;/li&gt;
-&lt;li&gt;d&lt;/li&gt;
-&lt;/ol&gt;`);
-</code></pre></li>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// jQuery</span></span><br><span class="line">$(<span class="string">`&lt;ol&gt;</span></span><br><span class="line"><span class="string">&lt;li&gt;a&lt;/li&gt;</span></span><br><span class="line"><span class="string">&lt;li&gt;b&lt;/li&gt;</span></span><br><span class="line"><span class="string">&lt;/ol&gt;</span></span><br><span class="line"><span class="string">&lt;ol&gt;</span></span><br><span class="line"><span class="string">&lt;li&gt;c&lt;/li&gt;</span></span><br><span class="line"><span class="string">&lt;li&gt;d&lt;/li&gt;</span></span><br><span class="line"><span class="string">&lt;/ol&gt;`</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Native</span></span><br><span class="line">range = <span class="built_in">document</span>.createRange();</span><br><span class="line">parse = range.createContextualFragment.bind(range);</span><br><span class="line"></span><br><span class="line">parse(<span class="string">`&lt;ol&gt;</span></span><br><span class="line"><span class="string">&lt;li&gt;a&lt;/li&gt;</span></span><br><span class="line"><span class="string">&lt;li&gt;b&lt;/li&gt;</span></span><br><span class="line"><span class="string">&lt;/ol&gt;</span></span><br><span class="line"><span class="string">&lt;ol&gt;</span></span><br><span class="line"><span class="string">&lt;li&gt;c&lt;/li&gt;</span></span><br><span class="line"><span class="string">&lt;li&gt;d&lt;/li&gt;</span></span><br><span class="line"><span class="string">&lt;/ol&gt;`</span>);</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
 <p><strong><a href="http://#table-of-contents" target="_blank" rel="noopener">⬆ back to top</a></strong></p>
 <h2 id="Ajax"><a href="#Ajax" class="headerlink" title="Ajax"></a>Ajax</h2><p><a href="https://fetch.spec.whatwg.org/" target="_blank" rel="noopener">Fetch API</a> is the new standard to replace XMLHttpRequest to do ajax. It works on Chrome and Firefox, you can use polyfills to make it work on legacy browsers. Try <a href="http://github.com/github/fetch" target="_blank" rel="noopener">github/fetch</a> on IE9+ or <a href="https://github.com/camsong/fetch-ie8/" target="_blank" rel="noopener">fetch-ie8</a> on IE8+, <a href="https://github.com/camsong/fetch-jsonp" target="_blank" rel="noopener">fetch-jsonp</a> to make JSONP requests.</p>
 <ul>
 <li><p><a href="http://#4.1" target="_blank" rel="noopener">4.1</a> Load data from the server and place the returned HTML into the matched element.</p>
-<pre><code>// jQuery
-$(selector).load(url, completeCallback)
-
-// Native
-fetch(url).then(data =&gt; data.text()).then(data =&gt; {
-document.querySelector(selector).innerHTML = data
-}).then(completeCallback)
-</code></pre></li>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// jQuery</span></span><br><span class="line">$(selector).load(url, completeCallback)</span><br><span class="line"></span><br><span class="line"><span class="comment">// Native</span></span><br><span class="line">fetch(url).then(<span class="function"><span class="params">data</span> =&gt;</span> data.text()).then(<span class="function"><span class="params">data</span> =&gt;</span> &#123;</span><br><span class="line"><span class="built_in">document</span>.querySelector(selector).innerHTML = data</span><br><span class="line">&#125;).then(completeCallback)</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
 <p><strong><a href="http://#table-of-contents" target="_blank" rel="noopener">⬆ back to top</a></strong></p>
 <h2 id="Events"><a href="#Events" class="headerlink" title="Events"></a>Events</h2><p>For a complete replacement with namespace and delegation, refer to <a href="https://github.com/oneuijs/oui-dom-events" target="_blank" rel="noopener">https://github.com/oneuijs/oui-dom-events</a></p>
 <ul>
 <li><p><a href="http://#5.0" target="_blank" rel="noopener">5.0</a> Document ready by <code>DOMContentLoaded</code></p>
-<pre><code>// jQuery
-$(document).ready(eventHandler);
-
-// Native
-// Check if the DOMContentLoaded has already been completed
-if (document.readyState === &apos;complete&apos; || document.readyState !== &apos;loading&apos;) {
-eventHandler();
-} else {
-document.addEventListener(&apos;DOMContentLoaded&apos;, eventHandler);
-}
-</code></pre></li>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// jQuery</span></span><br><span class="line">$(<span class="built_in">document</span>).ready(eventHandler);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Native</span></span><br><span class="line"><span class="comment">// Check if the DOMContentLoaded has already been completed</span></span><br><span class="line"><span class="keyword">if</span> (<span class="built_in">document</span>.readyState === <span class="string">'complete'</span> || <span class="built_in">document</span>.readyState !== <span class="string">'loading'</span>) &#123;</span><br><span class="line">eventHandler();</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line"><span class="built_in">document</span>.addEventListener(<span class="string">'DOMContentLoaded'</span>, eventHandler);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
 <ul>
 <li><p><a href="http://#5.1" target="_blank" rel="noopener">5.1</a> Bind an event with on</p>
-<pre><code>// jQuery
-$el.on(eventName, eventHandler);
-
-// Native
-el.addEventListener(eventName, eventHandler);
-</code></pre></li>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// jQuery</span></span><br><span class="line">$el.on(eventName, eventHandler);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Native</span></span><br><span class="line">el.addEventListener(eventName, eventHandler);</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
 <ul>
 <li><p><a href="http://#5.2" target="_blank" rel="noopener">5.2</a> Unbind an event with off</p>
-<pre><code>// jQuery
-$el.off(eventName, eventHandler);
-
-// Native
-el.removeEventListener(eventName, eventHandler);
-</code></pre></li>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// jQuery</span></span><br><span class="line">$el.off(eventName, eventHandler);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Native</span></span><br><span class="line">el.removeEventListener(eventName, eventHandler);</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
 <ul>
 <li><p><a href="http://#5.3" target="_blank" rel="noopener">5.3</a> Trigger</p>
-<pre><code>// jQuery
-$(el).trigger(&apos;custom-event&apos;, {key1: &apos;data&apos;});
-
-// Native
-if (window.CustomEvent) {
-const event = new CustomEvent(&apos;custom-event&apos;, {detail: {key1: &apos;data&apos;}});
-} else {
-const event = document.createEvent(&apos;CustomEvent&apos;);
-event.initCustomEvent(&apos;custom-event&apos;, true, true, {key1: &apos;data&apos;});
-}
-
-el.dispatchEvent(event);
-</code></pre></li>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// jQuery</span></span><br><span class="line">$(el).trigger(<span class="string">'custom-event'</span>, &#123;<span class="attr">key1</span>: <span class="string">'data'</span>&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Native</span></span><br><span class="line"><span class="keyword">if</span> (<span class="built_in">window</span>.CustomEvent) &#123;</span><br><span class="line"><span class="keyword">const</span> event = <span class="keyword">new</span> CustomEvent(<span class="string">'custom-event'</span>, &#123;<span class="attr">detail</span>: &#123;<span class="attr">key1</span>: <span class="string">'data'</span>&#125;&#125;);</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line"><span class="keyword">const</span> event = <span class="built_in">document</span>.createEvent(<span class="string">'CustomEvent'</span>);</span><br><span class="line">event.initCustomEvent(<span class="string">'custom-event'</span>, <span class="literal">true</span>, <span class="literal">true</span>, &#123;<span class="attr">key1</span>: <span class="string">'data'</span>&#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">el.dispatchEvent(event);</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
 <p><strong><a href="http://#table-of-contents" target="_blank" rel="noopener">⬆ back to top</a></strong></p>
 <h2 id="Utilities"><a href="#Utilities" class="headerlink" title="Utilities"></a>Utilities</h2><p>Most of utilities are found by native API. Others advanced functions could be chosen better utilities library focus on consistency and performance. Recommend <a href="https://lodash.com" target="_blank" rel="noopener">lodash</a> to replace.</p>
@@ -1036,257 +696,141 @@ el.dispatchEvent(event);
 <li>isArray</li>
 </ul>
 <p>Determine whether the argument is an array.</p>
-<pre><code>// jQuery
-$.isArray(array);
-
-// Native
-Array.isArray(array);
-</code></pre></li>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// jQuery</span></span><br><span class="line">$.isArray(array);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Native</span></span><br><span class="line"><span class="built_in">Array</span>.isArray(array);</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
 <pre><code>*   isWindow
 
 Determine whether the argument is a window.
 
-    // jQuery
-    $.isWindow(obj);
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// jQuery</span></span><br><span class="line">$.isWindow(obj);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Native</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">isWindow</span>(<span class="params">obj</span>) </span>&#123;</span><br><span class="line"><span class="keyword">return</span> obj !== <span class="literal">null</span> &amp;&amp; obj !== <span class="literal">undefined</span> &amp;&amp; obj === obj.window;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-    // Native
-    function isWindow(obj) {
-    return obj !== null &amp;&amp; obj !== undefined &amp;&amp; obj === obj.window;
-    }
 
 
 *   inArray
 
 Search for a specified value within an array and return its index (or -1 if not found).
 
-    // jQuery
-    $.inArray(item, array);
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// jQuery</span></span><br><span class="line">$.inArray(item, array);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Native</span></span><br><span class="line">array.indexOf(item) &gt; <span class="number">-1</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// ES6-way</span></span><br><span class="line">array.includes(item);</span><br></pre></td></tr></table></figure>
 
-    // Native
-    array.indexOf(item) &gt; -1;
-
-    // ES6-way
-    array.includes(item);
 
 
 *   isNumeric
 
 Determine if the argument passed is numerical. Use `typeof` to decide the type or the `type` example for better accuracy.
 
-    // jQuery
-    $.isNumeric(item);
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// jQuery</span></span><br><span class="line">$.isNumeric(item);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Native</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">isNumeric</span>(<span class="params">value</span>) </span>&#123;</span><br><span class="line"><span class="keyword">var</span> type = <span class="keyword">typeof</span> value;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> (type === <span class="string">'number'</span> || type === <span class="string">'string'</span>) &amp;&amp; !<span class="built_in">Number</span>.isNaN(value - <span class="built_in">Number</span>.parseFloat(value));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-    // Native
-    function isNumeric(value) {
-    var type = typeof value;
-
-    return (type === &apos;number&apos; || type === &apos;string&apos;) &amp;&amp; !Number.isNaN(value - Number.parseFloat(value));
-    }
 
 
 *   isFunction
 
 Determine if the argument passed is a JavaScript function object.
 
-    // jQuery
-    $.isFunction(item);
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// jQuery</span></span><br><span class="line">$.isFunction(item);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Native</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">isFunction</span>(<span class="params">item</span>) </span>&#123;</span><br><span class="line"><span class="keyword">if</span> (<span class="keyword">typeof</span> item === <span class="string">'function'</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> type = <span class="built_in">Object</span>.prototype.toString(item);</span><br><span class="line"><span class="keyword">return</span> type === <span class="string">'[object Function]'</span> || type === <span class="string">'[object GeneratorFunction]'</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-    // Native
-    function isFunction(item) {
-    if (typeof item === &apos;function&apos;) {
-      return true;
-    }
-    var type = Object.prototype.toString(item);
-    return type === &apos;[object Function]&apos; || type === &apos;[object GeneratorFunction]&apos;;
-    }
 
 
 *   isEmptyObject
 
 Check to see if an object is empty (contains no enumerable properties).
 
-    // jQuery
-    $.isEmptyObject(obj);
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// jQuery</span></span><br><span class="line">$.isEmptyObject(obj);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Native</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">isEmptyObject</span>(<span class="params">obj</span>) </span>&#123;</span><br><span class="line"><span class="keyword">return</span> <span class="built_in">Object</span>.keys(obj).length === <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-    // Native
-    function isEmptyObject(obj) {
-    return Object.keys(obj).length === 0;
-    }
 
 
 *   isPlainObject
 
 Check to see if an object is a plain object (created using “{}” or “new Object”).
 
-    // jQuery
-    $.isPlainObject(obj);
-
-    // Native
-    function isPlainObject(obj) {
-    if (typeof (obj) !== &apos;object&apos; || obj.nodeType || obj !== null &amp;&amp; obj !== undefined &amp;&amp; obj === obj.window) {
-      return false;
-    }
-
-    if (obj.constructor &amp;&amp;
-        !Object.prototype.hasOwnProperty.call(obj.constructor.prototype, &apos;isPrototypeOf&apos;)) {
-      return false;
-    }
-
-    return true;
-    }
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// jQuery</span></span><br><span class="line">$.isPlainObject(obj);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Native</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">isPlainObject</span>(<span class="params">obj</span>) </span>&#123;</span><br><span class="line"><span class="keyword">if</span> (<span class="keyword">typeof</span> (obj) !== <span class="string">'object'</span> || obj.nodeType || obj !== <span class="literal">null</span> &amp;&amp; obj !== <span class="literal">undefined</span> &amp;&amp; obj === obj.window) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (obj.constructor &amp;&amp;</span><br><span class="line">    !<span class="built_in">Object</span>.prototype.hasOwnProperty.call(obj.constructor.prototype, <span class="string">'isPrototypeOf'</span>)) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
 *   extend
 
 Merge the contents of two or more objects together into the first object. object.assign is ES6 API, and you could use [polyfill](https://github.com/ljharb/object.assign) also.
 
-    // jQuery
-    $.extend({}, defaultOpts, opts);
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// jQuery</span></span><br><span class="line">$.extend(&#123;&#125;, defaultOpts, opts);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Native</span></span><br><span class="line"><span class="built_in">Object</span>.assign(&#123;&#125;, defaultOpts, opts);</span><br></pre></td></tr></table></figure>
 
-    // Native
-    Object.assign({}, defaultOpts, opts);
 
 
 *   trim
 
 Remove the white-space from the beginning and end of a string.
 
-    // jQuery
-    $.trim(string);
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// jQuery</span></span><br><span class="line">$.trim(string);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Native</span></span><br><span class="line">string.trim();</span><br></pre></td></tr></table></figure>
 
-    // Native
-    string.trim();
 
 
 *   map
 
 Translate all items in an array or object to new array of items.
 
-    // jQuery
-    $.map(array, (value, index) =&gt; {
-    });
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// jQuery</span></span><br><span class="line">$.map(array, (value, index) =&gt; &#123;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Native</span></span><br><span class="line">array.map(<span class="function">(<span class="params">value, index</span>) =&gt;</span> &#123;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 
-    // Native
-    array.map((value, index) =&gt; {
-    });
 
 
 *   each
 
 A generic iterator function, which can be used to seamlessly iterate over both objects and arrays.
 
-    // jQuery
-    $.each(array, (index, value) =&gt; {
-    });
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// jQuery</span></span><br><span class="line">$.each(array, (index, value) =&gt; &#123;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Native</span></span><br><span class="line">array.forEach(<span class="function">(<span class="params">value, index</span>) =&gt;</span> &#123;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 
-    // Native
-    array.forEach((value, index) =&gt; {
-    });
 
 
 *   grep
 
 Finds the elements of an array which satisfy a filter function.
 
-    // jQuery
-    $.grep(array, (value, index) =&gt; {
-    });
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// jQuery</span></span><br><span class="line">$.grep(array, (value, index) =&gt; &#123;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Native</span></span><br><span class="line">array.filter(<span class="function">(<span class="params">value, index</span>) =&gt;</span> &#123;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 
-    // Native
-    array.filter((value, index) =&gt; {
-    });
 
 
 *   type
 
 Determine the internal JavaScript \[Class\] of an object.
 
-    // jQuery
-    $.type(obj);
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// jQuery</span></span><br><span class="line">$.type(obj);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Native</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">type</span>(<span class="params">item</span>) </span>&#123;</span><br><span class="line"><span class="keyword">const</span> reTypeOf = <span class="regexp">/(?:^\[object\s(.*?)\]$)/</span>;</span><br><span class="line"><span class="keyword">return</span> <span class="built_in">Object</span>.prototype.toString.call(item)</span><br><span class="line">    .replace(reTypeOf, <span class="string">'$1'</span>)</span><br><span class="line">    .toLowerCase();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-    // Native
-    function type(item) {
-    const reTypeOf = /(?:^\[object\s(.*?)\]$)/;
-    return Object.prototype.toString.call(item)
-      .replace(reTypeOf, &apos;$1&apos;)
-      .toLowerCase();
-    }
 
 
 *   merge
 
 Merge the contents of two arrays together into the first array.
 
-    // jQuery
-    $.merge(array1, array2);
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// jQuery</span></span><br><span class="line">$.merge(array1, array2);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Native</span></span><br><span class="line"><span class="comment">// But concat function doesn't remove duplicate items.</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">merge</span>(<span class="params">...args</span>) </span>&#123;</span><br><span class="line"><span class="keyword">return</span> [].concat(...args)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-    // Native
-    // But concat function doesn&apos;t remove duplicate items.
-    function merge(...args) {
-    return [].concat(...args)
-    }
 
 
 *   now
 
 Return a number representing the current time.
 
-    // jQuery
-    $.now();
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// jQuery</span></span><br><span class="line">$.now();</span><br><span class="line"></span><br><span class="line"><span class="comment">// Native</span></span><br><span class="line"><span class="built_in">Date</span>.now();</span><br></pre></td></tr></table></figure>
 
-    // Native
-    Date.now();
 
 
 *   proxy
 
 Takes a function and returns a new one that will always have a particular context.
 
-    // jQuery
-    $.proxy(fn, context);
-
-    // Native
-    fn.bind(context);
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// jQuery</span></span><br><span class="line">$.proxy(fn, context);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Native</span></span><br><span class="line">fn.bind(context);</span><br></pre></td></tr></table></figure>
 
 
 *   makeArray
 
 Convert an array-like object into a true JavaScript array.
 
-    // jQuery
-    $.makeArray(arrayLike);
-
-    // Native
-    Array.prototype.slice.call(arrayLike);
-
-    // ES6-way
-    Array.from(arrayLike);
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// jQuery</span></span><br><span class="line">$.makeArray(arrayLike);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Native</span></span><br><span class="line"><span class="built_in">Array</span>.prototype.slice.call(arrayLike);</span><br><span class="line"></span><br><span class="line"><span class="comment">// ES6-way</span></span><br><span class="line"><span class="built_in">Array</span>.from(arrayLike);</span><br></pre></td></tr></table></figure>
 </code></pre><ul>
 <li><p><a href="http://#6.2" target="_blank" rel="noopener">6.2</a> Contains Check to see if a DOM element is a descendant of another DOM element.</p>
-<pre><code>// jQuery
-$.contains(el, child);
-
-// Native
-el !== child &amp;&amp; el.contains(child);
-</code></pre></li>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// jQuery</span></span><br><span class="line">$.contains(el, child);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Native</span></span><br><span class="line">el !== child &amp;&amp; el.contains(child);</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
 <ul>
 <li><p><a href="http://#6.3" target="_blank" rel="noopener">6.3</a> Globaleval Execute some JavaScript code globally.</p>
-<pre><code>// jQuery
-$.globaleval(code);
-
-// Native
-function Globaleval(code) {
-const script = document.createElement(&apos;script&apos;);
-script.text = code;
-
-document.head.appendChild(script).parentNode.removeChild(script);
-}
-
-// Use eval, but context of eval is current, context of $.Globaleval is global.
-eval(code);
-</code></pre></li>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// jQuery</span></span><br><span class="line">$.globaleval(code);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Native</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Globaleval</span>(<span class="params">code</span>) </span>&#123;</span><br><span class="line"><span class="keyword">const</span> script = <span class="built_in">document</span>.createElement(<span class="string">'script'</span>);</span><br><span class="line">script.text = code;</span><br><span class="line"></span><br><span class="line"><span class="built_in">document</span>.head.appendChild(script).parentNode.removeChild(script);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// Use eval, but context of eval is current, context of $.Globaleval is global.</span></span><br><span class="line"><span class="built_in">eval</span>(code);</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
 <ul>
 <li><p><a href="http://#6.4" target="_blank" rel="noopener">6.4</a> parse</p>
@@ -1294,219 +838,72 @@ eval(code);
 <li>parseHTML</li>
 </ul>
 <p>Parses a string into an array of DOM nodes.</p>
-<pre><code>// jQuery
-$.parseHTML(htmlString);
-
-// Native
-function parseHTML(string) {
-const context = document.implementation.createHTMLDocument();
-
-// Set the base href for the created document so any parsed elements with URLs
-// are based on the document&apos;s URL
-const base = context.createElement(&apos;base&apos;);
-base.href = document.location.href;
-context.head.appendChild(base);
-
-context.body.innerHTML = string;
-return context.body.children;
-}
-</code></pre></li>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// jQuery</span></span><br><span class="line">$.parseHTML(htmlString);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Native</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">parseHTML</span>(<span class="params">string</span>) </span>&#123;</span><br><span class="line"><span class="keyword">const</span> context = <span class="built_in">document</span>.implementation.createHTMLDocument();</span><br><span class="line"></span><br><span class="line"><span class="comment">// Set the base href for the created document so any parsed elements with URLs</span></span><br><span class="line"><span class="comment">// are based on the document's URL</span></span><br><span class="line"><span class="keyword">const</span> base = context.createElement(<span class="string">'base'</span>);</span><br><span class="line">base.href = <span class="built_in">document</span>.location.href;</span><br><span class="line">context.head.appendChild(base);</span><br><span class="line"></span><br><span class="line">context.body.innerHTML = string;</span><br><span class="line"><span class="keyword">return</span> context.body.children;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
 <pre><code>*   parseJSON
 
 Takes a well-formed JSON string and returns the resulting JavaScript value.
 
-    // jQuery
-    $.parseJSON(str);
 
-    // Native
-    JSON.parse(str);
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// jQuery</span></span><br><span class="line">$.parseJSON(str);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Native</span></span><br><span class="line"><span class="built_in">JSON</span>.parse(str);</span><br></pre></td></tr></table></figure>
 </code></pre><p><strong><a href="http://#table-of-contents" target="_blank" rel="noopener">⬆ back to top</a></strong></p>
 <h2 id="Promises"><a href="#Promises" class="headerlink" title="Promises"></a>Promises</h2><p>A promise represents the eventual result of an asynchronous operation. jQuery has its own way to handle promises. Native JavaScript implements a thin and minimal API to handle promises according to the <a href="http://promises-aplus.github.io/promises-spec/" target="_blank" rel="noopener">Promises/A+</a> specification.</p>
 <ul>
 <li><p><a href="http://#7.1" target="_blank" rel="noopener">7.1</a> done, fail, always <code>done</code> is called when promise is resolved, <code>fail</code> is called when promise is rejected, <code>always</code> is called when promise is either resolved or rejected.</p>
-<pre><code>// jQuery
-$promise.done(doneCallback).fail(failCallback).always(alwaysCallback)
-
-// Native
-promise.then(doneCallback, failCallback).then(alwaysCallback, alwaysCallback)
-</code></pre></li>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// jQuery</span></span><br><span class="line">$promise.done(doneCallback).fail(failCallback).always(alwaysCallback)</span><br><span class="line"></span><br><span class="line"><span class="comment">// Native</span></span><br><span class="line">promise.then(doneCallback, failCallback).then(alwaysCallback, alwaysCallback)</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
 <ul>
 <li><p><a href="http://#7.2" target="_blank" rel="noopener">7.2</a> when <code>when</code> is used to handle multiple promises. It will resolve when all promises are resolved, and reject if either one is rejected.</p>
-<pre><code>// jQuery
-$.when($promise1, $promise2).done((promise1Result, promise2Result) =&gt; {
-});
-
-// Native
-Promise.all([$promise1, $promise2]).then([promise1Result, promise2Result] =&gt; {});
-</code></pre></li>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// jQuery</span></span><br><span class="line">$.when($promise1, $promise2).done(<span class="function">(<span class="params">promise1Result, promise2Result</span>) =&gt;</span> &#123;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Native</span></span><br><span class="line"><span class="built_in">Promise</span>.all([$promise1, $promise2]).then([promise1Result, promise2Result] =&gt; &#123;&#125;);</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
 <ul>
 <li><p><a href="http://#7.3" target="_blank" rel="noopener">7.3</a> Deferred Deferred is a way to create promises.</p>
-<pre><code>// jQuery
-function asyncFunc() {
-const defer = new $.Deferred();
-setTimeout(() =&gt; {
-  if(true) {
-    defer.resolve(&apos;some_value_computed_asynchronously&apos;);
-  } else {
-    defer.reject(&apos;failed&apos;);
-  }
-}, 1000);
-
-return defer.promise();
-}
-
-// Native
-function asyncFunc() {
-return new Promise((resolve, reject) =&gt; {
-  setTimeout(() =&gt; {
-    if (true) {
-      resolve(&apos;some_value_computed_asynchronously&apos;);
-    } else {
-      reject(&apos;failed&apos;);
-    }
-  }, 1000);
-});
-}
-
-// Deferred way
-function defer() {
-const deferred = {};
-const promise = new Promise((resolve, reject) =&gt; {
-  deferred.resolve = resolve;
-  deferred.reject = reject;
-});
-
-deferred.promise = () =&gt; {
-  return promise;
-};
-
-return deferred;
-}
-
-function asyncFunc() {
-const defer = defer();
-setTimeout(() =&gt; {
-  if(true) {
-    defer.resolve(&apos;some_value_computed_asynchronously&apos;);
-  } else {
-    defer.reject(&apos;failed&apos;);
-  }
-}, 1000);
-
-return defer.promise();
-}
-</code></pre></li>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// jQuery</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">asyncFunc</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line"><span class="keyword">const</span> defer = <span class="keyword">new</span> $.Deferred();</span><br><span class="line">setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="literal">true</span>) &#123;</span><br><span class="line">    defer.resolve(<span class="string">'some_value_computed_asynchronously'</span>);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    defer.reject(<span class="string">'failed'</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;, <span class="number">1000</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> defer.promise();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Native</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">asyncFunc</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line"><span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">    setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">        resolve(<span class="string">'some_value_computed_asynchronously'</span>);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        reject(<span class="string">'failed'</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    &#125;, <span class="number">1000</span>);</span><br><span class="line">&#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Deferred way</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">defer</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line"><span class="keyword">const</span> deferred = &#123;&#125;;</span><br><span class="line"><span class="keyword">const</span> promise = <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">    deferred.resolve = resolve;</span><br><span class="line">    deferred.reject = reject;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">deferred.promise = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> promise;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> deferred;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">asyncFunc</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line"><span class="keyword">const</span> defer = defer();</span><br><span class="line">setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="literal">true</span>) &#123;</span><br><span class="line">    defer.resolve(<span class="string">'some_value_computed_asynchronously'</span>);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    defer.reject(<span class="string">'failed'</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;, <span class="number">1000</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> defer.promise();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
 <p><strong><a href="http://#table-of-contents" target="_blank" rel="noopener">⬆ back to top</a></strong></p>
 <h2 id="Animation"><a href="#Animation" class="headerlink" title="Animation"></a>Animation</h2><ul>
 <li><p><a href="http://#8.1" target="_blank" rel="noopener">8.1</a> Show &amp; Hide</p>
-<pre><code>// jQuery
-$el.show();
-$el.hide();
-
-// Native
-// More detail about show method, please refer to https://github.com/oneuijs/oui-dom-utils/blob/master/src/index.js#L363
-el.style.display = &apos;&apos;|&apos;inline&apos;|&apos;inline-block&apos;|&apos;inline-table&apos;|&apos;block&apos;;
-el.style.display = &apos;none&apos;;
-</code></pre></li>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// jQuery</span></span><br><span class="line">$el.show();</span><br><span class="line">$el.hide();</span><br><span class="line"></span><br><span class="line"><span class="comment">// Native</span></span><br><span class="line"><span class="comment">// More detail about show method, please refer to https://github.com/oneuijs/oui-dom-utils/blob/master/src/index.js#L363</span></span><br><span class="line">el.style.display = <span class="string">''</span>|<span class="string">'inline'</span>|<span class="string">'inline-block'</span>|<span class="string">'inline-table'</span>|<span class="string">'block'</span>;</span><br><span class="line">el.style.display = <span class="string">'none'</span>;</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
 <ul>
 <li><p><a href="http://#8.2" target="_blank" rel="noopener">8.2</a> Toggle Display or hide the element.</p>
-<pre><code>// jQuery
-$el.toggle();
-
-// Native
-if (el.ownerDocument.defaultView.getComputedStyle(el, null).display === &apos;none&apos;) {
-el.style.display = &apos;&apos;|&apos;inline&apos;|&apos;inline-block&apos;|&apos;inline-table&apos;|&apos;block&apos;;
-} else {
-el.style.display = &apos;none&apos;;
-}
-</code></pre></li>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// jQuery</span></span><br><span class="line">$el.toggle();</span><br><span class="line"></span><br><span class="line"><span class="comment">// Native</span></span><br><span class="line"><span class="keyword">if</span> (el.ownerDocument.defaultView.getComputedStyle(el, <span class="literal">null</span>).display === <span class="string">'none'</span>) &#123;</span><br><span class="line">el.style.display = <span class="string">''</span>|<span class="string">'inline'</span>|<span class="string">'inline-block'</span>|<span class="string">'inline-table'</span>|<span class="string">'block'</span>;</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">el.style.display = <span class="string">'none'</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
 <ul>
 <li><p><a href="http://#8.3" target="_blank" rel="noopener">8.3</a> FadeIn &amp; FadeOut</p>
-<pre><code>// jQuery
-$el.fadeIn(3000);
-$el.fadeOut(3000);
-
-// Native
-el.style.transition = &apos;opacity 3s&apos;;
-// fadeIn
-el.style.opacity = &apos;1&apos;;
-// fadeOut
-el.style.opacity = &apos;0&apos;;
-</code></pre></li>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// jQuery</span></span><br><span class="line">$el.fadeIn(<span class="number">3000</span>);</span><br><span class="line">$el.fadeOut(<span class="number">3000</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Native</span></span><br><span class="line">el.style.transition = <span class="string">'opacity 3s'</span>;</span><br><span class="line"><span class="comment">// fadeIn</span></span><br><span class="line">el.style.opacity = <span class="string">'1'</span>;</span><br><span class="line"><span class="comment">// fadeOut</span></span><br><span class="line">el.style.opacity = <span class="string">'0'</span>;</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
 <ul>
 <li><p><a href="http://#8.4" target="_blank" rel="noopener">8.4</a> FadeTo Adjust the opacity of the element.</p>
-<pre><code>// jQuery
-$el.fadeTo(&apos;slow&apos;,0.15);
-// Native
-el.style.transition = &apos;opacity 3s&apos;; // assume &apos;slow&apos; equals 3 seconds
-el.style.opacity = &apos;0.15&apos;;
-</code></pre></li>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// jQuery</span></span><br><span class="line">$el.fadeTo(<span class="string">'slow'</span>,<span class="number">0.15</span>);</span><br><span class="line"><span class="comment">// Native</span></span><br><span class="line">el.style.transition = <span class="string">'opacity 3s'</span>; <span class="comment">// assume 'slow' equals 3 seconds</span></span><br><span class="line">el.style.opacity = <span class="string">'0.15'</span>;</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
 <ul>
 <li><p><a href="http://#8.5" target="_blank" rel="noopener">8.5</a> FadeToggle Display or hide the element by animating their opacity.</p>
-<pre><code>// jQuery
-$el.fadeToggle();
-
-// Native
-el.style.transition = &apos;opacity 3s&apos;;
-const { opacity } = el.ownerDocument.defaultView.getComputedStyle(el, null);
-if (opacity === &apos;1&apos;) {
-el.style.opacity = &apos;0&apos;;
-} else {
-el.style.opacity = &apos;1&apos;;
-}
-</code></pre></li>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// jQuery</span></span><br><span class="line">$el.fadeToggle();</span><br><span class="line"></span><br><span class="line"><span class="comment">// Native</span></span><br><span class="line">el.style.transition = <span class="string">'opacity 3s'</span>;</span><br><span class="line"><span class="keyword">const</span> &#123; opacity &#125; = el.ownerDocument.defaultView.getComputedStyle(el, <span class="literal">null</span>);</span><br><span class="line"><span class="keyword">if</span> (opacity === <span class="string">'1'</span>) &#123;</span><br><span class="line">el.style.opacity = <span class="string">'0'</span>;</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">el.style.opacity = <span class="string">'1'</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
 <ul>
 <li><p><a href="http://#8.6" target="_blank" rel="noopener">8.6</a> SlideUp &amp; SlideDown</p>
-<pre><code>// jQuery
-$el.slideUp();
-$el.slideDown();
-
-// Native
-const originHeight = &apos;100px&apos;;
-el.style.transition = &apos;height 3s&apos;;
-// slideUp
-el.style.height = &apos;0px&apos;;
-// slideDown
-el.style.height = originHeight;
-</code></pre></li>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// jQuery</span></span><br><span class="line">$el.slideUp();</span><br><span class="line">$el.slideDown();</span><br><span class="line"></span><br><span class="line"><span class="comment">// Native</span></span><br><span class="line"><span class="keyword">const</span> originHeight = <span class="string">'100px'</span>;</span><br><span class="line">el.style.transition = <span class="string">'height 3s'</span>;</span><br><span class="line"><span class="comment">// slideUp</span></span><br><span class="line">el.style.height = <span class="string">'0px'</span>;</span><br><span class="line"><span class="comment">// slideDown</span></span><br><span class="line">el.style.height = originHeight;</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
 <ul>
 <li><p><a href="http://#8.7" target="_blank" rel="noopener">8.7</a> SlideToggle Display or hide the element with a sliding motion.</p>
-<pre><code>// jQuery
-$el.slideToggle();
-
-// Native
-const originHeight = &apos;100px&apos;;
-el.style.transition = &apos;height 3s&apos;;
-const { height } = el.ownerDocument.defaultView.getComputedStyle(el, null);
-if (parseInt(height, 10) === 0) {
-el.style.height = originHeight;
-}
-else {
-el.style.height = &apos;0px&apos;;
-}
-</code></pre></li>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// jQuery</span></span><br><span class="line">$el.slideToggle();</span><br><span class="line"></span><br><span class="line"><span class="comment">// Native</span></span><br><span class="line"><span class="keyword">const</span> originHeight = <span class="string">'100px'</span>;</span><br><span class="line">el.style.transition = <span class="string">'height 3s'</span>;</span><br><span class="line"><span class="keyword">const</span> &#123; height &#125; = el.ownerDocument.defaultView.getComputedStyle(el, <span class="literal">null</span>);</span><br><span class="line"><span class="keyword">if</span> (<span class="built_in">parseInt</span>(height, <span class="number">10</span>) === <span class="number">0</span>) &#123;</span><br><span class="line">el.style.height = originHeight;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span> &#123;</span><br><span class="line">el.style.height = <span class="string">'0px'</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
 <ul>
 <li><p><a href="http://#8.8" target="_blank" rel="noopener">8.8</a> Animate Perform a custom animation of a set of CSS properties.</p>
-<pre><code>// jQuery
-$el.animate({ params }, speed);
-
-// Native
-el.style.transition = &apos;all &apos; + speed;
-Object.keys(params).forEach((key) =&gt;
-el.style[key] = params[key];
-)
-</code></pre></li>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// jQuery</span></span><br><span class="line">$el.animate(&#123; params &#125;, speed);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Native</span></span><br><span class="line">el.style.transition = <span class="string">'all '</span> + speed;</span><br><span class="line"><span class="built_in">Object</span>.keys(params).forEach(<span class="function">(<span class="params">key</span>) =&gt;</span></span><br><span class="line">el.style[key] = params[key];</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
 <h2 id="Alternatives"><a href="#Alternatives" class="headerlink" title="Alternatives"></a>Alternatives</h2><ul>
 <li><a href="http://youmightnotneedjquery.com/" target="_blank" rel="noopener">You Might Not Need jQuery</a> - Examples of how to do common event, element, ajax etc with plain javascript.</li>
@@ -4057,71 +3454,9 @@ top:50vh;
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 132
+        Total : 134
         </div>
         <!-- search  -->
         
@@ -4134,6 +3469,16 @@ top:50vh;
     
     <div class="archive-year"> 2018 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/01</span><a class="archive-post-title" href= "/2018/08/01/redis-note/" >redis-note</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/28</span><a class="archive-post-title" href= "/2018/07/28/netcat/" >netcat.md</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -4206,12 +3551,12 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/02</span><a class="archive-post-title" href= "/2017/12/02/initial-build-pl-js/" >[Initial] Build: PL By: JS</a>
+            <span class="archive-post-date">12/02</span><a class="archive-post-title" href= "/2017/12/02/parser-build-pl-byjs/" >[Parser] Build: PL By:JS</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/02</span><a class="archive-post-title" href= "/2017/12/02/parser-build-pl-byjs/" >[Parser] Build: PL By:JS</a>
+            <span class="archive-post-date">12/02</span><a class="archive-post-title" href= "/2017/12/02/initial-build-pl-js/" >[Initial] Build: PL By: JS</a>
         </li>
     
     
@@ -4296,12 +3641,12 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">08/01</span><a class="archive-post-title" href= "/2017/08/01/aquatone-a-tool-for-domain-flyovers/" >AQUATONE: A tool for domain flyovers</a>
+            <span class="archive-post-date">08/01</span><a class="archive-post-title" href= "/2017/08/01/nsa-tools/" >NSA tools</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">08/01</span><a class="archive-post-title" href= "/2017/08/01/nsa-tools/" >NSA tools</a>
+            <span class="archive-post-date">08/01</span><a class="archive-post-title" href= "/2017/08/01/aquatone-a-tool-for-domain-flyovers/" >AQUATONE: A tool for domain flyovers</a>
         </li>
     
     
@@ -4486,12 +3831,12 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">01/26</span><a class="archive-post-title" href= "/2017/01/26/ennote/" >EnNote</a>
+            <span class="archive-post-date">01/26</span><a class="archive-post-title" href= "/2017/01/26/e6-ad-a3-e5-88-99-e8-a1-a8-e8-be-be-e5-bc-8fip/" >正则表达式IP</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">01/26</span><a class="archive-post-title" href= "/2017/01/26/e6-ad-a3-e5-88-99-e8-a1-a8-e8-be-be-e5-bc-8fip/" >正则表达式IP</a>
+            <span class="archive-post-date">01/26</span><a class="archive-post-title" href= "/2017/01/26/ennote/" >EnNote</a>
         </li>
     
     
@@ -4640,12 +3985,12 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">11/13</span><a class="archive-post-title" href= "/2016/11/13/2016-11-12/" >2016.11.12</a>
+            <span class="archive-post-date">11/13</span><a class="archive-post-title" href= "/2016/11/13/e5-87-af-e6-92-92-e5-af-86-e7-a0-81-ef-bc-88python-ef-bc-89/" >凯撒密码（Python）</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">11/13</span><a class="archive-post-title" href= "/2016/11/13/e5-87-af-e6-92-92-e5-af-86-e7-a0-81-ef-bc-88python-ef-bc-89/" >凯撒密码（Python）</a>
+            <span class="archive-post-date">11/13</span><a class="archive-post-title" href= "/2016/11/13/2016-11-12/" >2016.11.12</a>
         </li>
     
     
@@ -4735,12 +4080,12 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">11/02</span><a class="archive-post-title" href= "/2016/11/02/e6-9c-89-e5-ba-8f-e6-a0-91-e8-bd-ac-e4-ba-8c-e5-8f-89-e6-a0-91-e6-b1-82-e6-b7-b1-e5-ba-a6/" >有序树转二叉树求深度</a>
+            <span class="archive-post-date">11/02</span><a class="archive-post-title" href= "/2016/11/02/redoorundo/" >Redo or Undo</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">11/02</span><a class="archive-post-title" href= "/2016/11/02/redoorundo/" >Redo or Undo</a>
+            <span class="archive-post-date">11/02</span><a class="archive-post-title" href= "/2016/11/02/e6-9c-89-e5-ba-8f-e6-a0-91-e8-bd-ac-e4-ba-8c-e5-8f-89-e6-a0-91-e6-b1-82-e6-b7-b1-e5-ba-a6/" >有序树转二叉树求深度</a>
         </li>
     
     
@@ -4769,26 +4114,6 @@ top:50vh;
         </li>
     
     
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/22</span><a class="archive-post-title" href= "/2016/10/22/e9-80-9a-e7-95-85-e5-b7-a5-e7-a8-8b-e9-97-ae-e9-a2-98/" >通畅工程问题</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/22</span><a class="archive-post-title" href= "/2016/10/22/e5-b9-b6-e6-9f-a5-e9-9b-86/" >(转)并查集</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/21</span><a class="archive-post-title" href= "/2016/10/21/e5-85-ab-e7-9a-87-e5-90-8e-e9-97-ae-e9-a2-98/" >八皇后问题</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2016/10/14/e6-a8-a1-e6-8b-9f-e7-99-bb-e9-99-86/" >模拟登陆</a>
-        </li>
-    
-    
     
     
     
@@ -4813,12 +4138,32 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/13</span><a class="archive-post-title" href= "/2016/10/13/spider-e7-99-be-e5-ba-a6-e8-b4-b4-e5-90-a7-e5-b8-96-e5-ad-90/" >Spider百度贴吧帖子</a>
+            <span class="archive-post-date">10/22</span><a class="archive-post-title" href= "/2016/10/22/e9-80-9a-e7-95-85-e5-b7-a5-e7-a8-8b-e9-97-ae-e9-a2-98/" >通畅工程问题</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/22</span><a class="archive-post-title" href= "/2016/10/22/e5-b9-b6-e6-9f-a5-e9-9b-86/" >(转)并查集</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/21</span><a class="archive-post-title" href= "/2016/10/21/e5-85-ab-e7-9a-87-e5-90-8e-e9-97-ae-e9-a2-98/" >八皇后问题</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2016/10/14/e6-a8-a1-e6-8b-9f-e7-99-bb-e9-99-86/" >模拟登陆</a>
         </li>
     
     
         <li class="archive-post-item">
             <span class="archive-post-date">10/13</span><a class="archive-post-title" href= "/2016/10/13/e7-b3-97-e4-ba-8b-e7-99-be-e7-a7-91spider-e4-bb-a3-e7-a0-81-e4-bc-98-e5-8c-96/" >糗事百科Spider代码优化</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/13</span><a class="archive-post-title" href= "/2016/10/13/spider-e7-99-be-e5-ba-a6-e8-b4-b4-e5-90-a7-e5-b8-96-e5-ad-90/" >Spider百度贴吧帖子</a>
         </li>
     
     
@@ -4912,13 +4257,17 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="标签"><span class="iconfont-archer">&#xe606;</span>标签</span>
     
-        <span class="sidebar-tag-name" data-tags="凯撒密码"><span class="iconfont-archer">&#xe606;</span>凯撒密码</span>
-    
         <span class="sidebar-tag-name" data-tags="击鼓传花"><span class="iconfont-archer">&#xe606;</span>击鼓传花</span>
     
         <span class="sidebar-tag-name" data-tags="数据结构"><span class="iconfont-archer">&#xe606;</span>数据结构</span>
     
         <span class="sidebar-tag-name" data-tags="算法"><span class="iconfont-archer">&#xe606;</span>算法</span>
+    
+        <span class="sidebar-tag-name" data-tags="凯撒密码"><span class="iconfont-archer">&#xe606;</span>凯撒密码</span>
+    
+        <span class="sidebar-tag-name" data-tags="数据结构与算法"><span class="iconfont-archer">&#xe606;</span>数据结构与算法</span>
+    
+        <span class="sidebar-tag-name" data-tags="编码"><span class="iconfont-archer">&#xe606;</span>编码</span>
     
         <span class="sidebar-tag-name" data-tags="android"><span class="iconfont-archer">&#xe606;</span>android</span>
     
@@ -4928,19 +4277,23 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="思维导图"><span class="iconfont-archer">&#xe606;</span>思维导图</span>
     
-        <span class="sidebar-tag-name" data-tags="数据结构与算法"><span class="iconfont-archer">&#xe606;</span>数据结构与算法</span>
+        <span class="sidebar-tag-name" data-tags="permission"><span class="iconfont-archer">&#xe606;</span>permission</span>
     
-        <span class="sidebar-tag-name" data-tags="编码"><span class="iconfont-archer">&#xe606;</span>编码</span>
+        <span class="sidebar-tag-name" data-tags="正则"><span class="iconfont-archer">&#xe606;</span>正则</span>
+    
+        <span class="sidebar-tag-name" data-tags="flex"><span class="iconfont-archer">&#xe606;</span>flex</span>
+    
+        <span class="sidebar-tag-name" data-tags="layout"><span class="iconfont-archer">&#xe606;</span>layout</span>
+    
+        <span class="sidebar-tag-name" data-tags="algorithm"><span class="iconfont-archer">&#xe606;</span>algorithm</span>
+    
+        <span class="sidebar-tag-name" data-tags="嗅事百科"><span class="iconfont-archer">&#xe606;</span>嗅事百科</span>
+    
+        <span class="sidebar-tag-name" data-tags="illegal"><span class="iconfont-archer">&#xe606;</span>illegal</span>
     
         <span class="sidebar-tag-name" data-tags="gcd"><span class="iconfont-archer">&#xe606;</span>gcd</span>
     
         <span class="sidebar-tag-name" data-tags="rsa"><span class="iconfont-archer">&#xe606;</span>rsa</span>
-    
-        <span class="sidebar-tag-name" data-tags="fstab"><span class="iconfont-archer">&#xe606;</span>fstab</span>
-    
-        <span class="sidebar-tag-name" data-tags="mount"><span class="iconfont-archer">&#xe606;</span>mount</span>
-    
-        <span class="sidebar-tag-name" data-tags="illegal"><span class="iconfont-archer">&#xe606;</span>illegal</span>
     
         <span class="sidebar-tag-name" data-tags="拓扑排序"><span class="iconfont-archer">&#xe606;</span>拓扑排序</span>
     
@@ -4956,8 +4309,6 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="正则表达式"><span class="iconfont-archer">&#xe606;</span>正则表达式</span>
     
-        <span class="sidebar-tag-name" data-tags="后缀表达式"><span class="iconfont-archer">&#xe606;</span>后缀表达式</span>
-    
         <span class="sidebar-tag-name" data-tags="apache"><span class="iconfont-archer">&#xe606;</span>apache</span>
     
         <span class="sidebar-tag-name" data-tags="security"><span class="iconfont-archer">&#xe606;</span>security</span>
@@ -4966,7 +4317,7 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="渗透"><span class="iconfont-archer">&#xe606;</span>渗透</span>
     
-        <span class="sidebar-tag-name" data-tags="story"><span class="iconfont-archer">&#xe606;</span>story</span>
+        <span class="sidebar-tag-name" data-tags="后缀表达式"><span class="iconfont-archer">&#xe606;</span>后缀表达式</span>
     
         <span class="sidebar-tag-name" data-tags="cocos"><span class="iconfont-archer">&#xe606;</span>cocos</span>
     
@@ -4974,13 +4325,13 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="game"><span class="iconfont-archer">&#xe606;</span>game</span>
     
+        <span class="sidebar-tag-name" data-tags="story"><span class="iconfont-archer">&#xe606;</span>story</span>
+    
         <span class="sidebar-tag-name" data-tags="utf-8"><span class="iconfont-archer">&#xe606;</span>utf-8</span>
     
         <span class="sidebar-tag-name" data-tags="爬虫"><span class="iconfont-archer">&#xe606;</span>爬虫</span>
     
         <span class="sidebar-tag-name" data-tags="备份"><span class="iconfont-archer">&#xe606;</span>备份</span>
-    
-        <span class="sidebar-tag-name" data-tags="algorithm"><span class="iconfont-archer">&#xe606;</span>algorithm</span>
     
         <span class="sidebar-tag-name" data-tags="数据"><span class="iconfont-archer">&#xe606;</span>数据</span>
     
@@ -4994,17 +4345,31 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="通信"><span class="iconfont-archer">&#xe606;</span>通信</span>
     
+        <span class="sidebar-tag-name" data-tags="函数"><span class="iconfont-archer">&#xe606;</span>函数</span>
+    
         <span class="sidebar-tag-name" data-tags="english"><span class="iconfont-archer">&#xe606;</span>english</span>
     
         <span class="sidebar-tag-name" data-tags="funnny"><span class="iconfont-archer">&#xe606;</span>funnny</span>
     
-        <span class="sidebar-tag-name" data-tags="函数"><span class="iconfont-archer">&#xe606;</span>函数</span>
+        <span class="sidebar-tag-name" data-tags="blob"><span class="iconfont-archer">&#xe606;</span>blob</span>
+    
+        <span class="sidebar-tag-name" data-tags="bomb"><span class="iconfont-archer">&#xe606;</span>bomb</span>
+    
+        <span class="sidebar-tag-name" data-tags="exploding"><span class="iconfont-archer">&#xe606;</span>exploding</span>
+    
+        <span class="sidebar-tag-name" data-tags="git"><span class="iconfont-archer">&#xe606;</span>git</span>
+    
+        <span class="sidebar-tag-name" data-tags="memory"><span class="iconfont-archer">&#xe606;</span>memory</span>
+    
+        <span class="sidebar-tag-name" data-tags="tree"><span class="iconfont-archer">&#xe606;</span>tree</span>
     
         <span class="sidebar-tag-name" data-tags="php5"><span class="iconfont-archer">&#xe606;</span>php5</span>
     
         <span class="sidebar-tag-name" data-tags="wifi"><span class="iconfont-archer">&#xe606;</span>wifi</span>
     
-        <span class="sidebar-tag-name" data-tags="git"><span class="iconfont-archer">&#xe606;</span>git</span>
+        <span class="sidebar-tag-name" data-tags="ftp"><span class="iconfont-archer">&#xe606;</span>ftp</span>
+    
+        <span class="sidebar-tag-name" data-tags="service"><span class="iconfont-archer">&#xe606;</span>service</span>
     
         <span class="sidebar-tag-name" data-tags="github"><span class="iconfont-archer">&#xe606;</span>github</span>
     
@@ -5013,20 +4378,6 @@ top:50vh;
         <span class="sidebar-tag-name" data-tags="博客"><span class="iconfont-archer">&#xe606;</span>博客</span>
     
         <span class="sidebar-tag-name" data-tags="库"><span class="iconfont-archer">&#xe606;</span>库</span>
-    
-        <span class="sidebar-tag-name" data-tags="ftp"><span class="iconfont-archer">&#xe606;</span>ftp</span>
-    
-        <span class="sidebar-tag-name" data-tags="service"><span class="iconfont-archer">&#xe606;</span>service</span>
-    
-        <span class="sidebar-tag-name" data-tags="blob"><span class="iconfont-archer">&#xe606;</span>blob</span>
-    
-        <span class="sidebar-tag-name" data-tags="bomb"><span class="iconfont-archer">&#xe606;</span>bomb</span>
-    
-        <span class="sidebar-tag-name" data-tags="exploding"><span class="iconfont-archer">&#xe606;</span>exploding</span>
-    
-        <span class="sidebar-tag-name" data-tags="memory"><span class="iconfont-archer">&#xe606;</span>memory</span>
-    
-        <span class="sidebar-tag-name" data-tags="tree"><span class="iconfont-archer">&#xe606;</span>tree</span>
     
         <span class="sidebar-tag-name" data-tags="html5"><span class="iconfont-archer">&#xe606;</span>html5</span>
     
@@ -5070,6 +4421,22 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="python3"><span class="iconfont-archer">&#xe606;</span>python3</span>
     
+        <span class="sidebar-tag-name" data-tags="dev"><span class="iconfont-archer">&#xe606;</span>dev</span>
+    
+        <span class="sidebar-tag-name" data-tags="file"><span class="iconfont-archer">&#xe606;</span>file</span>
+    
+        <span class="sidebar-tag-name" data-tags="mount"><span class="iconfont-archer">&#xe606;</span>mount</span>
+    
+        <span class="sidebar-tag-name" data-tags="su"><span class="iconfont-archer">&#xe606;</span>su</span>
+    
+        <span class="sidebar-tag-name" data-tags="sudo"><span class="iconfont-archer">&#xe606;</span>sudo</span>
+    
+        <span class="sidebar-tag-name" data-tags="system"><span class="iconfont-archer">&#xe606;</span>system</span>
+    
+        <span class="sidebar-tag-name" data-tags="usage"><span class="iconfont-archer">&#xe606;</span>usage</span>
+    
+        <span class="sidebar-tag-name" data-tags="user"><span class="iconfont-archer">&#xe606;</span>user</span>
+    
         <span class="sidebar-tag-name" data-tags="lvm"><span class="iconfont-archer">&#xe606;</span>lvm</span>
     
         <span class="sidebar-tag-name" data-tags="raid"><span class="iconfont-archer">&#xe606;</span>raid</span>
@@ -5083,6 +4450,10 @@ top:50vh;
         <span class="sidebar-tag-name" data-tags="protocol"><span class="iconfont-archer">&#xe606;</span>protocol</span>
     
         <span class="sidebar-tag-name" data-tags="strategy"><span class="iconfont-archer">&#xe606;</span>strategy</span>
+    
+        <span class="sidebar-tag-name" data-tags="acm"><span class="iconfont-archer">&#xe606;</span>acm</span>
+    
+        <span class="sidebar-tag-name" data-tags="security; kali; tools"><span class="iconfont-archer">&#xe606;</span>security; kali; tools</span>
     
         <span class="sidebar-tag-name" data-tags="firstSet"><span class="iconfont-archer">&#xe606;</span>firstSet</span>
     
@@ -5100,22 +4471,6 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="sql注入"><span class="iconfont-archer">&#xe606;</span>sql注入</span>
     
-        <span class="sidebar-tag-name" data-tags="dev"><span class="iconfont-archer">&#xe606;</span>dev</span>
-    
-        <span class="sidebar-tag-name" data-tags="file"><span class="iconfont-archer">&#xe606;</span>file</span>
-    
-        <span class="sidebar-tag-name" data-tags="su"><span class="iconfont-archer">&#xe606;</span>su</span>
-    
-        <span class="sidebar-tag-name" data-tags="sudo"><span class="iconfont-archer">&#xe606;</span>sudo</span>
-    
-        <span class="sidebar-tag-name" data-tags="system"><span class="iconfont-archer">&#xe606;</span>system</span>
-    
-        <span class="sidebar-tag-name" data-tags="usage"><span class="iconfont-archer">&#xe606;</span>usage</span>
-    
-        <span class="sidebar-tag-name" data-tags="user"><span class="iconfont-archer">&#xe606;</span>user</span>
-    
-        <span class="sidebar-tag-name" data-tags="acm"><span class="iconfont-archer">&#xe606;</span>acm</span>
-    
         <span class="sidebar-tag-name" data-tags="nodebb"><span class="iconfont-archer">&#xe606;</span>nodebb</span>
     
         <span class="sidebar-tag-name" data-tags="腾讯云"><span class="iconfont-archer">&#xe606;</span>腾讯云</span>
@@ -5126,71 +4481,13 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="NSA"><span class="iconfont-archer">&#xe606;</span>NSA</span>
     
-        <span class="sidebar-tag-name" data-tags="permission"><span class="iconfont-archer">&#xe606;</span>permission</span>
-    
-        <span class="sidebar-tag-name" data-tags="正则"><span class="iconfont-archer">&#xe606;</span>正则</span>
-    
-        <span class="sidebar-tag-name" data-tags="flex"><span class="iconfont-archer">&#xe606;</span>flex</span>
-    
-        <span class="sidebar-tag-name" data-tags="layout"><span class="iconfont-archer">&#xe606;</span>layout</span>
-    
-        <span class="sidebar-tag-name" data-tags="csrf"><span class="iconfont-archer">&#xe606;</span>csrf</span>
-    
-        <span class="sidebar-tag-name" data-tags="session"><span class="iconfont-archer">&#xe606;</span>session</span>
-    
-        <span class="sidebar-tag-name" data-tags="token"><span class="iconfont-archer">&#xe606;</span>token</span>
-    
-        <span class="sidebar-tag-name" data-tags="uid"><span class="iconfont-archer">&#xe606;</span>uid</span>
-    
-        <span class="sidebar-tag-name" data-tags="xss"><span class="iconfont-archer">&#xe606;</span>xss</span>
-    
-        <span class="sidebar-tag-name" data-tags="assembly"><span class="iconfont-archer">&#xe606;</span>assembly</span>
-    
-        <span class="sidebar-tag-name" data-tags="instructions"><span class="iconfont-archer">&#xe606;</span>instructions</span>
-    
-        <span class="sidebar-tag-name" data-tags="int"><span class="iconfont-archer">&#xe606;</span>int</span>
-    
-        <span class="sidebar-tag-name" data-tags="指令"><span class="iconfont-archer">&#xe606;</span>指令</span>
-    
-        <span class="sidebar-tag-name" data-tags="汇编"><span class="iconfont-archer">&#xe606;</span>汇编</span>
-    
-        <span class="sidebar-tag-name" data-tags="魔方"><span class="iconfont-archer">&#xe606;</span>魔方</span>
-    
-        <span class="sidebar-tag-name" data-tags="join"><span class="iconfont-archer">&#xe606;</span>join</span>
-    
-        <span class="sidebar-tag-name" data-tags="优化"><span class="iconfont-archer">&#xe606;</span>优化</span>
-    
-        <span class="sidebar-tag-name" data-tags="电话"><span class="iconfont-archer">&#xe606;</span>电话</span>
-    
-        <span class="sidebar-tag-name" data-tags="编程"><span class="iconfont-archer">&#xe606;</span>编程</span>
-    
-        <span class="sidebar-tag-name" data-tags="http-equiv"><span class="iconfont-archer">&#xe606;</span>http-equiv</span>
-    
-        <span class="sidebar-tag-name" data-tags="http协议"><span class="iconfont-archer">&#xe606;</span>http协议</span>
-    
-        <span class="sidebar-tag-name" data-tags="jquery"><span class="iconfont-archer">&#xe606;</span>jquery</span>
-    
-        <span class="sidebar-tag-name" data-tags="jsp"><span class="iconfont-archer">&#xe606;</span>jsp</span>
-    
-        <span class="sidebar-tag-name" data-tags="ANSI"><span class="iconfont-archer">&#xe606;</span>ANSI</span>
-    
-        <span class="sidebar-tag-name" data-tags="ASCII"><span class="iconfont-archer">&#xe606;</span>ASCII</span>
-    
-        <span class="sidebar-tag-name" data-tags="decode"><span class="iconfont-archer">&#xe606;</span>decode</span>
-    
-        <span class="sidebar-tag-name" data-tags="encode"><span class="iconfont-archer">&#xe606;</span>encode</span>
-    
-        <span class="sidebar-tag-name" data-tags="ISO-8859-1"><span class="iconfont-archer">&#xe606;</span>ISO-8859-1</span>
-    
-        <span class="sidebar-tag-name" data-tags="messy code"><span class="iconfont-archer">&#xe606;</span>messy code</span>
-    
-        <span class="sidebar-tag-name" data-tags="微信"><span class="iconfont-archer">&#xe606;</span>微信</span>
-    
         <span class="sidebar-tag-name" data-tags="安全"><span class="iconfont-archer">&#xe606;</span>安全</span>
     
         <span class="sidebar-tag-name" data-tags="序列化与反序列化"><span class="iconfont-archer">&#xe606;</span>序列化与反序列化</span>
     
-        <span class="sidebar-tag-name" data-tags="嗅事百科"><span class="iconfont-archer">&#xe606;</span>嗅事百科</span>
+        <span class="sidebar-tag-name" data-tags="微信"><span class="iconfont-archer">&#xe606;</span>微信</span>
+    
+        <span class="sidebar-tag-name" data-tags="socket"><span class="iconfont-archer">&#xe606;</span>socket</span>
     
         <span class="sidebar-tag-name" data-tags="phpstorm"><span class="iconfont-archer">&#xe606;</span>phpstorm</span>
     
@@ -5206,15 +4503,19 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="wordpress"><span class="iconfont-archer">&#xe606;</span>wordpress</span>
     
-        <span class="sidebar-tag-name" data-tags="socket"><span class="iconfont-archer">&#xe606;</span>socket</span>
-    
         <span class="sidebar-tag-name" data-tags="PIL"><span class="iconfont-archer">&#xe606;</span>PIL</span>
-    
-        <span class="sidebar-tag-name" data-tags="zipfile"><span class="iconfont-archer">&#xe606;</span>zipfile</span>
     
         <span class="sidebar-tag-name" data-tags="pickle"><span class="iconfont-archer">&#xe606;</span>pickle</span>
     
         <span class="sidebar-tag-name" data-tags="序列化"><span class="iconfont-archer">&#xe606;</span>序列化</span>
+    
+        <span class="sidebar-tag-name" data-tags="zipfile"><span class="iconfont-archer">&#xe606;</span>zipfile</span>
+    
+        <span class="sidebar-tag-name" data-tags="redis"><span class="iconfont-archer">&#xe606;</span>redis</span>
+    
+        <span class="sidebar-tag-name" data-tags="string"><span class="iconfont-archer">&#xe606;</span>string</span>
+    
+        <span class="sidebar-tag-name" data-tags="note"><span class="iconfont-archer">&#xe606;</span>note</span>
     
         <span class="sidebar-tag-name" data-tags="撤销"><span class="iconfont-archer">&#xe606;</span>撤销</span>
     
@@ -5256,13 +4557,15 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="病毒"><span class="iconfont-archer">&#xe606;</span>病毒</span>
     
-        <span class="sidebar-tag-name" data-tags="webshell"><span class="iconfont-archer">&#xe606;</span>webshell</span>
-    
         <span class="sidebar-tag-name" data-tags="effective"><span class="iconfont-archer">&#xe606;</span>effective</span>
     
         <span class="sidebar-tag-name" data-tags="win10"><span class="iconfont-archer">&#xe606;</span>win10</span>
     
         <span class="sidebar-tag-name" data-tags="windows"><span class="iconfont-archer">&#xe606;</span>windows</span>
+    
+        <span class="sidebar-tag-name" data-tags="webshell"><span class="iconfont-archer">&#xe606;</span>webshell</span>
+    
+        <span class="sidebar-tag-name" data-tags="fstab"><span class="iconfont-archer">&#xe606;</span>fstab</span>
     
         <span class="sidebar-tag-name" data-tags="索引"><span class="iconfont-archer">&#xe606;</span>索引</span>
     
@@ -5274,25 +4577,67 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="castby"><span class="iconfont-archer">&#xe606;</span>castby</span>
     
-        <span class="sidebar-tag-name" data-tags="code"><span class="iconfont-archer">&#xe606;</span>code</span>
+        <span class="sidebar-tag-name" data-tags="csrf"><span class="iconfont-archer">&#xe606;</span>csrf</span>
     
-        <span class="sidebar-tag-name" data-tags="regular"><span class="iconfont-archer">&#xe606;</span>regular</span>
+        <span class="sidebar-tag-name" data-tags="session"><span class="iconfont-archer">&#xe606;</span>session</span>
+    
+        <span class="sidebar-tag-name" data-tags="token"><span class="iconfont-archer">&#xe606;</span>token</span>
+    
+        <span class="sidebar-tag-name" data-tags="uid"><span class="iconfont-archer">&#xe606;</span>uid</span>
+    
+        <span class="sidebar-tag-name" data-tags="xss"><span class="iconfont-archer">&#xe606;</span>xss</span>
+    
+        <span class="sidebar-tag-name" data-tags="join"><span class="iconfont-archer">&#xe606;</span>join</span>
+    
+        <span class="sidebar-tag-name" data-tags="优化"><span class="iconfont-archer">&#xe606;</span>优化</span>
+    
+        <span class="sidebar-tag-name" data-tags="电话"><span class="iconfont-archer">&#xe606;</span>电话</span>
+    
+        <span class="sidebar-tag-name" data-tags="编程"><span class="iconfont-archer">&#xe606;</span>编程</span>
+    
+        <span class="sidebar-tag-name" data-tags="assembly"><span class="iconfont-archer">&#xe606;</span>assembly</span>
+    
+        <span class="sidebar-tag-name" data-tags="instructions"><span class="iconfont-archer">&#xe606;</span>instructions</span>
+    
+        <span class="sidebar-tag-name" data-tags="int"><span class="iconfont-archer">&#xe606;</span>int</span>
+    
+        <span class="sidebar-tag-name" data-tags="指令"><span class="iconfont-archer">&#xe606;</span>指令</span>
+    
+        <span class="sidebar-tag-name" data-tags="汇编"><span class="iconfont-archer">&#xe606;</span>汇编</span>
+    
+        <span class="sidebar-tag-name" data-tags="魔方"><span class="iconfont-archer">&#xe606;</span>魔方</span>
+    
+        <span class="sidebar-tag-name" data-tags="http-equiv"><span class="iconfont-archer">&#xe606;</span>http-equiv</span>
+    
+        <span class="sidebar-tag-name" data-tags="http协议"><span class="iconfont-archer">&#xe606;</span>http协议</span>
+    
+        <span class="sidebar-tag-name" data-tags="jsp"><span class="iconfont-archer">&#xe606;</span>jsp</span>
+    
+        <span class="sidebar-tag-name" data-tags="jquery"><span class="iconfont-archer">&#xe606;</span>jquery</span>
+    
+        <span class="sidebar-tag-name" data-tags="ANSI"><span class="iconfont-archer">&#xe606;</span>ANSI</span>
+    
+        <span class="sidebar-tag-name" data-tags="ASCII"><span class="iconfont-archer">&#xe606;</span>ASCII</span>
+    
+        <span class="sidebar-tag-name" data-tags="decode"><span class="iconfont-archer">&#xe606;</span>decode</span>
+    
+        <span class="sidebar-tag-name" data-tags="encode"><span class="iconfont-archer">&#xe606;</span>encode</span>
+    
+        <span class="sidebar-tag-name" data-tags="ISO-8859-1"><span class="iconfont-archer">&#xe606;</span>ISO-8859-1</span>
+    
+        <span class="sidebar-tag-name" data-tags="messy code"><span class="iconfont-archer">&#xe606;</span>messy code</span>
     
         <span class="sidebar-tag-name" data-tags="baidu"><span class="iconfont-archer">&#xe606;</span>baidu</span>
     
         <span class="sidebar-tag-name" data-tags="tieba"><span class="iconfont-archer">&#xe606;</span>tieba</span>
     
+        <span class="sidebar-tag-name" data-tags="code"><span class="iconfont-archer">&#xe606;</span>code</span>
+    
+        <span class="sidebar-tag-name" data-tags="regular"><span class="iconfont-archer">&#xe606;</span>regular</span>
+    
         <span class="sidebar-tag-name" data-tags="dom"><span class="iconfont-archer">&#xe606;</span>dom</span>
     
         <span class="sidebar-tag-name" data-tags="frontdesign"><span class="iconfont-archer">&#xe606;</span>frontdesign</span>
-    
-        <span class="sidebar-tag-name" data-tags="match"><span class="iconfont-archer">&#xe606;</span>match</span>
-    
-        <span class="sidebar-tag-name" data-tags="regex"><span class="iconfont-archer">&#xe606;</span>regex</span>
-    
-        <span class="sidebar-tag-name" data-tags="test"><span class="iconfont-archer">&#xe606;</span>test</span>
-    
-        <span class="sidebar-tag-name" data-tags="tutorial"><span class="iconfont-archer">&#xe606;</span>tutorial</span>
     
         <span class="sidebar-tag-name" data-tags="expression"><span class="iconfont-archer">&#xe606;</span>expression</span>
     
@@ -5309,6 +4654,14 @@ top:50vh;
         <span class="sidebar-tag-name" data-tags="react-native"><span class="iconfont-archer">&#xe606;</span>react-native</span>
     
         <span class="sidebar-tag-name" data-tags="vue.js"><span class="iconfont-archer">&#xe606;</span>vue.js</span>
+    
+        <span class="sidebar-tag-name" data-tags="match"><span class="iconfont-archer">&#xe606;</span>match</span>
+    
+        <span class="sidebar-tag-name" data-tags="regex"><span class="iconfont-archer">&#xe606;</span>regex</span>
+    
+        <span class="sidebar-tag-name" data-tags="test"><span class="iconfont-archer">&#xe606;</span>test</span>
+    
+        <span class="sidebar-tag-name" data-tags="tutorial"><span class="iconfont-archer">&#xe606;</span>tutorial</span>
     
         <span class="sidebar-tag-name" data-tags="coding"><span class="iconfont-archer">&#xe606;</span>coding</span>
     
@@ -5372,6 +4725,8 @@ jsonContent:
         <span class="sidebar-category-name" data-categories="Cocos"><span class="iconfont-archer">&#xe60a;</span>Cocos</span>
     
         <span class="sidebar-category-name" data-categories="Parser-amp-language"><span class="iconfont-archer">&#xe60a;</span>Parser-amp-language</span>
+    
+        <span class="sidebar-category-name" data-categories="Database"><span class="iconfont-archer">&#xe60a;</span>Database</span>
     
         <span class="sidebar-category-name" data-categories="Assembly"><span class="iconfont-archer">&#xe60a;</span>Assembly</span>
     

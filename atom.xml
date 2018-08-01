@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://rezeros.github.io/"/>
-  <updated>2018-07-28T04:48:55.692Z</updated>
+  <updated>2018-08-01T13:14:40.280Z</updated>
   <id>https://rezeros.github.io/</id>
   
   <author>
@@ -15,6 +15,60 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>redis-note</title>
+    <link href="https://rezeros.github.io/2018/08/01/redis-note/"/>
+    <id>https://rezeros.github.io/2018/08/01/redis-note/</id>
+    <published>2018-08-01T11:40:45.000Z</published>
+    <updated>2018-08-01T13:14:40.280Z</updated>
+    
+    <content type="html"><![CDATA[<p><a href="https://juejin.im/book/5afc2e5f6fb9a07a9b362527/" target="_blank" rel="noopener">https://juejin.im/book/5afc2e5f6fb9a07a9b362527/</a></p><h2 id="Basic-tips"><a href="#Basic-tips" class="headerlink" title="Basic tips:"></a>Basic tips:</h2><h3 id="String"><a href="#String" class="headerlink" title="String"></a>String</h3><hr><ol><li><p>Expand</p><p> The capacity will expand as two times speed within <code>1m</code>, otherwise it will increase <code>1m</code> every time until the max capacity(<code>512m</code>).</p></li><li><p>Example</p> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&gt; setex name 5 codehole  # 5s equals:set+expire</span><br><span class="line">&gt; get name</span><br><span class="line">&quot;codehole&quot;</span><br><span class="line">... # wait for 5s</span><br><span class="line">&gt; get name</span><br><span class="line">(nil)</span><br><span class="line"></span><br><span class="line">&gt; incrby age -5</span><br><span class="line">(integer) 31</span><br><span class="line">&gt; set codehole 9223372036854775807  # Long.Max</span><br><span class="line">OK</span><br><span class="line">&gt; incr codehole</span><br><span class="line">(error) ERR increment or decrement would overflow...</span><br></pre></td></tr></table></figure></li><li><p>Tips </p><p> 1 bit =8&gt; 1 byte =much&gt; string </p><p> So 1 bit =much&gt; string, like bitmap structure.</p></li></ol><h3 id="list"><a href="#list" class="headerlink" title="list"></a>list</h3><hr><ol><li><p>Time Complexity</p><p> insert and delete O(1) find O(n)</p><p> Example :</p> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&gt; rpush books python java golang</span><br><span class="line">(integer) 3</span><br><span class="line">&gt; lindex books 1  # O(n) </span><br><span class="line">&quot;java&quot;</span><br><span class="line">&gt; lrange books 0 -1  # get all emelents，O(n) </span><br><span class="line">1) &quot;python&quot;</span><br><span class="line">2) &quot;java&quot;</span><br><span class="line">3) &quot;golang&quot;</span><br><span class="line">&gt; ltrim books 1 -1 # O(n) -1 means the first last position</span><br><span class="line">OK</span><br><span class="line">&gt; lrange books 0 -1</span><br><span class="line">1) &quot;java&quot;</span><br><span class="line">2) &quot;golang&quot;</span><br><span class="line">&gt; ltrim books 1 0 # Actually it empty the whole list</span><br><span class="line">OK</span><br><span class="line">&gt; llen books</span><br><span class="line">(integer) 0...</span><br></pre></td></tr></table></figure></li><li><p>Implement</p><p> The list is implemented by a quicklist, which will use ziplist as small size and change to quicklist when the size grow enough.</p><p> The quick list link different ziplist by <code>prev</code> and <code>next</code> as list.</p></li></ol><h3 id="Hash"><a href="#Hash" class="headerlink" title="Hash"></a>Hash</h3><hr>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;a href=&quot;https://juejin.im/book/5afc2e5f6fb9a07a9b362527/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://juejin.im/book/5afc2e5f6fb9a07a9b362527
+      
+    
+    </summary>
+    
+      <category term="Database" scheme="https://rezeros.github.io/categories/Database/"/>
+    
+    
+      <category term="redis" scheme="https://rezeros.github.io/tags/redis/"/>
+    
+      <category term="string" scheme="https://rezeros.github.io/tags/string/"/>
+    
+      <category term="note" scheme="https://rezeros.github.io/tags/note/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>netcat.md</title>
+    <link href="https://rezeros.github.io/2018/07/28/netcat/"/>
+    <id>https://rezeros.github.io/2018/07/28/netcat/</id>
+    <published>2018-07-28T08:27:59.000Z</published>
+    <updated>2018-07-28T09:00:01.578Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="netcat-tool-py-version"><a href="#netcat-tool-py-version" class="headerlink" title="netcat tool(py version)"></a>netcat tool(py version)</h1>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;netcat-tool-py-version&quot;&gt;&lt;a href=&quot;#netcat-tool-py-version&quot; class=&quot;headerlink&quot; title=&quot;netcat tool(py version)&quot;&gt;&lt;/a&gt;netcat tool(py vers
+      
+    
+    </summary>
+    
+      <category term="Security" scheme="https://rezeros.github.io/categories/Security/"/>
+    
+    
+      <category term="security; kali; tools" scheme="https://rezeros.github.io/tags/security-kali-tools/"/>
+    
+  </entry>
   
   <entry>
     <title>Hello World</title>
@@ -362,11 +416,11 @@ import java.io.In
     
       <category term="linux" scheme="https://rezeros.github.io/tags/linux/"/>
     
-      <category term="mount" scheme="https://rezeros.github.io/tags/mount/"/>
-    
       <category term="dev" scheme="https://rezeros.github.io/tags/dev/"/>
     
       <category term="file" scheme="https://rezeros.github.io/tags/file/"/>
+    
+      <category term="mount" scheme="https://rezeros.github.io/tags/mount/"/>
     
       <category term="su" scheme="https://rezeros.github.io/tags/su/"/>
     
@@ -608,71 +662,6 @@ import java.io.In
       <category term="uid" scheme="https://rezeros.github.io/tags/uid/"/>
     
       <category term="xss" scheme="https://rezeros.github.io/tags/xss/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Exploding Git Repositories</title>
-    <link href="https://rezeros.github.io/2017/10/13/exploding-git-repositories/"/>
-    <id>https://rezeros.github.io/2017/10/13/exploding-git-repositories/</id>
-    <published>2017-10-13T07:46:47.000Z</published>
-    <updated>2018-07-28T05:11:59.497Z</updated>
-    
-    <content type="html"><![CDATA[<p>Origin fork： <a href="https://kate.io/blog/git-bomb/" target="_blank" rel="noopener">git exploding repo</a> <a href="http://www.open-open.com/lib/view/1328070620202" target="_blank" rel="noopener">Tree, blob 可参考</a> <code>git clone https://github.com/Katee/git-bomb.git</code> 值得一试上面的命令。（最好不要用自己的工作物理机） 如果你没有足够大的 RAM 和 storage, 那么通常来说你的 git 会被kill， 然后就是爆内存到逼你重启。</p><blockquote><p>The secret is that git de-duplicates “blobs” (which are used to store files) to make repositories smaller and allow using the same blob when a file remains unchanged between commits.</p></blockquote><p>blobs 指的是 类似 <strong>文件内容或inodes</strong>， tree 指的是 类似目录一样的东西 文章开头的那个项目 <strong>git-bomb</strong> 妄想造 a billion files, 然而它实际上只有10 tree 和 10个指向文件blob指针。 实际上这种攻击类似于 笑傲江湖 (XML bomb) ， 因此叫 git bomb。</p><h2 id="Structure"><a href="#Structure" class="headerlink" title="Structure"></a><strong>Structure</strong></h2><h4 id="Bottom"><a href="#Bottom" class="headerlink" title="Bottom"></a><strong>Bottom</strong></h4><p><img src="http://img.blog.csdn.net/20171013150303196?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvZ2l0aHViXzM1OTU3MTg4/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="blobs"> 最底下的有个blob文件有一个laugh。</p><pre><code>$ git show 5faa3895522087022ba6fc9e64b02653bd7c4283one laugh</code></pre><p>而有一个树对象指向这个blob对象10次</p><pre><code>$ git ls-tree 6961ae061a9b89b91162c00d55425b39a19c9f90100644 blob 5faa3895522087022ba6fc9e64b02653bd7c4283    f0100644 blob 5faa3895522087022ba6fc9e64b02653bd7c4283    f1# … snipped100644 blob 5faa3895522087022ba6fc9e64b02653bd7c4283    f9</code></pre><h4 id="Middle"><a href="#Middle" class="headerlink" title="Middle"></a><strong>Middle</strong></h4><p>然后 9 层树对象 指向 它们身后的这个树对象 (这是顶部树对象):</p><pre><code>$ git ls-tree 106d3b1c00034193bbe91194eb8a90fc45006377040000 tree 8d106ebc17b2de80acefd454825d394b9bc47fe6    d0040000 tree 8d106ebc17b2de80acefd454825d394b9bc47fe6    d1# … snipped040000 tree 8d106ebc17b2de80acefd454825d394b9bc47fe6    d9</code></pre><h4 id="Top"><a href="#Top" class="headerlink" title="Top"></a><strong>Top</strong></h4><p>master ref 指向最高树对象。</p><pre><code>$ git log --pretty=format:&quot;%s | tree: %T&quot;Create a git bomb | tree: 106d3b1c00034193bbe91194eb8a90fc45006377</code></pre><p>可以用多种能跑tree的方法 (<code>git status</code>, <code>git checkout</code>) 来测试这个repo， 都会因git在写文件进磁盘前在内存中建树而使内存 奔溃。 这也意味着你的进程会被killed 而不是填充满你的磁盘。</p><h3 id="Other-Git-Bombs"><a href="#Other-Git-Bombs" class="headerlink" title="Other Git Bombs"></a><strong>Other Git Bombs</strong></h3><p>Here is a slightly different version of the same idea. This repo has 15,000 nested tree objects. On my laptop this ends up blowing up the stack and causing a segfault. $ git clone <a href="https://github.com/Katee/git-bomb-segfault.git" target="_blank" rel="noopener">https://github.com/Katee/git-bomb-segfault.git</a> If you’d like to make your own git bombs read the next post <a href="https://kate.io/blog/making-your-own-exploding-git-repos/" target="_blank" rel="noopener">Making Your Own Git Bombs</a>.</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;Origin fork： &lt;a href=&quot;https://kate.io/blog/git-bomb/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;git exploding repo&lt;/a&gt; &lt;a href=&quot;http://www.open-open
-      
-    
-    </summary>
-    
-      <category term="Security" scheme="https://rezeros.github.io/categories/Security/"/>
-    
-    
-      <category term="git" scheme="https://rezeros.github.io/tags/git/"/>
-    
-      <category term="blob" scheme="https://rezeros.github.io/tags/blob/"/>
-    
-      <category term="bomb" scheme="https://rezeros.github.io/tags/bomb/"/>
-    
-      <category term="exploding" scheme="https://rezeros.github.io/tags/exploding/"/>
-    
-      <category term="memory" scheme="https://rezeros.github.io/tags/memory/"/>
-    
-      <category term="tree" scheme="https://rezeros.github.io/tags/tree/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Master horse training standard</title>
-    <link href="https://rezeros.github.io/2017/10/01/master-horse-training-standard/"/>
-    <id>https://rezeros.github.io/2017/10/01/master-horse-training-standard/</id>
-    <published>2017-10-01T12:47:59.000Z</published>
-    <updated>2018-07-28T05:11:59.497Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="Persona"><a href="#Persona" class="headerlink" title="Persona"></a>Persona</h2><ol><li><p>Search: BFS, DFS, IDA*, Hash</p></li><li><p>Thoughts design: Greedy, binary, Tree point, Merge sort, Ruler method</p></li><li><p>Math: extended Euclidean， prime, Eulers function, Fast matrix power, Gauss elimination</p></li><li><p>Data structure: STL(priority queue, map, multiset), Monotone structure(queue, stack, sliding window), disjoint set</p></li><li><p>Dynamic planning： classic problem， Tree DP, status compress DP</p></li><li><p>Math: Game(bash, nim, Fibonacci, Wythoff)， derangement， inverse element, combination of recursive</p></li><li><p>Graphy theory: minimal spanning tree， maximum matching， shortest path(floyd, dijkstra, bellman-ford, SPFA)</p></li><li><p>Computation geometry: line segment intersection, Cross product， Polygon area</p></li><li><p>Data structure: segment tree, tree attay, KMP, Trie</p></li><li><p>Graphy theory: network flow(max-flow, minimum cost flow), strongly connected components</p></li></ol><h2 id="Team-Necessary"><a href="#Team-Necessary" class="headerlink" title="Team Necessary"></a>Team Necessary</h2><ol><li><p>Data structure: splay tree, AC automantic machine, suffix array, Heavy-light Decomposition， balanced tree(treap), chairman tree, block, RMQ, LCA</p></li><li><p>Dynamic planing: digit DP, interval DP, data structure optimize DP(gradient optimize, monotonic queue, quadrilateral inequality, binary system)</p></li><li><p>Computation geometry： convex closure, Half-plane Intersection, area of circles</p></li><li><p>Math: SG function, matrix, Fermat’s little theorem， Chinese remainder theorem, pick theorem, probability and expectation(probability DP), FFT, Simpson, displace(polya theorem, Burnside lemma), combinatorial mathematics(interval counting, Catalan number， Stirling number, counting order)</p></li><li><p>Graphy theory: connected component(cut point, bridge, Biconnect), 2SAT, Differential Constrain, minimal cut, Eulerian circuit</p></li><li><p>Graphy theory: Network flow(upper and lower bound, max density subgraph, largest closed subgraph), most perfect matching</p></li></ol><h2 id="Team-Stronger"><a href="#Team-Stronger" class="headerlink" title="Team Stronger"></a>Team Stronger</h2><ol><li><p>Sundry: simulated annealing, plug DP, DLX, divide and conquer tree</p></li><li><p>Data sturcture: dynamic tree, kd tree, suffix automantic machine, Mo team, Persistent data structure</p></li><li><p>Math: generation function, liner programming, Mobius inversion, fast number theoretic transform</p></li><li><p>Graphy Theory: stable matching, the Kth short path, Second-best Minmum Spanning Tree, maximum clique, hamiltonian circuit, Minimum spanning tree</p></li><li><p>Computation geometry: Rotating calipers, 3D convex hull, Minimum Circumscribed Circle, Affine transformation matrix， motion planning</p></li></ol>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;Persona&quot;&gt;&lt;a href=&quot;#Persona&quot; class=&quot;headerlink&quot; title=&quot;Persona&quot;&gt;&lt;/a&gt;Persona&lt;/h2&gt;&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;Search: BFS, DFS, IDA*, Hash&lt;/p&gt;
-&lt;/li&gt;
-&lt;l
-      
-    
-    </summary>
-    
-      <category term="Algorithm" scheme="https://rezeros.github.io/categories/Algorithm/"/>
-    
-    
-      <category term="algorithm" scheme="https://rezeros.github.io/tags/algorithm/"/>
-    
-      <category term="acm" scheme="https://rezeros.github.io/tags/acm/"/>
     
   </entry>
   
