@@ -267,7 +267,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>Word count: <span class="post-count">1,089</span> / Reading time: <span class="post-count">5 min</span></span>
+                        <span>Word count: <span class="post-count">1,605</span> / Reading time: <span class="post-count">9 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -407,7 +407,71 @@ height:50vh;
 <p>前者在 Java 里是 0，后者是符号位为 1、其他位均为 0 的浮点数，在内存中等同于十六进制整数 0x8000000（即 -0.0F 可通过 Float.intBitsToFloat(0x8000000) 求得）。尽管它们的内存数值不同，但是在 Java 中 +0.0F == -0.0F 会返回真。</p>
 <p>[0x7F800001, 0x7FFFFFFF] 和 [0xFF800001, 0xFFFFFFFF] 对应的都是 NaN。当然，一般我们计算得出的 NaN，比如说通过 +0.0F/+0.0F，在内存中应为 0x7FC00000。这个数值，我们称之为标准的 NaN，而其他的我们称之为不标准的 NaN。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sun.misc.Unsafe;</span><br><span class="line"><span class="keyword">import</span> java.lang.reflect.Constructor;</span><br><span class="line"><span class="keyword">import</span> java.lang.reflect.Field;</span><br><span class="line"><span class="keyword">import</span> java.lang.reflect.InvocationTargetException;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Foo</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">boolean</span> flag = <span class="keyword">true</span>;</span><br><span class="line">     <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">getFlag</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.flag;</span><br><span class="line">    &#125;</span><br><span class="line">     <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> InvocationTargetException,</span></span><br><span class="line"><span class="function">            NoSuchMethodException,</span></span><br><span class="line"><span class="function">            InstantiationException,</span></span><br><span class="line"><span class="function">            IllegalAccessException,</span></span><br><span class="line"><span class="function">            NoSuchFieldException </span>&#123;</span><br><span class="line">        Foo foo = <span class="keyword">new</span> Foo();</span><br><span class="line">        Field field = foo.getClass().getDeclaredField(<span class="string">"flag"</span>);</span><br><span class="line">        Unsafe unsafe = foo.getUnsafeByConstructor();</span><br><span class="line">        <span class="keyword">long</span> addr = unsafe.objectFieldOffset(field);</span><br><span class="line">         <span class="keyword">for</span> (<span class="keyword">byte</span> b = <span class="number">0</span>; b &lt; <span class="number">4</span>; b++) &#123;</span><br><span class="line">            System.out.println(<span class="string">"Unsafe.putByte: "</span> + b);</span><br><span class="line">            unsafe.putByte(foo, addr, b);</span><br><span class="line">             System.out.println(<span class="string">"Unsafe.getByte: "</span> + unsafe.getByte(foo, addr));</span><br><span class="line">            System.out.println(<span class="string">"Unsafe.getBoolean: "</span> + unsafe.getBoolean(foo, addr));</span><br><span class="line">             System.out.println(<span class="string">"foo.flag: "</span> + foo.flag);</span><br><span class="line">            System.out.println(<span class="string">"foo.getFlag: "</span> + foo.getFlag());</span><br><span class="line">             <span class="keyword">if</span> (foo.flag) &#123;</span><br><span class="line">                System.out.println(<span class="string">"Hello, Java!"</span> + <span class="string">" foo.flag"</span>);</span><br><span class="line">            &#125;</span><br><span class="line">             <span class="keyword">if</span> (<span class="keyword">true</span> == foo.flag) &#123;</span><br><span class="line">                System.out.println(<span class="string">"Hello, JVM!"</span> + <span class="string">" foo.flag"</span>);</span><br><span class="line">            &#125;</span><br><span class="line">             <span class="keyword">if</span> (foo.getFlag()) &#123;</span><br><span class="line">                System.out.println(<span class="string">"Hello, Java!"</span> + <span class="string">" getFlag"</span>);</span><br><span class="line">            &#125;</span><br><span class="line">             <span class="keyword">if</span> (<span class="keyword">true</span> == foo.getFlag()) &#123;</span><br><span class="line">                System.out.println(<span class="string">"Hello, JVM!"</span> + <span class="string">" getFlag"</span>);</span><br><span class="line">            &#125;</span><br><span class="line">             System.out.println(<span class="string">"-----------------------------------------------------------"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> Unsafe <span class="title">getUnsafeByConstructor</span><span class="params">()</span> <span class="keyword">throws</span> NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException </span>&#123;</span><br><span class="line">        Constructor&lt;Unsafe&gt; unsafeConstructor = Unsafe.class.getDeclaredConstructor();</span><br><span class="line">        unsafeConstructor.setAccessible(<span class="keyword">true</span>);</span><br><span class="line">        Unsafe unsafe = unsafeConstructor.newInstance();</span><br><span class="line">         <span class="keyword">return</span> unsafe;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> Unsafe <span class="title">getUnsafe</span><span class="params">()</span> <span class="keyword">throws</span> NoSuchFieldException, IllegalAccessException </span>&#123;</span><br><span class="line">        Field theUnsafe = Unsafe.class.getDeclaredField(<span class="string">"theUnsafe"</span>);</span><br><span class="line">        theUnsafe.setAccessible(<span class="keyword">true</span>);</span><br><span class="line">        Unsafe unsafe = (Unsafe) theUnsafe.get(<span class="keyword">null</span>);</span><br><span class="line">        <span class="keyword">return</span> unsafe;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"> <span class="comment">/*</span></span><br><span class="line"><span class="comment">Unsafe.putBoolean和Unsafe.puByte是native实现</span></span><br><span class="line"><span class="comment"> putBoolean和putByte也是通过宏SET_FIELD模板出的函数</span></span><br><span class="line"><span class="comment"> #define SET_FIELD(obj, offset, type_name, x) \</span></span><br><span class="line"><span class="comment">  oop p = JNIHandles::resolve(obj); \</span></span><br><span class="line"><span class="comment">  *(type_name*)index_oop_from_field_offset_long(p, offset) = truncate_##type_name(x)</span></span><br><span class="line"><span class="comment"> unsafe.cpp中定义宏做truncate</span></span><br><span class="line"><span class="comment">#define truncate_jboolean(x) ((x) &amp; 1)</span></span><br><span class="line"><span class="comment">#define truncate_jbyte(x) (x)</span></span><br><span class="line"><span class="comment">#define truncate_jshort(x) (x)</span></span><br><span class="line"><span class="comment">#define truncate_jchar(x) (x)</span></span><br><span class="line"><span class="comment">#define truncate_jint(x) (x)</span></span><br><span class="line"><span class="comment">#define truncate_jlong(x) (x)</span></span><br><span class="line"><span class="comment">#define truncate_jfloat(x) (x)</span></span><br><span class="line"><span class="comment">#define truncate_jdouble(x) (x)</span></span><br><span class="line"><span class="comment"> 综上：unsafe.Put*不会对值做修改</span></span><br><span class="line"><span class="comment">------------------------------------------------------------------------------------</span></span><br><span class="line"><span class="comment">getBoolean和getByte也是通过宏GET_FIELD模板出的函数</span></span><br><span class="line"><span class="comment"> #define GET_FIELD(obj, offset, type_name, v) \</span></span><br><span class="line"><span class="comment">  oop p = JNIHandles::resolve(obj); \</span></span><br><span class="line"><span class="comment">  type_name v = *(type_name*)index_oop_from_field_offset_long(p, offset)</span></span><br><span class="line"><span class="comment"> 综上，unsafe.Get*不会对值做修改</span></span><br><span class="line"><span class="comment">------------------------------------------------------------------------------------</span></span><br><span class="line"><span class="comment">验证：</span></span><br><span class="line"><span class="comment">unsafe.putByte(foo, addr, (byte)2); // 设置为: 2</span></span><br><span class="line"><span class="comment">System.out.println(unsafe.getByte(foo, addr)); // 打印getByte: 2</span></span><br><span class="line"><span class="comment">System.out.println(unsafe.getBoolean(foo, addr)); // 打印getBoolean: true</span></span><br><span class="line"><span class="comment"> unsafe.putByte(foo, addr, (byte)1); // 设置为: 1</span></span><br><span class="line"><span class="comment">System.out.println(unsafe.getByte(foo, addr)); // 打印getByte: 1</span></span><br><span class="line"><span class="comment">System.out.println(unsafe.getBoolean(foo, addr)); // 打印getBoolean: true</span></span><br><span class="line"><span class="comment">------------------------------------------------------------------------------------</span></span><br><span class="line"><span class="comment">疑问：</span></span><br><span class="line"><span class="comment">if(foo.flag)判断，使用getfield	Field flag:"Z"，执行逻辑等于：0 ！= flag</span></span><br><span class="line"><span class="comment">if(foo.getFlag())判断，使用invokevirtual	Method getFlag:"()Z"，执行逻辑等于： 0 != （(flag) &amp; 1）</span></span><br><span class="line"><span class="comment"> 求大神帮忙解答</span></span><br><span class="line"><span class="comment"> --------------------------</span></span><br><span class="line"><span class="comment">附getFlag jasm码：</span></span><br><span class="line"><span class="comment">public Method getFlag:"()Z"</span></span><br><span class="line"><span class="comment">	stack 1 locals 1</span></span><br><span class="line"><span class="comment">&#123;</span></span><br><span class="line"><span class="comment">		aload_0;</span></span><br><span class="line"><span class="comment">		getfield	Field flag:"Z";</span></span><br><span class="line"><span class="comment">		ireturn;</span></span><br><span class="line"><span class="comment">&#125;</span></span><br><span class="line"><span class="comment">*/</span> </span><br><span class="line"></span><br><span class="line">Unsafe.putBoolean会做掩码，另外方法返回也会对<span class="keyword">boolean</span> <span class="keyword">byte</span> <span class="keyword">char</span> <span class="keyword">short</span>进行掩码</span><br></pre></td></tr></table></figure>
-<h2 id="Class-Loader"><a href="#Class-Loader" class="headerlink" title="Class Loader"></a>Class Loader</h2>
+<h2 id="Class-Loader"><a href="#Class-Loader" class="headerlink" title="Class Loader"></a>Class Loader</h2><p><img src="http://files.trickmaster.cn/java_classloader_hierarchy.png" alt="java_classloader_hierarchy"></p>
+<h3 id="load"><a href="#load" class="headerlink" title="load"></a>load</h3><blockquote>
+<p>tips: In this time,JVM has generated the class structure and write in the method area</p>
+</blockquote>
+<ol>
+<li><p>Every class loader inherit java.lang.ClassLoader except boot class loader.</p>
+<ul>
+<li>Boot: jre/lib, Xbootclasspath</li>
+<li>Extension: ext, dirs</li>
+<li>Application:</li>
+</ul>
+</li>
+<li><p>JAVA9: change extension to platform which would load almost all modules except important moudles such as java.base.</p>
+</li>
+<li><p>Class unique ID: result of class loader object and class full path name.</p>
+</li>
+</ol>
+<h3 id="link"><a href="#link" class="headerlink" title="link"></a>link</h3><blockquote>
+<p>tips: get the address of method instead of class.</p>
+</blockquote>
+<ol>
+<li><p>Valid byte for jvm criterion.</p>
+</li>
+<li><p>Prepare</p>
+<ul>
+<li>Allocate memory</li>
+<li>Construct layer about class such as method table which realize dynamic binding of virtual method.</li>
+</ul>
+</li>
+<li><p>analyze</p>
+<ul>
+<li>resolve these symbols to actual refference</li>
+</ul>
+</li>
+</ol>
+<p>Besides: Java machine specification not require finish the analyze in the link process, it just has provisions that the necessity of resolving symbol refference before execute the corresponding byte code.</p>
+<h3 id="init-process"><a href="#init-process" class="headerlink" title="init process"></a>init process</h3><ol>
+<li><p><code>final static [basic type or String]</code> will be signed ConstantValue and init directly by jvm. Besides, all of directly assignment and static block code will be put in the same method and rename as <code>&lt;clinit&gt;</code>.</p>
+</li>
+<li><p>JVM will use block method to ensure teh clinit method only be executed once.(And the feature always be used to realized singleton lazy init process)</p>
+</li>
+<li><p>When will the init process be triggered:</p>
+<ul>
+<li>JVM start, init user settle Main class</li>
+<li><code>new</code> the aim class</li>
+<li>instructions: call static method, init over class</li>
+<li>instructions: visit static field init over class</li>
+<li>child class init trigger parent class init</li>
+<li>default method defined in interface will result in interface init process.</li>
+<li>reflection init class</li>
+<li>the first call MethodHandle object, init the class where methodHandle locate.</li>
+</ul>
+</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">public class Singleton &#123;</span><br><span class="line">  private Singleton() &#123;&#125;</span><br><span class="line">  private static class LazyHolder &#123;</span><br><span class="line">    static final Singleton INSTANCE = new Singleton();</span><br><span class="line">  &#125;</span><br><span class="line">  public static Singleton getInstance() &#123;</span><br><span class="line">    return LazyHolder.INSTANCE;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>The above code:<br>    Only class Singleton.getInstance, program will visit LazyHolder.INSTANCE, then trigger the process of LazyHolder init and create a Singleton object.</p>
+<p>Practice:</p>
+<p><code>JVM: -verbose:class</code> will print the order of class loading and special symbol before LazyHolder method.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">$ echo &apos;</span><br><span class="line">public class Singleton &#123;</span><br><span class="line">  private Singleton() &#123;&#125;</span><br><span class="line">  private static class LazyHolder &#123;</span><br><span class="line">    static final Singleton INSTANCE = new Singleton();</span><br><span class="line">    static &#123;</span><br><span class="line">      System.out.println(&quot;LazyHolder.&lt;clinit&gt;&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  public static Object getInstance(boolean flag) &#123;</span><br><span class="line">    if (flag) return new LazyHolder[2];</span><br><span class="line">    return LazyHolder.INSTANCE;</span><br><span class="line">  &#125;</span><br><span class="line">  public static void main(String[] args) &#123;</span><br><span class="line">    getInstance(true);</span><br><span class="line">    System.out.println(&quot;----&quot;);</span><br><span class="line">    getInstance(false);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;&apos; &gt; Singleton.java</span><br><span class="line">$ javac Singleton.java</span><br><span class="line">$ java -verbose:class Singleton</span><br></pre></td></tr></table></figure>
+<p>Problem:<br>new array whether result in LazyHolder load or init?</p>
+<p>A: load not init.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ java -cp /path/to/asmtools.jar org.openjdk.asmtools.jdis.Main Singleton\$LazyHolder.class &gt; Singleton\$LazyHolder.jasm.1</span><br><span class="line">$ awk &apos;NR==1,/stack 1/&#123;sub(/stack 1/, &quot;stack 0&quot;)&#125; 1&apos; Singleton\$LazyHolder.jasm.1 &gt; Singleton\$LazyHolder.jasm</span><br><span class="line">$ java -cp /path/to/asmtools.jar org.openjdk.asmtools.jasm.Main Singleton\$LazyHolder.jasm</span><br><span class="line">$ java -verbose:class Singleton</span><br></pre></td></tr></table></figure>
+<p>Problem2:<br>new array will result in link of LazyHolder?</p>
+<p>A: No.(while getInstance(false) will link and init)</p>
+
     </article>
     <!-- license  -->
     
@@ -594,7 +658,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#How-java-code-run"><span class="toc-number">1.</span> <span class="toc-text">How java code run?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Java-basic-types"><span class="toc-number">2.</span> <span class="toc-text">Java basic types</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Class-Loader"><span class="toc-number">3.</span> <span class="toc-text">Class Loader</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#How-java-code-run"><span class="toc-number">1.</span> <span class="toc-text">How java code run?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Java-basic-types"><span class="toc-number">2.</span> <span class="toc-text">Java basic types</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Class-Loader"><span class="toc-number">3.</span> <span class="toc-text">Class Loader</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#load"><span class="toc-number">3.1.</span> <span class="toc-text">load</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#link"><span class="toc-number">3.2.</span> <span class="toc-text">link</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#init-process"><span class="toc-number">3.3.</span> <span class="toc-text">init process</span></a></li></ol></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
@@ -607,182 +671,6 @@ top:50vh;
     <div class="sidebar-content sidebar-content-show-archive">
           <div class="sidebar-panel-archives">
     <!-- 在ejs中将archive按照时间排序 -->
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     
@@ -3378,12 +3266,12 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">08/01</span><a class="archive-post-title" href= "/2017/08/01/nsa-tools/" >NSA tools</a>
+            <span class="archive-post-date">08/01</span><a class="archive-post-title" href= "/2017/08/01/aquatone-a-tool-for-domain-flyovers/" >AQUATONE: A tool for domain flyovers</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">08/01</span><a class="archive-post-title" href= "/2017/08/01/aquatone-a-tool-for-domain-flyovers/" >AQUATONE: A tool for domain flyovers</a>
+            <span class="archive-post-date">08/01</span><a class="archive-post-title" href= "/2017/08/01/nsa-tools/" >NSA tools</a>
         </li>
     
     
@@ -3568,12 +3456,12 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">01/26</span><a class="archive-post-title" href= "/2017/01/26/e6-ad-a3-e5-88-99-e8-a1-a8-e8-be-be-e5-bc-8fip/" >正则表达式IP</a>
+            <span class="archive-post-date">01/26</span><a class="archive-post-title" href= "/2017/01/26/ennote/" >EnNote</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">01/26</span><a class="archive-post-title" href= "/2017/01/26/ennote/" >EnNote</a>
+            <span class="archive-post-date">01/26</span><a class="archive-post-title" href= "/2017/01/26/e6-ad-a3-e5-88-99-e8-a1-a8-e8-be-be-e5-bc-8fip/" >正则表达式IP</a>
         </li>
     
     
@@ -3722,12 +3610,12 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">11/13</span><a class="archive-post-title" href= "/2016/11/13/2016-11-12/" >2016.11.12</a>
+            <span class="archive-post-date">11/13</span><a class="archive-post-title" href= "/2016/11/13/e5-87-af-e6-92-92-e5-af-86-e7-a0-81-ef-bc-88python-ef-bc-89/" >凯撒密码（Python）</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">11/13</span><a class="archive-post-title" href= "/2016/11/13/e5-87-af-e6-92-92-e5-af-86-e7-a0-81-ef-bc-88python-ef-bc-89/" >凯撒密码（Python）</a>
+            <span class="archive-post-date">11/13</span><a class="archive-post-title" href= "/2016/11/13/2016-11-12/" >2016.11.12</a>
         </li>
     
     
@@ -3817,12 +3705,12 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">11/02</span><a class="archive-post-title" href= "/2016/11/02/e6-9c-89-e5-ba-8f-e6-a0-91-e8-bd-ac-e4-ba-8c-e5-8f-89-e6-a0-91-e6-b1-82-e6-b7-b1-e5-ba-a6/" >有序树转二叉树求深度</a>
+            <span class="archive-post-date">11/02</span><a class="archive-post-title" href= "/2016/11/02/e5-87-bb-e9-bc-93-e4-bc-a0-e8-8a-b1/" >击鼓传花</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">11/02</span><a class="archive-post-title" href= "/2016/11/02/e5-87-bb-e9-bc-93-e4-bc-a0-e8-8a-b1/" >击鼓传花</a>
+            <span class="archive-post-date">11/02</span><a class="archive-post-title" href= "/2016/11/02/e6-9c-89-e5-ba-8f-e6-a0-91-e8-bd-ac-e4-ba-8c-e5-8f-89-e6-a0-91-e6-b1-82-e6-b7-b1-e5-ba-a6/" >有序树转二叉树求深度</a>
         </li>
     
     
@@ -3852,35 +3740,12 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/22</span><a class="archive-post-title" href= "/2016/10/22/e5-b9-b6-e6-9f-a5-e9-9b-86/" >(转)并查集</a>
-        </li>
-    
-    
-    
-    
-    
-        </ul>
-    
-    <div class="archive-year"> Invalid date </div>
-    <ul class="year-list">
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2018/07/28/hello-world/" >Hello World</a>
-        </li>
-    
-    
-    
-    
-    
-        </ul>
-    
-    <div class="archive-year"> 2016 </div>
-    <ul class="year-list">
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">10/22</span><a class="archive-post-title" href= "/2016/10/22/e9-80-9a-e7-95-85-e5-b7-a5-e7-a8-8b-e9-97-ae-e9-a2-98/" >通畅工程问题</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/22</span><a class="archive-post-title" href= "/2016/10/22/e5-b9-b6-e6-9f-a5-e9-9b-86/" >(转)并查集</a>
         </li>
     
     
@@ -3895,12 +3760,12 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/13</span><a class="archive-post-title" href= "/2016/10/13/spider-e7-99-be-e5-ba-a6-e8-b4-b4-e5-90-a7-e5-b8-96-e5-ad-90/" >Spider百度贴吧帖子</a>
+            <span class="archive-post-date">10/13</span><a class="archive-post-title" href= "/2016/10/13/e7-b3-97-e4-ba-8b-e7-99-be-e7-a7-91spider-e4-bb-a3-e7-a0-81-e4-bc-98-e5-8c-96/" >糗事百科Spider代码优化</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/13</span><a class="archive-post-title" href= "/2016/10/13/e7-b3-97-e4-ba-8b-e7-99-be-e7-a7-91spider-e4-bb-a3-e7-a0-81-e4-bc-98-e5-8c-96/" >糗事百科Spider代码优化</a>
+            <span class="archive-post-date">10/13</span><a class="archive-post-title" href= "/2016/10/13/spider-e7-99-be-e5-ba-a6-e8-b4-b4-e5-90-a7-e5-b8-96-e5-ad-90/" >Spider百度贴吧帖子</a>
         </li>
     
     
@@ -3911,6 +3776,20 @@ top:50vh;
     
         <li class="archive-post-item">
             <span class="archive-post-date">10/12</span><a class="archive-post-title" href= "/2016/10/12/e7-88-ac-e8-99-ab-e5-ad-a6-e4-b9-a0/" >爬虫学习</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> Invalid date </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2018/07/28/hello-world/" >Hello World</a>
         </li>
     
     </div>
@@ -3944,6 +3823,16 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="javascript"><span class="iconfont-archer">&#xe606;</span>javascript</span>
     
+        <span class="sidebar-tag-name" data-tags="archlinux"><span class="iconfont-archer">&#xe606;</span>archlinux</span>
+    
+        <span class="sidebar-tag-name" data-tags="gdm"><span class="iconfont-archer">&#xe606;</span>gdm</span>
+    
+        <span class="sidebar-tag-name" data-tags="shell"><span class="iconfont-archer">&#xe606;</span>shell</span>
+    
+        <span class="sidebar-tag-name" data-tags="themes"><span class="iconfont-archer">&#xe606;</span>themes</span>
+    
+        <span class="sidebar-tag-name" data-tags="atom"><span class="iconfont-archer">&#xe606;</span>atom</span>
+    
         <span class="sidebar-tag-name" data-tags="arch"><span class="iconfont-archer">&#xe606;</span>arch</span>
     
         <span class="sidebar-tag-name" data-tags="bbr"><span class="iconfont-archer">&#xe606;</span>bbr</span>
@@ -3957,16 +3846,6 @@ top:50vh;
         <span class="sidebar-tag-name" data-tags="speed"><span class="iconfont-archer">&#xe606;</span>speed</span>
     
         <span class="sidebar-tag-name" data-tags="tcp"><span class="iconfont-archer">&#xe606;</span>tcp</span>
-    
-        <span class="sidebar-tag-name" data-tags="archlinux"><span class="iconfont-archer">&#xe606;</span>archlinux</span>
-    
-        <span class="sidebar-tag-name" data-tags="gdm"><span class="iconfont-archer">&#xe606;</span>gdm</span>
-    
-        <span class="sidebar-tag-name" data-tags="shell"><span class="iconfont-archer">&#xe606;</span>shell</span>
-    
-        <span class="sidebar-tag-name" data-tags="themes"><span class="iconfont-archer">&#xe606;</span>themes</span>
-    
-        <span class="sidebar-tag-name" data-tags="atom"><span class="iconfont-archer">&#xe606;</span>atom</span>
     
         <span class="sidebar-tag-name" data-tags="angular"><span class="iconfont-archer">&#xe606;</span>angular</span>
     
@@ -3982,12 +3861,6 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="selector"><span class="iconfont-archer">&#xe606;</span>selector</span>
     
-        <span class="sidebar-tag-name" data-tags="classLoader"><span class="iconfont-archer">&#xe606;</span>classLoader</span>
-    
-        <span class="sidebar-tag-name" data-tags="findClass"><span class="iconfont-archer">&#xe606;</span>findClass</span>
-    
-        <span class="sidebar-tag-name" data-tags="java"><span class="iconfont-archer">&#xe606;</span>java</span>
-    
         <span class="sidebar-tag-name" data-tags="八皇后"><span class="iconfont-archer">&#xe606;</span>八皇后</span>
     
         <span class="sidebar-tag-name" data-tags="html"><span class="iconfont-archer">&#xe606;</span>html</span>
@@ -3995,16 +3868,6 @@ top:50vh;
         <span class="sidebar-tag-name" data-tags="标签"><span class="iconfont-archer">&#xe606;</span>标签</span>
     
         <span class="sidebar-tag-name" data-tags="凯撒密码"><span class="iconfont-archer">&#xe606;</span>凯撒密码</span>
-    
-        <span class="sidebar-tag-name" data-tags="击鼓传花"><span class="iconfont-archer">&#xe606;</span>击鼓传花</span>
-    
-        <span class="sidebar-tag-name" data-tags="数据结构"><span class="iconfont-archer">&#xe606;</span>数据结构</span>
-    
-        <span class="sidebar-tag-name" data-tags="算法"><span class="iconfont-archer">&#xe606;</span>算法</span>
-    
-        <span class="sidebar-tag-name" data-tags="数据结构与算法"><span class="iconfont-archer">&#xe606;</span>数据结构与算法</span>
-    
-        <span class="sidebar-tag-name" data-tags="编码"><span class="iconfont-archer">&#xe606;</span>编码</span>
     
         <span class="sidebar-tag-name" data-tags="android"><span class="iconfont-archer">&#xe606;</span>android</span>
     
@@ -4014,9 +3877,23 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="思维导图"><span class="iconfont-archer">&#xe606;</span>思维导图</span>
     
-        <span class="sidebar-tag-name" data-tags="嗅事百科"><span class="iconfont-archer">&#xe606;</span>嗅事百科</span>
+        <span class="sidebar-tag-name" data-tags="击鼓传花"><span class="iconfont-archer">&#xe606;</span>击鼓传花</span>
     
-        <span class="sidebar-tag-name" data-tags="illegal"><span class="iconfont-archer">&#xe606;</span>illegal</span>
+        <span class="sidebar-tag-name" data-tags="数据结构"><span class="iconfont-archer">&#xe606;</span>数据结构</span>
+    
+        <span class="sidebar-tag-name" data-tags="算法"><span class="iconfont-archer">&#xe606;</span>算法</span>
+    
+        <span class="sidebar-tag-name" data-tags="classLoader"><span class="iconfont-archer">&#xe606;</span>classLoader</span>
+    
+        <span class="sidebar-tag-name" data-tags="findClass"><span class="iconfont-archer">&#xe606;</span>findClass</span>
+    
+        <span class="sidebar-tag-name" data-tags="java"><span class="iconfont-archer">&#xe606;</span>java</span>
+    
+        <span class="sidebar-tag-name" data-tags="数据结构与算法"><span class="iconfont-archer">&#xe606;</span>数据结构与算法</span>
+    
+        <span class="sidebar-tag-name" data-tags="编码"><span class="iconfont-archer">&#xe606;</span>编码</span>
+    
+        <span class="sidebar-tag-name" data-tags="嗅事百科"><span class="iconfont-archer">&#xe606;</span>嗅事百科</span>
     
         <span class="sidebar-tag-name" data-tags="拓扑排序"><span class="iconfont-archer">&#xe606;</span>拓扑排序</span>
     
@@ -4026,29 +3903,17 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="rsa"><span class="iconfont-archer">&#xe606;</span>rsa</span>
     
-        <span class="sidebar-tag-name" data-tags="fstab"><span class="iconfont-archer">&#xe606;</span>fstab</span>
-    
-        <span class="sidebar-tag-name" data-tags="mount"><span class="iconfont-archer">&#xe606;</span>mount</span>
-    
         <span class="sidebar-tag-name" data-tags="二叉树"><span class="iconfont-archer">&#xe606;</span>二叉树</span>
     
         <span class="sidebar-tag-name" data-tags="有序树"><span class="iconfont-archer">&#xe606;</span>有序树</span>
     
-        <span class="sidebar-tag-name" data-tags="login"><span class="iconfont-archer">&#xe606;</span>login</span>
+        <span class="sidebar-tag-name" data-tags="fstab"><span class="iconfont-archer">&#xe606;</span>fstab</span>
     
-        <span class="sidebar-tag-name" data-tags="selenium"><span class="iconfont-archer">&#xe606;</span>selenium</span>
+        <span class="sidebar-tag-name" data-tags="mount"><span class="iconfont-archer">&#xe606;</span>mount</span>
     
         <span class="sidebar-tag-name" data-tags="正则表达式"><span class="iconfont-archer">&#xe606;</span>正则表达式</span>
     
         <span class="sidebar-tag-name" data-tags="后缀表达式"><span class="iconfont-archer">&#xe606;</span>后缀表达式</span>
-    
-        <span class="sidebar-tag-name" data-tags="apache"><span class="iconfont-archer">&#xe606;</span>apache</span>
-    
-        <span class="sidebar-tag-name" data-tags="security"><span class="iconfont-archer">&#xe606;</span>security</span>
-    
-        <span class="sidebar-tag-name" data-tags="web server"><span class="iconfont-archer">&#xe606;</span>web server</span>
-    
-        <span class="sidebar-tag-name" data-tags="渗透"><span class="iconfont-archer">&#xe606;</span>渗透</span>
     
         <span class="sidebar-tag-name" data-tags="cocos"><span class="iconfont-archer">&#xe606;</span>cocos</span>
     
@@ -4062,21 +3927,71 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="爬虫"><span class="iconfont-archer">&#xe606;</span>爬虫</span>
     
+        <span class="sidebar-tag-name" data-tags="login"><span class="iconfont-archer">&#xe606;</span>login</span>
+    
+        <span class="sidebar-tag-name" data-tags="selenium"><span class="iconfont-archer">&#xe606;</span>selenium</span>
+    
+        <span class="sidebar-tag-name" data-tags="apache"><span class="iconfont-archer">&#xe606;</span>apache</span>
+    
+        <span class="sidebar-tag-name" data-tags="security"><span class="iconfont-archer">&#xe606;</span>security</span>
+    
+        <span class="sidebar-tag-name" data-tags="web server"><span class="iconfont-archer">&#xe606;</span>web server</span>
+    
+        <span class="sidebar-tag-name" data-tags="渗透"><span class="iconfont-archer">&#xe606;</span>渗透</span>
+    
         <span class="sidebar-tag-name" data-tags="备份"><span class="iconfont-archer">&#xe606;</span>备份</span>
     
         <span class="sidebar-tag-name" data-tags="数据"><span class="iconfont-archer">&#xe606;</span>数据</span>
     
         <span class="sidebar-tag-name" data-tags="algorithm"><span class="iconfont-archer">&#xe606;</span>algorithm</span>
     
+        <span class="sidebar-tag-name" data-tags="illegal"><span class="iconfont-archer">&#xe606;</span>illegal</span>
+    
+        <span class="sidebar-tag-name" data-tags="permission"><span class="iconfont-archer">&#xe606;</span>permission</span>
+    
+        <span class="sidebar-tag-name" data-tags="正则"><span class="iconfont-archer">&#xe606;</span>正则</span>
+    
+        <span class="sidebar-tag-name" data-tags="flex"><span class="iconfont-archer">&#xe606;</span>flex</span>
+    
+        <span class="sidebar-tag-name" data-tags="layout"><span class="iconfont-archer">&#xe606;</span>layout</span>
+    
+        <span class="sidebar-tag-name" data-tags="csrf"><span class="iconfont-archer">&#xe606;</span>csrf</span>
+    
+        <span class="sidebar-tag-name" data-tags="session"><span class="iconfont-archer">&#xe606;</span>session</span>
+    
+        <span class="sidebar-tag-name" data-tags="token"><span class="iconfont-archer">&#xe606;</span>token</span>
+    
+        <span class="sidebar-tag-name" data-tags="uid"><span class="iconfont-archer">&#xe606;</span>uid</span>
+    
+        <span class="sidebar-tag-name" data-tags="web"><span class="iconfont-archer">&#xe606;</span>web</span>
+    
+        <span class="sidebar-tag-name" data-tags="xss"><span class="iconfont-archer">&#xe606;</span>xss</span>
+    
+        <span class="sidebar-tag-name" data-tags="join"><span class="iconfont-archer">&#xe606;</span>join</span>
+    
+        <span class="sidebar-tag-name" data-tags="优化"><span class="iconfont-archer">&#xe606;</span>优化</span>
+    
+        <span class="sidebar-tag-name" data-tags="电话"><span class="iconfont-archer">&#xe606;</span>电话</span>
+    
+        <span class="sidebar-tag-name" data-tags="编程"><span class="iconfont-archer">&#xe606;</span>编程</span>
+    
+        <span class="sidebar-tag-name" data-tags="assembly"><span class="iconfont-archer">&#xe606;</span>assembly</span>
+    
+        <span class="sidebar-tag-name" data-tags="instructions"><span class="iconfont-archer">&#xe606;</span>instructions</span>
+    
+        <span class="sidebar-tag-name" data-tags="int"><span class="iconfont-archer">&#xe606;</span>int</span>
+    
+        <span class="sidebar-tag-name" data-tags="指令"><span class="iconfont-archer">&#xe606;</span>指令</span>
+    
+        <span class="sidebar-tag-name" data-tags="汇编"><span class="iconfont-archer">&#xe606;</span>汇编</span>
+    
+        <span class="sidebar-tag-name" data-tags="魔方"><span class="iconfont-archer">&#xe606;</span>魔方</span>
+    
         <span class="sidebar-tag-name" data-tags="extensions"><span class="iconfont-archer">&#xe606;</span>extensions</span>
     
         <span class="sidebar-tag-name" data-tags="前端"><span class="iconfont-archer">&#xe606;</span>前端</span>
     
         <span class="sidebar-tag-name" data-tags="api"><span class="iconfont-archer">&#xe606;</span>api</span>
-    
-        <span class="sidebar-tag-name" data-tags="扩展"><span class="iconfont-archer">&#xe606;</span>扩展</span>
-    
-        <span class="sidebar-tag-name" data-tags="通信"><span class="iconfont-archer">&#xe606;</span>通信</span>
     
         <span class="sidebar-tag-name" data-tags="函数"><span class="iconfont-archer">&#xe606;</span>函数</span>
     
@@ -4114,9 +4029,9 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="html5"><span class="iconfont-archer">&#xe606;</span>html5</span>
     
-        <span class="sidebar-tag-name" data-tags="web"><span class="iconfont-archer">&#xe606;</span>web</span>
-    
         <span class="sidebar-tag-name" data-tags="网络"><span class="iconfont-archer">&#xe606;</span>网络</span>
+    
+        <span class="sidebar-tag-name" data-tags="通信"><span class="iconfont-archer">&#xe606;</span>通信</span>
     
         <span class="sidebar-tag-name" data-tags="http"><span class="iconfont-archer">&#xe606;</span>http</span>
     
@@ -4141,8 +4056,6 @@ top:50vh;
         <span class="sidebar-tag-name" data-tags="注册码"><span class="iconfont-archer">&#xe606;</span>注册码</span>
     
         <span class="sidebar-tag-name" data-tags="激活码"><span class="iconfont-archer">&#xe606;</span>激活码</span>
-    
-        <span class="sidebar-tag-name" data-tags="jvm"><span class="iconfont-archer">&#xe606;</span>jvm</span>
     
         <span class="sidebar-tag-name" data-tags="kali"><span class="iconfont-archer">&#xe606;</span>kali</span>
     
@@ -4170,6 +4083,10 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="user"><span class="iconfont-archer">&#xe606;</span>user</span>
     
+        <span class="sidebar-tag-name" data-tags="lvm"><span class="iconfont-archer">&#xe606;</span>lvm</span>
+    
+        <span class="sidebar-tag-name" data-tags="raid"><span class="iconfont-archer">&#xe606;</span>raid</span>
+    
         <span class="sidebar-tag-name" data-tags="firewall"><span class="iconfont-archer">&#xe606;</span>firewall</span>
     
         <span class="sidebar-tag-name" data-tags="firewalld"><span class="iconfont-archer">&#xe606;</span>firewalld</span>
@@ -4190,10 +4107,6 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="acm"><span class="iconfont-archer">&#xe606;</span>acm</span>
     
-        <span class="sidebar-tag-name" data-tags="lvm"><span class="iconfont-archer">&#xe606;</span>lvm</span>
-    
-        <span class="sidebar-tag-name" data-tags="raid"><span class="iconfont-archer">&#xe606;</span>raid</span>
-    
         <span class="sidebar-tag-name" data-tags="injection"><span class="iconfont-archer">&#xe606;</span>injection</span>
     
         <span class="sidebar-tag-name" data-tags="mysqli"><span class="iconfont-archer">&#xe606;</span>mysqli</span>
@@ -4210,15 +4123,15 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="论坛"><span class="iconfont-archer">&#xe606;</span>论坛</span>
     
+        <span class="sidebar-tag-name" data-tags="exploit"><span class="iconfont-archer">&#xe606;</span>exploit</span>
+    
+        <span class="sidebar-tag-name" data-tags="NSA"><span class="iconfont-archer">&#xe606;</span>NSA</span>
+    
         <span class="sidebar-tag-name" data-tags="安全"><span class="iconfont-archer">&#xe606;</span>安全</span>
     
         <span class="sidebar-tag-name" data-tags="序列化与反序列化"><span class="iconfont-archer">&#xe606;</span>序列化与反序列化</span>
     
         <span class="sidebar-tag-name" data-tags="微信"><span class="iconfont-archer">&#xe606;</span>微信</span>
-    
-        <span class="sidebar-tag-name" data-tags="exploit"><span class="iconfont-archer">&#xe606;</span>exploit</span>
-    
-        <span class="sidebar-tag-name" data-tags="NSA"><span class="iconfont-archer">&#xe606;</span>NSA</span>
     
         <span class="sidebar-tag-name" data-tags="phpstorm"><span class="iconfont-archer">&#xe606;</span>phpstorm</span>
     
@@ -4298,49 +4211,29 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="windows"><span class="iconfont-archer">&#xe606;</span>windows</span>
     
-        <span class="sidebar-tag-name" data-tags="permission"><span class="iconfont-archer">&#xe606;</span>permission</span>
+        <span class="sidebar-tag-name" data-tags="扩展"><span class="iconfont-archer">&#xe606;</span>扩展</span>
     
-        <span class="sidebar-tag-name" data-tags="正则"><span class="iconfont-archer">&#xe606;</span>正则</span>
+        <span class="sidebar-tag-name" data-tags="索引"><span class="iconfont-archer">&#xe606;</span>索引</span>
     
-        <span class="sidebar-tag-name" data-tags="flex"><span class="iconfont-archer">&#xe606;</span>flex</span>
+        <span class="sidebar-tag-name" data-tags="domain"><span class="iconfont-archer">&#xe606;</span>domain</span>
     
-        <span class="sidebar-tag-name" data-tags="layout"><span class="iconfont-archer">&#xe606;</span>layout</span>
+        <span class="sidebar-tag-name" data-tags="scan-tools"><span class="iconfont-archer">&#xe606;</span>scan-tools</span>
     
-        <span class="sidebar-tag-name" data-tags="csrf"><span class="iconfont-archer">&#xe606;</span>csrf</span>
+        <span class="sidebar-tag-name" data-tags="sub-domain"><span class="iconfont-archer">&#xe606;</span>sub-domain</span>
     
-        <span class="sidebar-tag-name" data-tags="session"><span class="iconfont-archer">&#xe606;</span>session</span>
+        <span class="sidebar-tag-name" data-tags="castby"><span class="iconfont-archer">&#xe606;</span>castby</span>
     
-        <span class="sidebar-tag-name" data-tags="token"><span class="iconfont-archer">&#xe606;</span>token</span>
+        <span class="sidebar-tag-name" data-tags="code"><span class="iconfont-archer">&#xe606;</span>code</span>
     
-        <span class="sidebar-tag-name" data-tags="uid"><span class="iconfont-archer">&#xe606;</span>uid</span>
+        <span class="sidebar-tag-name" data-tags="jquery"><span class="iconfont-archer">&#xe606;</span>jquery</span>
     
-        <span class="sidebar-tag-name" data-tags="xss"><span class="iconfont-archer">&#xe606;</span>xss</span>
-    
-        <span class="sidebar-tag-name" data-tags="join"><span class="iconfont-archer">&#xe606;</span>join</span>
-    
-        <span class="sidebar-tag-name" data-tags="优化"><span class="iconfont-archer">&#xe606;</span>优化</span>
-    
-        <span class="sidebar-tag-name" data-tags="电话"><span class="iconfont-archer">&#xe606;</span>电话</span>
-    
-        <span class="sidebar-tag-name" data-tags="编程"><span class="iconfont-archer">&#xe606;</span>编程</span>
-    
-        <span class="sidebar-tag-name" data-tags="assembly"><span class="iconfont-archer">&#xe606;</span>assembly</span>
-    
-        <span class="sidebar-tag-name" data-tags="instructions"><span class="iconfont-archer">&#xe606;</span>instructions</span>
-    
-        <span class="sidebar-tag-name" data-tags="int"><span class="iconfont-archer">&#xe606;</span>int</span>
-    
-        <span class="sidebar-tag-name" data-tags="指令"><span class="iconfont-archer">&#xe606;</span>指令</span>
-    
-        <span class="sidebar-tag-name" data-tags="汇编"><span class="iconfont-archer">&#xe606;</span>汇编</span>
-    
-        <span class="sidebar-tag-name" data-tags="魔方"><span class="iconfont-archer">&#xe606;</span>魔方</span>
+        <span class="sidebar-tag-name" data-tags="regular"><span class="iconfont-archer">&#xe606;</span>regular</span>
     
         <span class="sidebar-tag-name" data-tags="http-equiv"><span class="iconfont-archer">&#xe606;</span>http-equiv</span>
     
         <span class="sidebar-tag-name" data-tags="http协议"><span class="iconfont-archer">&#xe606;</span>http协议</span>
     
-        <span class="sidebar-tag-name" data-tags="jquery"><span class="iconfont-archer">&#xe606;</span>jquery</span>
+        <span class="sidebar-tag-name" data-tags="jvm"><span class="iconfont-archer">&#xe606;</span>jvm</span>
     
         <span class="sidebar-tag-name" data-tags="jsp"><span class="iconfont-archer">&#xe606;</span>jsp</span>
     
@@ -4360,19 +4253,17 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="tieba"><span class="iconfont-archer">&#xe606;</span>tieba</span>
     
-        <span class="sidebar-tag-name" data-tags="索引"><span class="iconfont-archer">&#xe606;</span>索引</span>
+        <span class="sidebar-tag-name" data-tags="dom"><span class="iconfont-archer">&#xe606;</span>dom</span>
     
-        <span class="sidebar-tag-name" data-tags="domain"><span class="iconfont-archer">&#xe606;</span>domain</span>
+        <span class="sidebar-tag-name" data-tags="frontdesign"><span class="iconfont-archer">&#xe606;</span>frontdesign</span>
     
-        <span class="sidebar-tag-name" data-tags="scan-tools"><span class="iconfont-archer">&#xe606;</span>scan-tools</span>
+        <span class="sidebar-tag-name" data-tags="match"><span class="iconfont-archer">&#xe606;</span>match</span>
     
-        <span class="sidebar-tag-name" data-tags="sub-domain"><span class="iconfont-archer">&#xe606;</span>sub-domain</span>
+        <span class="sidebar-tag-name" data-tags="regex"><span class="iconfont-archer">&#xe606;</span>regex</span>
     
-        <span class="sidebar-tag-name" data-tags="castby"><span class="iconfont-archer">&#xe606;</span>castby</span>
+        <span class="sidebar-tag-name" data-tags="test"><span class="iconfont-archer">&#xe606;</span>test</span>
     
-        <span class="sidebar-tag-name" data-tags="code"><span class="iconfont-archer">&#xe606;</span>code</span>
-    
-        <span class="sidebar-tag-name" data-tags="regular"><span class="iconfont-archer">&#xe606;</span>regular</span>
+        <span class="sidebar-tag-name" data-tags="tutorial"><span class="iconfont-archer">&#xe606;</span>tutorial</span>
     
         <span class="sidebar-tag-name" data-tags="expression"><span class="iconfont-archer">&#xe606;</span>expression</span>
     
@@ -4389,18 +4280,6 @@ top:50vh;
         <span class="sidebar-tag-name" data-tags="react-native"><span class="iconfont-archer">&#xe606;</span>react-native</span>
     
         <span class="sidebar-tag-name" data-tags="vue.js"><span class="iconfont-archer">&#xe606;</span>vue.js</span>
-    
-        <span class="sidebar-tag-name" data-tags="dom"><span class="iconfont-archer">&#xe606;</span>dom</span>
-    
-        <span class="sidebar-tag-name" data-tags="frontdesign"><span class="iconfont-archer">&#xe606;</span>frontdesign</span>
-    
-        <span class="sidebar-tag-name" data-tags="match"><span class="iconfont-archer">&#xe606;</span>match</span>
-    
-        <span class="sidebar-tag-name" data-tags="regex"><span class="iconfont-archer">&#xe606;</span>regex</span>
-    
-        <span class="sidebar-tag-name" data-tags="test"><span class="iconfont-archer">&#xe606;</span>test</span>
-    
-        <span class="sidebar-tag-name" data-tags="tutorial"><span class="iconfont-archer">&#xe606;</span>tutorial</span>
     
         <span class="sidebar-tag-name" data-tags="coding"><span class="iconfont-archer">&#xe606;</span>coding</span>
     
@@ -4451,23 +4330,23 @@ jsonContent:
     
         <span class="sidebar-category-name" data-categories="Linux"><span class="iconfont-archer">&#xe60a;</span>Linux</span>
     
-        <span class="sidebar-category-name" data-categories="BackStage"><span class="iconfont-archer">&#xe60a;</span>BackStage</span>
-    
         <span class="sidebar-category-name" data-categories="Algorithm"><span class="iconfont-archer">&#xe60a;</span>Algorithm</span>
     
         <span class="sidebar-category-name" data-categories="Python"><span class="iconfont-archer">&#xe60a;</span>Python</span>
     
         <span class="sidebar-category-name" data-categories="Android"><span class="iconfont-archer">&#xe60a;</span>Android</span>
     
+        <span class="sidebar-category-name" data-categories="BackStage"><span class="iconfont-archer">&#xe60a;</span>BackStage</span>
+    
         <span class="sidebar-category-name" data-categories="Design"><span class="iconfont-archer">&#xe60a;</span>Design</span>
     
         <span class="sidebar-category-name" data-categories="Cocos"><span class="iconfont-archer">&#xe60a;</span>Cocos</span>
     
+        <span class="sidebar-category-name" data-categories="Assembly"><span class="iconfont-archer">&#xe60a;</span>Assembly</span>
+    
         <span class="sidebar-category-name" data-categories="Parser-amp-language"><span class="iconfont-archer">&#xe60a;</span>Parser-amp-language</span>
     
         <span class="sidebar-category-name" data-categories="Database"><span class="iconfont-archer">&#xe60a;</span>Database</span>
-    
-        <span class="sidebar-category-name" data-categories="Assembly"><span class="iconfont-archer">&#xe60a;</span>Assembly</span>
     
     </div>
     <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>
