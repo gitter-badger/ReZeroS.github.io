@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://rezeros.github.io/"/>
-  <updated>2018-08-29T15:05:13.196Z</updated>
+  <updated>2018-08-29T15:50:37.096Z</updated>
   <id>https://rezeros.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>msfcheetsheet</title>
+    <link href="https://rezeros.github.io/2018/08/29/msfcheetsheet/"/>
+    <id>https://rezeros.github.io/2018/08/29/msfcheetsheet/</id>
+    <published>2018-08-29T15:41:13.000Z</published>
+    <updated>2018-08-29T15:50:37.096Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="http://files.trickmaster.cn/misc_tools_sheet_v1-1.jpg" alt="misc_tools_sheet_v1-1"></p><p><img src="http://files.trickmaster.cn/misc_tools_sheet_v1-2.jpg" alt="misc_tools_sheet_v1-2"></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;img src=&quot;http://files.trickmaster.cn/misc_tools_sheet_v1-1.jpg&quot; alt=&quot;misc_tools_sheet_v1-1&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://files.trickmaster.c
+      
+    
+    </summary>
+    
+    
+      <category term="kali" scheme="https://rezeros.github.io/tags/kali/"/>
+    
+      <category term="msfconsole" scheme="https://rezeros.github.io/tags/msfconsole/"/>
+    
+  </entry>
   
   <entry>
     <title>jvmLearn</title>
@@ -621,31 +647,6 @@ import java.io.In
       <category term="指令" scheme="https://rezeros.github.io/tags/%E6%8C%87%E4%BB%A4/"/>
     
       <category term="汇编" scheme="https://rezeros.github.io/tags/%E6%B1%87%E7%BC%96/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>意大利炮待命中（密码我QQ）</title>
-    <link href="https://rezeros.github.io/2017/10/14/e6-84-8f-e5-a4-a7-e5-88-a9-e7-82-ae-e5-be-85-e5-91-bd-e4-b8-ad/"/>
-    <id>https://rezeros.github.io/2017/10/14/e6-84-8f-e5-a4-a7-e5-88-a9-e7-82-ae-e5-be-85-e5-91-bd-e4-b8-ad/</id>
-    <published>2017-10-14T12:54:24.000Z</published>
-    <updated>2018-07-28T05:11:59.497Z</updated>
-    
-    <content type="html"><![CDATA[<p><a href="https://juejin.im/entry/582b0161c4c97100542e4277" target="_blank" rel="noopener">https://juejin.im/entry/582b0161c4c97100542e4277</a> <a href="http://gfwrev.blogspot.kr/search?q=GFW" target="_blank" rel="noopener">http://gfwrev.blogspot.kr/search?q=GFW</a> <a href="https://theinitium.com/article/20150904-mainland-greatfirewall/" target="_blank" rel="noopener">https://theinitium.com/article/20150904-mainland-greatfirewall/</a> 福利： 链接：<a href="http://pan.baidu.com/s/1eSvSl9o" target="_blank" rel="noopener">http://pan.baidu.com/s/1eSvSl9o</a> 密码：0px3</p><h2 id="GFW-的封锁方法"><a href="#GFW-的封锁方法" class="headerlink" title="GFW 的封锁方法"></a>GFW 的封锁方法</h2><p>国内 DNS 服务器的缓存污染 发往国外的 DNS 解析请求的拦截或篡改 IP 黑名单 端口封锁，针对 OpenVPN，SSH，shadowsocks 等，有用到 DPI，多次换端口后封 IP 关键字封锁，利用深度包检测（DPI），是主要方法。可用全站 https 应对，不过 GFW 因为无法识别 https，所以会针对所有 https 连接进行随机的中断 关于 GFW 的更多技术细节可以参见本文的参考链接</p><h3 id="HOST"><a href="#HOST" class="headerlink" title="HOST"></a>HOST</h3><h3 id="VPN"><a href="#VPN" class="headerlink" title="VPN"></a>VPN</h3><p>VPN 常用有这么几个方案，PPTP、L2TP 和 OpenVPN 和 Cisco AnyConnect PPTP 最简单轻快，服务端部署简单，但是由于加密比较薄弱，在逐渐升级的 GFW 操蛋之下，经常会被干死。 OpenVPN 是加密强度最高的，因为他不是通过用户名密码的，而是需要服务端生成客户端证书来认证的。但是 OpenVPN 的服务端部署还是比较复杂的。 L2TP 就介于两者之间。 Cisco AnyConnect 比较特殊，平时用的其实不多，但是这个是苹果设备默认支持的几种方式之一。所以随着苹果设备的流行，用的也比较多了。</p><h3 id="GoAgent-2012-2013-die"><a href="#GoAgent-2012-2013-die" class="headerlink" title="GoAgent 2012-2013 die"></a>GoAgent 2012-2013 die</h3><h3 id="ShadowSocks"><a href="#ShadowSocks" class="headerlink" title="ShadowSocks"></a>ShadowSocks</h3><h2 id="VPS"><a href="#VPS" class="headerlink" title="VPS"></a>VPS</h2><p>VPS 的大的提供商，比较大，服务也比较好的是美国的 Linode，而且他有日本的节点，比较有利于国内使用。但是 Linode 原本比较贵，后来降价之后，最便宜的机器也要10美元一个月。而且日本节点也卖完了。DigitalOcean 是后起之秀，最大的优势是他的最便宜的主机，一个月只要5美元。同时，服务也很稳定。 买 VPS 只要找靠谱的大牌，然后选机房就行。国际上几个地区是常用的。 一个是美国西海岸，主要是旧金山，对于国内而言，比较稳定，但是由于中间隔了一个太平洋，距离摆在这，延迟通常达到200毫秒。 另一个是美国东海岸，通常就是纽约，延迟更大。比较好的是日本节点。日本机房，比较可靠的是 Linode 和 vultr。 但是这两个都得用信用卡美元支付，比较蛋疼。另一个比较好的选择是新加坡机房，DigitalOcean 在这里有。 DigitalOcean 另一个优势就是支持 PayPal 支付，而 PayPal 是可以使用银联的。所以基本上有个国内的网银，就可以付钱了。 但是 DO 的新加坡机房比较蛋疼，网络有问题，从国内的各个地区的各个运营商访问都差别很大。目前只知道江苏移动，经常延迟只有70多毫秒。 另一个比较好的选择就是香港机房。但是香港由于带宽比较贵，所以通常一个月都得要好几百。太贵了。一般集体使用，或者土豪可以考虑。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;&lt;a href=&quot;https://juejin.im/entry/582b0161c4c97100542e4277&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://juejin.im/entry/582b0161c4c97100542e427
-      
-    
-    </summary>
-    
-      <category term="Security" scheme="https://rezeros.github.io/categories/Security/"/>
-    
-    
-      <category term="illegal" scheme="https://rezeros.github.io/tags/illegal/"/>
     
   </entry>
   
