@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://rezeros.github.io/"/>
-  <updated>2018-08-30T04:55:24.705Z</updated>
+  <updated>2018-08-30T05:00:24.005Z</updated>
   <id>https://rezeros.github.io/</id>
   
   <author>
@@ -18,10 +18,10 @@
   
   <entry>
     <title>All Nodes Distance K in Binary Tree</title>
-    <link href="https://rezeros.github.io/2018/08/30/Tree/"/>
-    <id>https://rezeros.github.io/2018/08/30/Tree/</id>
+    <link href="https://rezeros.github.io/2018/08/30/leet863/"/>
+    <id>https://rezeros.github.io/2018/08/30/leet863/</id>
     <published>2018-08-30T04:54:45.000Z</published>
-    <updated>2018-08-30T04:55:24.705Z</updated>
+    <updated>2018-08-30T05:00:24.005Z</updated>
     
     <content type="html"><![CDATA[<p><a href="https://www.geeksforgeeks.org/print-nodes-distance-k-given-node-binary-tree/" target="_blank" rel="noopener">https://www.geeksforgeeks.org/print-nodes-distance-k-given-node-binary-tree/</a></p>]]></content>
     
