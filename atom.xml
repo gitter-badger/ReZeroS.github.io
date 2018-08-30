@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://rezeros.github.io/"/>
-  <updated>2018-08-30T05:00:24.005Z</updated>
+  <updated>2018-08-30T07:44:11.842Z</updated>
   <id>https://rezeros.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Data Structure</title>
+    <link href="https://rezeros.github.io/2018/08/30/datastructure/"/>
+    <id>https://rezeros.github.io/2018/08/30/datastructure/</id>
+    <published>2018-08-30T07:36:49.000Z</published>
+    <updated>2018-08-30T07:44:11.842Z</updated>
+    
+    <content type="html"><![CDATA[<p><a href="http://bigocheatsheet.com/?fb_action_ids=10151356831076688&amp;fb_action_types=og.likes&amp;fb_source=other_multiline&amp;action_object_map=%7B%2210151356831076688%22%3A548442195182655%7D&amp;action_type_map=%7B%2210151356831076688%22%3A%22og.likes%22%7D&amp;action_ref_map=%5B%5D" target="_blank" rel="noopener">Import From This Link</a></p><p>O(1) &lt; O(LOGn) &lt; O(n) &lt; O(nLOGn) &lt; O(n^2) &lt; O(2^n) &lt; O(n!)</p><p><img src="http://files.trickmaster.cn/bigocheatsheet.png" alt="bigocheatsheet"></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;a href=&quot;http://bigocheatsheet.com/?fb_action_ids=10151356831076688&amp;amp;fb_action_types=og.likes&amp;amp;fb_source=other_multiline&amp;amp;action
+      
+    
+    </summary>
+    
+      <category term="Algorithm" scheme="https://rezeros.github.io/categories/Algorithm/"/>
+    
+    
+      <category term="Big-O" scheme="https://rezeros.github.io/tags/Big-O/"/>
+    
+  </entry>
   
   <entry>
     <title>All Nodes Distance K in Binary Tree</title>
@@ -605,35 +630,6 @@ import java.io.In
       <category term="parse" scheme="https://rezeros.github.io/tags/parse/"/>
     
       <category term="precedence" scheme="https://rezeros.github.io/tags/precedence/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>[Initial] Build: PL By: JS</title>
-    <link href="https://rezeros.github.io/2017/12/02/initial-build-pl-js/"/>
-    <id>https://rezeros.github.io/2017/12/02/initial-build-pl-js/</id>
-    <published>2017-12-02T10:05:53.000Z</published>
-    <updated>2018-07-28T05:11:59.497Z</updated>
-    
-    <content type="html"><![CDATA[<p>Origin: <a href="http://lisperator.net/pltut/" target="_blank" rel="noopener">http://lisperator.net/pltut/</a> This is a tutorial on how to implement a programming language. If you ever wrote an interpreter or a compiler, then there is probably nothing new for you here. But, if you’re using regexps to “parse” anything that looks like a programming language, then please read at least the section on parsing. Let’s write less buggy code! The ToC on the right is in “simple-to-advanced” order. I’d recommend you not to skip forward, unless you know the subject well. You can always refer back if you don’t understand something. Also, questions and feedback are very much appreciated! The target audience is the average JavaScript / NodeJS programmer.</p><h3 id="What-are-we-going-to-learn"><a href="#What-are-we-going-to-learn" class="headerlink" title="What are we going to learn"></a>What are we going to learn</h3><ul><li>What is a parser, and how to write one.</li><li>How to write an interpreter.</li><li>Continuations, and why are they important.</li><li>Writing a compiler.</li><li>How to transform code to continuation-passing style.</li><li>A few basic optimization techniques.</li><li>Examples of what our λanguage brings new over plain JavaScript.</li></ul><h3 id="Description-of-the-language"><a href="#Description-of-the-language" class="headerlink" title="Description of the language"></a>Description of the language</h3><pre><code># this is a commentprintln(&quot;Hello World!&quot;);println(2 + 3 * 4);# functions are introduced with `lambda` or `λ`fib = lambda (n) if n &lt; 2 then n else fib(n - 1) + fib(n - 2);println(fib(15));print-range = λ(a, b)             # `λ` is synonym to `lambda`                if a &lt;= b then {  # `then` here is optional as you can see below                  print(a);                  if a + 1 &lt;= b {                    print(&quot;, &quot;);                    print-range(a + 1, b);                  } else println(&quot;&quot;);        # newline                };print-range(1, 5);</code></pre><p>Output</p><pre><code>Hello World!146101, 2, 3, 4, 5</code></pre><p>The λanguage looks a bit like JavaScript, but it’s different. First, there are no statements, only expressions. An expression returns a value and can be used in place of any other expression. Semicolons are required to separate expressions in a “sequence”. The curly brackets, { and }, create such a sequence, and it’s itself an expression. Its value is what the last expression evaluates to. The following is a valid program:</p><pre><code>a = {  fib(10);  # has no side-effects, but it&apos;s computed anyway  fib(15)   # the last semicolon can be missing};print(a); # prints 610</code></pre><p>Functions are introduced with one of the keywords lambda or λ (they are synonyms). After the keyword there must be a (possibly empty) parenthesized list of variable names separated with commas, like in JavaScript — these are the argument names. The function body is a single expression, but it can be a sequence wrapped in {…}. There is no return statement (there are no statements) — the last expression evaluated in a function gives the value to return to its caller. There is no var. To introduce new variables, you can use what JavaScripters call “IIFE”. Use a lambda, declare variables as arguments. Variables have function scope, and functions are closures — like in JavaScript. Even if is itself an expression. In JavaScript you’d get that effect with the ternary operator:</p><pre><code>a = foo() ? bar() : baz();           // JavaScripta = if foo() then bar() else baz();  # λanguage</code></pre><p>The then keyword is optional when the branch starts with an open bracket ({), as you can see in print-range above. Otherwise it is required. The else keyword is required if the alternative branch is present. Again, then and else take as body a single expression, but you can {group} multiple expressions by using brackets and semicolons. When the else branch is missing and the condition is false, the result of the if expression is false. Speaking of which, false is a keyword which denotes the only falsy value in our λanguage:</p><pre><code>if foo() then print(&quot;OK&quot;);</code></pre><p>will print “OK” if and only if the result of foo() is NOT false. There’s also a true keyword for completion, but really everything which is not false (in terms of JavaScript’s === operator) will be interpreted as true in conditionals (including the number 0 and the empty string “”). Also note above that there is no point to demand parentheses around an if’s condition. It’s no error if you add them, though, as an open paren starts an expression — but they’re just superfluous. A whole program is parsed as if it were embedded in curly brackets, therefore you need to place a semicolon after each expression. The last expression can be an exception.</p><hr><p>Well, that’s our tiny λanguage. It’s not necessarily a good one. The syntax looks cute, but it has its traps. There are a lot of missing features, like objects or arrays; we don’t concentrate on them because they’re not essential for our journey. If you understand all this material, you’ll be able to implement those easily. In the next section we’ll write a parser for this λanguage.</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;Origin: &lt;a href=&quot;http://lisperator.net/pltut/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;http://lisperator.net/pltut/&lt;/a&gt; This is a tutorial on how 
-      
-    
-    </summary>
-    
-      <category term="Parser &amp;amp; language" scheme="https://rezeros.github.io/categories/Parser-amp-language/"/>
-    
-    
-      <category term="js" scheme="https://rezeros.github.io/tags/js/"/>
-    
-      <category term="language" scheme="https://rezeros.github.io/tags/language/"/>
-    
-      <category term="parser" scheme="https://rezeros.github.io/tags/parser/"/>
     
   </entry>
   
