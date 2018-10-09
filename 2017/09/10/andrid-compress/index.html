@@ -398,8 +398,8 @@ height:50vh;
         <blockquote>
 <p>本文由 <a href="http://ksria.com/simpread/" target="_blank" rel="noopener">简悦 SimpRead</a> 转码， 原文地址 <a href="https://zhuanlan.zhihu.com/p/23882195?utm\_medium=social&amp;utm\_source=qq" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/23882195?utm\_medium=social&amp;utm\_source=qq</a></p>
 </blockquote>
-<h2 id="1、我是怎么思考这件事情的"><a href="#1、我是怎么思考这件事情的" class="headerlink" title="1、我是怎么思考这件事情的"></a><strong>1、我是怎么思考这件事情的</strong></h2><p>APK 是 Android 系统安装包的文件格式，关于这个话题其实是一个老生常谈的题目，不论是公司内部，还是外部网络，前人前辈已经总结出很多方法和规律。不过随着移动端技术近两年的飞速发展，一些新的思维方式和优化方法也逐渐涌现和成熟起来。笔者在实践过程中踩过一些坑，收获了一些经验，在这里做个思考和总结，所以随笔给大家，希望对大家从事相关工作的时候有所帮助和参考，同时也是抛砖引玉，希望大家共同探讨这个开放性的话题。 关于为什么 APK 要瘦身，这个不多说，只从三个方面唠叨一下，对于用户（或者客户）来说，APK 越大，在下载安装过程中，他们耗费的流量会越多，安装等待时间也会越长；对于产品本身，意味着下载转化率会越低（因为竞品中，用户有更多机会选择那个体验最好，功能最多，性能最好，包最小的）；对于研发来说，是一种优化改进技术的机会。 欲瘦身，我们先找找胖的原因和问题。按目标－路径－资源的思维模式，找原因和问题有如下几条路径，一是拍脑袋，按自己的经验和判断，甚至是主观想象；二是去搜索引擎找关键字，逛各种技术论坛听技术大牛们怎么说，看各类技术文章抽取提炼；三是用一种可测量的工具或者方法发现问题。 前两种不赘述，我这里说说第三种方法。用一种可测量的工具或者方法来分析，所谓工欲善其事，必先利其器。这个器可以可以自己锻造，也可以用现成的。这里推荐一个在线 apk 分析工具，因为是外部工具，所以大家请在使用过程中，不要上传未发布出去的产品，为了数据安全，笔者这里拿一个 github 上开源的 Android 项目作为瘦身示例。</p>
-<h2 id="2、寻找问题"><a href="#2、寻找问题" class="headerlink" title="2、寻找问题"></a><strong>2、寻找问题</strong></h2><p><a href="http://link.zhihu.com/?target=https%3A//nimbledroid.com/" target="_blank" rel="noopener">NimbleDroid</a> 是美国哥伦比亚大学的博士创业团队研发出来的分析 Android app 性能指标的系统，分析的方式有静态和动态两种方式，其中静态分析可以分析出 APK 安装包中大文件排行榜，各种知名 SDK 的大小以及占代码整体的比例，各种类型文件的大小以及占排行，各种知名 SDK 的方法数以及占所有 dex 中方法数的比例，废话不多说，下面上高清无码大图看看颜值吧。 如果想使用分析功能分析自己的产品，请登录并上传自己产品的 apk 包，所有功能目前均免费使用，如果是想分析 Google Play 上已经发布的产品，可以直接点击 “Play Apps” 查看，还可以使用搜索功能根据应用名和包名查看结果。再次强调下，请不要上传任何未发布的产品。 登录 <img src="https://pic1.zhimg.com/v2-657b86553ac315c306f5a0526d354f74_b.png" alt=""> 上传 apk 文件 <img src="https://pic3.zhimg.com/v2-1acf01deae8021e35150e25b5361564e_b.png" alt=""> 分析结果摘要，可以看到一些概览的信息，apk 文件大小，总的方法数 <img src="https://pic3.zhimg.com/v2-56c61cc5330515c19daf696bd3bb0a1a_b.png" alt=""> 文件大小分析详情页，大文件列表，这里列出的是 apk 文件中超过 100k 的文件排行，这里的文件大小指的是 apk 文件中的大小 <img src="https://pic4.zhimg.com/v2-8e94e91548801e25f7da4014dc714a7b_b.png" alt=""> 各种知名 SDK 的大小以及占代码整体的比例，这里目前能识别出 Android Support，Jackson JSON parser, Google Play Services, Paypal, Glide, OkHttp, Facebook SDK, Fabric, Gson 等等，Application 表示 App 中自己编写的代码部分 <img src="https://pic2.zhimg.com/v2-afaaed41cfb3a694efaca3f29bbd1cf1_b.png" alt=""> 各种类型文件的大小以及排行 <img src="https://pic2.zhimg.com/v2-c49890086b1bee278065c9c97dc4225d_b.png" alt=""> 各种知名 SDK 占所有 dex 中方法数的比例 <img src="https://pic3.zhimg.com/v2-37f6ab3eb1192fcfc2c252e0b21885ce_b.png" alt=""> 各种知名 SDK 的方法数排行榜 <img src="https://pic4.zhimg.com/v2-7d35255e0db25ac6df9d677e7524bee3_b.png" alt=""> 看完这个 apk 内剖图是不是有一种神清气爽的感觉！我把这个分析工具比做我们家买的智能体重秤，可以称体重，脂肪含量，骨重，骨密度，肌肉含量等等，那么，我们是不是发现了一些问题，进而把这些问题和我们之前靠经验和一拍脑袋的原因可以用逻辑联系在一起。 那么，我们接下来可以通过分析数据整理出我们的优化目标</p>
+<h2 id="1、我是怎么思考这件事情的"><a href="#1、我是怎么思考这件事情的" class="headerlink" title="1、我是怎么思考这件事情的 "></a><strong>1、我是怎么思考这件事情的 </strong></h2><p>APK 是 Android 系统安装包的文件格式，关于这个话题其实是一个老生常谈的题目，不论是公司内部，还是外部网络，前人前辈已经总结出很多方法和规律。不过随着移动端技术近两年的飞速发展，一些新的思维方式和优化方法也逐渐涌现和成熟起来。笔者在实践过程中踩过一些坑，收获了一些经验，在这里做个思考和总结，所以随笔给大家，希望对大家从事相关工作的时候有所帮助和参考，同时也是抛砖引玉，希望大家共同探讨这个开放性的话题。 关于为什么 APK 要瘦身，这个不多说，只从三个方面唠叨一下，对于用户（或者客户）来说，APK 越大，在下载安装过程中，他们耗费的流量会越多，安装等待时间也会越长；对于产品本身，意味着下载转化率会越低（因为竞品中，用户有更多机会选择那个体验最好，功能最多，性能最好，包最小的）；对于研发来说，是一种优化改进技术的机会。 欲瘦身，我们先找找胖的原因和问题。按目标－路径－资源的思维模式，找原因和问题有如下几条路径，一是拍脑袋，按自己的经验和判断，甚至是主观想象；二是去搜索引擎找关键字，逛各种技术论坛听技术大牛们怎么说，看各类技术文章抽取提炼；三是用一种可测量的工具或者方法发现问题。 前两种不赘述，我这里说说第三种方法。用一种可测量的工具或者方法来分析，所谓工欲善其事，必先利其器。这个器可以可以自己锻造，也可以用现成的。这里推荐一个在线 apk 分析工具，因为是外部工具，所以大家请在使用过程中，不要上传未发布出去的产品，为了数据安全，笔者这里拿一个 github 上开源的 Android 项目作为瘦身示例。</p>
+<h2 id="2、寻找问题"><a href="#2、寻找问题" class="headerlink" title="2、寻找问题 "></a><strong>2、寻找问题 </strong></h2><p><a href="http://link.zhihu.com/?target=https%3A//nimbledroid.com/" target="_blank" rel="noopener">NimbleDroid</a> 是美国哥伦比亚大学的博士创业团队研发出来的分析 Android app 性能指标的系统，分析的方式有静态和动态两种方式，其中静态分析可以分析出 APK 安装包中大文件排行榜，各种知名 SDK 的大小以及占代码整体的比例，各种类型文件的大小以及占排行，各种知名 SDK 的方法数以及占所有 dex 中方法数的比例，废话不多说，下面上高清无码大图看看颜值吧。 如果想使用分析功能分析自己的产品，请登录并上传自己产品的 apk 包，所有功能目前均免费使用，如果是想分析 Google Play 上已经发布的产品，可以直接点击 “Play Apps” 查看，还可以使用搜索功能根据应用名和包名查看结果。再次强调下，请不要上传任何未发布的产品。 登录 <img src="https://pic1.zhimg.com/v2-657b86553ac315c306f5a0526d354f74_b.png" alt=""> 上传 apk 文件 <img src="https://pic3.zhimg.com/v2-1acf01deae8021e35150e25b5361564e_b.png" alt=""> 分析结果摘要，可以看到一些概览的信息，apk 文件大小，总的方法数 <img src="https://pic3.zhimg.com/v2-56c61cc5330515c19daf696bd3bb0a1a_b.png" alt=""> 文件大小分析详情页，大文件列表，这里列出的是 apk 文件中超过 100k 的文件排行，这里的文件大小指的是 apk 文件中的大小 <img src="https://pic4.zhimg.com/v2-8e94e91548801e25f7da4014dc714a7b_b.png" alt=""> 各种知名 SDK 的大小以及占代码整体的比例，这里目前能识别出 Android Support，Jackson JSON parser, Google Play Services, Paypal, Glide, OkHttp, Facebook SDK, Fabric, Gson 等等，Application 表示 App 中自己编写的代码部分 <img src="https://pic2.zhimg.com/v2-afaaed41cfb3a694efaca3f29bbd1cf1_b.png" alt=""> 各种类型文件的大小以及排行 <img src="https://pic2.zhimg.com/v2-c49890086b1bee278065c9c97dc4225d_b.png" alt=""> 各种知名 SDK 占所有 dex 中方法数的比例 <img src="https://pic3.zhimg.com/v2-37f6ab3eb1192fcfc2c252e0b21885ce_b.png" alt=""> 各种知名 SDK 的方法数排行榜 <img src="https://pic4.zhimg.com/v2-7d35255e0db25ac6df9d677e7524bee3_b.png" alt=""> 看完这个 apk 内剖图是不是有一种神清气爽的感觉！我把这个分析工具比做我们家买的智能体重秤，可以称体重，脂肪含量，骨重，骨密度，肌肉含量等等，那么，我们是不是发现了一些问题，进而把这些问题和我们之前靠经验和一拍脑袋的原因可以用逻辑联系在一起。 那么，我们接下来可以通过分析数据整理出我们的优化目标</p>
 <ol>
 <li>大文件排行榜里，有 11 张 png 文件的大小超过了 100k，记住，这可是压缩之后的啊；</li>
 <li><p>大文件排行榜里，resources.arsc 的大小接近 2M，这也是一个优化点；</p>
@@ -411,7 +411,7 @@ height:50vh;
 <li><p>文件类型排行榜里，png, dex 和 arsc 是前三甲；</p>
 </li>
 </ol>
-<h2 id="3、梳理优化目标"><a href="#3、梳理优化目标" class="headerlink" title="3、梳理优化目标"></a><strong>3、梳理优化目标</strong></h2><p>所以我们的目标是没有蛀牙，不对，是下面的目标：</p>
+<h2 id="3、梳理优化目标"><a href="#3、梳理优化目标" class="headerlink" title="3、梳理优化目标 "></a><strong>3、梳理优化目标 </strong></h2><p>所以我们的目标是没有蛀牙，不对，是下面的目标：</p>
 <ol>
 <li>png 图片优化；</li>
 <li><p>resources.arsc 文件的优化；</p>
@@ -419,7 +419,7 @@ height:50vh;
 <li><p>代码优化</p>
 </li>
 </ol>
-<p><strong>3.1</strong> <strong>图片优化的尝试</strong> 首先是第一个目标，图片的优化，慢点，我们看看这些图为什么这么大先，准确的说，为什么这些图在 apk（其实就是 zip 文件）里这么大，好了，上工具分析。 这次用了一些简单的工具组合，系统自带的 cmd 就好。 <img src="https://pic1.zhimg.com/v2-fb7f2bcbfdbeda14424c61b34c1d87f4_b.jpg" alt=""> 命令执行的结果如下 <img src="https://pic1.zhimg.com/v2-3b34d466461761c9295df07b19898fe4_b.png" alt=""> 恩，所有的 png 文件居然是 STORE 的方式存储到 apk 里的，关于 zip 里的 STORE 和 DEFLATE，<a href="http://link.zhihu.com/?target=https%3A//en.wikipedia.org/wiki/Zip_%28file_format" target="_blank" rel="noopener">详见</a> ) 通俗的说，当文件是 STORED 的方式存储到 zip，表示这个文件并没有经过压缩，如果是 Defl:N 的方式，表示通过 DEFLATED normal 的方式压缩存储到 zip。 这看起来有点不合理，png 原封不动的放入 zip，当然最后产出的 apk 会比较大。那么，如何解决呢？笔者首先尝使用 android gradle plugin 的方式，发现 aaptOptions 和 packagingOptions 都未能解决问题。在 github 上发现一个开源项目 <a href="http://link.zhihu.com/?target=https%3A//github.com/shwenzhang/AndResGuard" target="_blank" rel="noopener">AndResGuard</a>，试了集成到项目中，再看结果如下： 优化前： <img src="https://pic1.zhimg.com/v2-cb4b29357178a21f6cf57252f21a97b8_b.png" alt=""> 10536027 字节 优化后： <img src="https://pic2.zhimg.com/v2-fb6582098e9028f72b9c0c5732e75d2d_b.png" alt=""> 普通 zip 压缩： 8786265 字节 （压缩了将近 17%） 采用 7zip 压缩：8567150 字节 （压缩了将近 19%） 再看看这个工具做了什么，对比下开启资源混淆前后 优化前 <img src="https://pic1.zhimg.com/v2-1e2c8ff9fde5b41f438bc731b7910450_b.png" alt=""> 优化后 <img src="https://pic1.zhimg.com/v2-8849961c9ec8cc17ffbd662dd12e8cf8_b.png" alt=""></p>
+<p><strong>3.1</strong> <strong> 图片优化的尝试 </strong> 首先是第一个目标，图片的优化，慢点，我们看看这些图为什么这么大先，准确的说，为什么这些图在 apk（其实就是 zip 文件）里这么大，好了，上工具分析。 这次用了一些简单的工具组合，系统自带的 cmd 就好。 <img src="https://pic1.zhimg.com/v2-fb7f2bcbfdbeda14424c61b34c1d87f4_b.jpg" alt=""> 命令执行的结果如下 <img src="https://pic1.zhimg.com/v2-3b34d466461761c9295df07b19898fe4_b.png" alt=""> 恩，所有的 png 文件居然是 STORE 的方式存储到 apk 里的，关于 zip 里的 STORE 和 DEFLATE，<a href="http://link.zhihu.com/?target=https%3A//en.wikipedia.org/wiki/Zip_%28file_format" target="_blank" rel="noopener">详见</a> ) 通俗的说，当文件是 STORED 的方式存储到 zip，表示这个文件并没有经过压缩，如果是 Defl:N 的方式，表示通过 DEFLATED normal 的方式压缩存储到 zip。 这看起来有点不合理，png 原封不动的放入 zip，当然最后产出的 apk 会比较大。那么，如何解决呢？笔者首先尝使用 android gradle plugin 的方式，发现 aaptOptions 和 packagingOptions 都未能解决问题。在 github 上发现一个开源项目 <a href="http://link.zhihu.com/?target=https%3A//github.com/shwenzhang/AndResGuard" target="_blank" rel="noopener">AndResGuard</a>，试了集成到项目中，再看结果如下： 优化前： <img src="https://pic1.zhimg.com/v2-cb4b29357178a21f6cf57252f21a97b8_b.png" alt=""> 10536027 字节 优化后： <img src="https://pic2.zhimg.com/v2-fb6582098e9028f72b9c0c5732e75d2d_b.png" alt=""> 普通 zip 压缩： 8786265 字节 （压缩了将近 17%） 采用 7zip 压缩：8567150 字节 （压缩了将近 19%） 再看看这个工具做了什么，对比下开启资源混淆前后 优化前 <img src="https://pic1.zhimg.com/v2-1e2c8ff9fde5b41f438bc731b7910450_b.png" alt=""> 优化后 <img src="https://pic1.zhimg.com/v2-8849961c9ec8cc17ffbd662dd12e8cf8_b.png" alt=""></p>
 <ol>
 <li>资源（png, xml, jpg 等）名称混淆，资源路径名称混淆以及名称长度压缩；</li>
 <li><p>原来以 STORED 形式存储到 zip 中的 png 文件被改成了 DEFLATED（普通压缩存储）方式；</p>
@@ -427,7 +427,7 @@ height:50vh;
 <li><p>意外发现 resources.arsc, META-INF/<em>.SF 以及 META-INF/</em>.MF 变小了，而且是解压之后的文件大小也变小了。</p>
 </li>
 </ol>
-<p>用 apk 反编译神器 <a href="http://link.zhihu.com/?target=https%3A//github.com/skylot/jadx.git" target="_blank" rel="noopener">jadx</a>内窥 apk 寻找真相 <img src="https://pic4.zhimg.com/v2-22d4434479b7113c1d0ef44906f639f3_b.png" alt=""> 原来 apk 中资源（png, xml，以及 properties 文件）的相对路径会存放到 META-INF/<em>.SF 以及 META-INF/</em>.MF 中并为每个资源文件计算 SHA1 值并存储在这两个文件中，至于为啥这么做以及这两个 SHA1 有啥区别和作用请参考网络上关于这方面知识的文章，已超出本文的主题所以这里不再赘述。 对于 resources.arsc 文件 <img src="https://pic4.zhimg.com/v2-9d5a0bfba7c0d28d0be88df0734ea3eb_b.png" alt=""> 很容易看出来它是资源文件索引表，所以，看到这里大家应该明白这三个文件为啥会变小了吧。 <strong>3.2</strong> <strong>一次意外的发现</strong> 顺着 resources.arsc 往下看，发现一个有趣的东西， <img src="https://pic3.zhimg.com/v2-6b78a128a64725563df614fbe00be1ea_b.png" alt=""> 这又将成为一个优化点，去除那些没用的翻译资源，引入一些第三方的 SDK，往往这些 SDK 带了很多翻译资源在里面，比如 android support 库，去掉后我们来看看效果。 假设我们只保留英文，当然只是个实验，现实中看具体情况了， 采用 7zip 压缩：8220738 字节 （压缩了将近 22%，再增加 3 个点） 当然，真实的项目里不可能这样，但是蚊子肉也是肉啊！ 其实，我想说的是这提供了一种优化思路，就是利用 gradle 的配置干掉无用的资源，同样的可以用在 so 本地库上，分辨率（gradle 配置已 deprecated）上。 gradle 配置示例如下： <img src="https://pic1.zhimg.com/v2-18536ee0c51bccb150e65ebec348e7b8_b.jpg" alt=""> 记得包在 android{} 中间哦。那么，有人要问了，abi 里肿么没有 x86？据说 intel 提供了一个解决方案叫 houdini，是一个运行在 x86 设备上的中间件，可以将 arm 转码为 x86 的指令，不过效率很低，有些运算型的，比如计算 MD5 和 SHA1，甚至不如 java，笔者曾经做过测试对比，又是另外一个话题，此处不赘述，感兴趣的读者可以移步。 到此为止，我们已经在朝第一个目标迈进，不经意间发现了第一个目标和第二个目标之间的关系，所以利用资源混淆工具，达成了第二个目标。 利用 7zip 压缩，我们对整个包进行了 2 个点的压缩，这是一个超出预期的成果。 <strong>3.3</strong> <strong>图片优化的方法</strong> 关于第一个目标，我们的路径还没有结束，拍脑袋想出来的路径是压缩 png，非 alpha 图转成 jpg，还有什么？所以去各种技术论坛逛了一圈，请教了各种技术大牛，梳理的路径如下： 1、手动 lint 检查，手动删除代码中没有引用到的资源，实际效果不等。 在 Android Studio 中打开 “Analyze” 然后选择 “Inspect Code…”，范围选择整个项目，然后点击 “OK” 配置如下图 <img src="https://pic1.zhimg.com/v2-7147bb5b4c9eead2db46cc6cb8974dfc_b.png" alt=""> 2、gradle 脚本中开启 shrinkResources 脚本参考如下 <img src="https://pic2.zhimg.com/v2-426f6193ca739c1cbf9bbd5f49483779_b.jpg" alt=""> shrinkResources 配合 minifyEnabled 使用效果更佳，详见 <a href="http://link.zhihu.com/?target=http%3A//tools.android.com/tech-docs/new-build-system/resource-shrinking" target="_blank" rel="noopener">shrinkResources 用法以及注意</a> 采用 7zip 压缩：8115283 字节 （压缩了将近 23%，再增加 1 个点） 3、使用图片压缩工具，压缩 png 图的大小，将非 alpha 的图转换成 jpg 形式，关于这点同事以及网络上的大牛们已经整理的很详细了，我这里做简单总结，欲知详情，请见附录的参考。 使用 tinypng，我只想说咱们在公司做产品，此方案慎用，上传任何未发布产品的内容到外部网络，都有可能引起数据泄漏，所以慎用此方案。下面说替代方案。</p>
+<p>用 apk 反编译神器 <a href="http://link.zhihu.com/?target=https%3A//github.com/skylot/jadx.git" target="_blank" rel="noopener">jadx</a>内窥 apk 寻找真相 <img src="https://pic4.zhimg.com/v2-22d4434479b7113c1d0ef44906f639f3_b.png" alt=""> 原来 apk 中资源（png, xml，以及 properties 文件）的相对路径会存放到 META-INF/<em>.SF 以及 META-INF/</em>.MF 中并为每个资源文件计算 SHA1 值并存储在这两个文件中，至于为啥这么做以及这两个 SHA1 有啥区别和作用请参考网络上关于这方面知识的文章，已超出本文的主题所以这里不再赘述。 对于 resources.arsc 文件 <img src="https://pic4.zhimg.com/v2-9d5a0bfba7c0d28d0be88df0734ea3eb_b.png" alt=""> 很容易看出来它是资源文件索引表，所以，看到这里大家应该明白这三个文件为啥会变小了吧。 <strong>3.2</strong> <strong> 一次意外的发现 </strong> 顺着 resources.arsc 往下看，发现一个有趣的东西， <img src="https://pic3.zhimg.com/v2-6b78a128a64725563df614fbe00be1ea_b.png" alt=""> 这又将成为一个优化点，去除那些没用的翻译资源，引入一些第三方的 SDK，往往这些 SDK 带了很多翻译资源在里面，比如 android support 库，去掉后我们来看看效果。 假设我们只保留英文，当然只是个实验，现实中看具体情况了， 采用 7zip 压缩：8220738 字节 （压缩了将近 22%，再增加 3 个点） 当然，真实的项目里不可能这样，但是蚊子肉也是肉啊！ 其实，我想说的是这提供了一种优化思路，就是利用 gradle 的配置干掉无用的资源，同样的可以用在 so 本地库上，分辨率（gradle 配置已 deprecated）上。 gradle 配置示例如下： <img src="https://pic1.zhimg.com/v2-18536ee0c51bccb150e65ebec348e7b8_b.jpg" alt=""> 记得包在 android{} 中间哦。那么，有人要问了，abi 里肿么没有 x86？据说 intel 提供了一个解决方案叫 houdini，是一个运行在 x86 设备上的中间件，可以将 arm 转码为 x86 的指令，不过效率很低，有些运算型的，比如计算 MD5 和 SHA1，甚至不如 java，笔者曾经做过测试对比，又是另外一个话题，此处不赘述，感兴趣的读者可以移步。 到此为止，我们已经在朝第一个目标迈进，不经意间发现了第一个目标和第二个目标之间的关系，所以利用资源混淆工具，达成了第二个目标。 利用 7zip 压缩，我们对整个包进行了 2 个点的压缩，这是一个超出预期的成果。 <strong>3.3</strong> <strong> 图片优化的方法 </strong> 关于第一个目标，我们的路径还没有结束，拍脑袋想出来的路径是压缩 png，非 alpha 图转成 jpg，还有什么？所以去各种技术论坛逛了一圈，请教了各种技术大牛，梳理的路径如下： 1、手动 lint 检查，手动删除代码中没有引用到的资源，实际效果不等。 在 Android Studio 中打开 “Analyze” 然后选择 “Inspect Code…”，范围选择整个项目，然后点击 “OK” 配置如下图 <img src="https://pic1.zhimg.com/v2-7147bb5b4c9eead2db46cc6cb8974dfc_b.png" alt=""> 2、gradle 脚本中开启 shrinkResources 脚本参考如下 <img src="https://pic2.zhimg.com/v2-426f6193ca739c1cbf9bbd5f49483779_b.jpg" alt=""> shrinkResources 配合 minifyEnabled 使用效果更佳，详见 <a href="http://link.zhihu.com/?target=http%3A//tools.android.com/tech-docs/new-build-system/resource-shrinking" target="_blank" rel="noopener">shrinkResources 用法以及注意</a> 采用 7zip 压缩：8115283 字节 （压缩了将近 23%，再增加 1 个点） 3、使用图片压缩工具，压缩 png 图的大小，将非 alpha 的图转换成 jpg 形式，关于这点同事以及网络上的大牛们已经整理的很详细了，我这里做简单总结，欲知详情，请见附录的参考。 使用 tinypng，我只想说咱们在公司做产品，此方案慎用，上传任何未发布产品的内容到外部网络，都有可能引起数据泄漏，所以慎用此方案。下面说替代方案。</p>
 <ul>
 <li><a href="http://link.zhihu.com/?target=http%3A//wasted.werk01.de/" target="_blank" rel="noopener">WASTED</a></li>
 <li><p><a href="http://link.zhihu.com/?target=http%3A//pngquant.org/" target="_blank" rel="noopener">pngquant</a></p>
@@ -437,12 +437,12 @@ height:50vh;
 <li><p><a href="http://link.zhihu.com/?target=https%3A//imageoptim.com/" target="_blank" rel="noopener">ImageOptim</a></p>
 </li>
 </ul>
-<p>以上工具太散，有没有集成化的工具，答案是 “有” @心伦 童鞋开发的 <a href="http://link.zhihu.com/?target=http%3A//web.npm.alibaba-inc.com/package/%40ali/imagemin" target="_blank" rel="noopener">imagemin</a> @姐夫童鞋开发的 <a href="http://link.zhihu.com/?target=http%3A//gitlab.alibaba-inc.com/zhefu.wzf/MSImageResourcesHelper" target="_blank" rel="noopener">MSImageResourcesHelper</a> png 转成 jpg 格式，具体效果不等。 4、终极大杀器，png 转成 webp，关于 webp，更多详情请参考<a href="http://link.zhihu.com/?target=https%3A//developers.google.com/speed/webp/" target="_blank" rel="noopener">谷歌官方文档</a>以及<a href="http://link.zhihu.com/?target=http%3A//developer.android.com/guide/appendix/media-formats.html" target="_blank" rel="noopener">安卓开发者在线参考</a> 先上效果图： <img src="https://pic3.zhimg.com/v2-06a662325c50bac4021483b0bff960e6_b.png" alt=""> 采用 7zip 压缩：4926912 字节 （压缩了将近 53%，再增加 30 个点） 没看错吧，是 30 个点，目前 apk 的大小是原始 apk 大小的一半不到，而我做的，一行代码木有改动，仅用了一些工具而已！ 说人话，我木有吃减肥药，木有绝食，体重却轻了一半！！！ 但是，目前却没能用到项目中，因为有两个坑</p>
+<p>以上工具太散，有没有集成化的工具，答案是 “有” @心伦 童鞋开发的 <a href="http://link.zhihu.com/?target=http%3A//web.npm.alibaba-inc.com/package/%40ali/imagemin" target="_blank" rel="noopener">imagemin</a> @姐夫童鞋开发的 <a href="http://link.zhihu.com/?target=http%3A//gitlab.alibaba-inc.com/zhefu.wzf/MSImageResourcesHelper" target="_blank" rel="noopener">MSImageResourcesHelper</a> png 转成 jpg 格式，具体效果不等。 4、终极大杀器，png 转成 webp，关于 webp，更多详情请参考 <a href="http://link.zhihu.com/?target=https%3A//developers.google.com/speed/webp/" target="_blank" rel="noopener">谷歌官方文档</a> 以及<a href="http://link.zhihu.com/?target=http%3A//developer.android.com/guide/appendix/media-formats.html" target="_blank" rel="noopener">安卓开发者在线参考</a> 先上效果图： <img src="https://pic3.zhimg.com/v2-06a662325c50bac4021483b0bff960e6_b.png" alt=""> 采用 7zip 压缩：4926912 字节 （压缩了将近 53%，再增加 30 个点） 没看错吧，是 30 个点，目前 apk 的大小是原始 apk 大小的一半不到，而我做的，一行代码木有改动，仅用了一些工具而已！ 说人话，我木有吃减肥药，木有绝食，体重却轻了一半！！！ 但是，目前却没能用到项目中，因为有两个坑</p>
 <ul>
 <li>在三星的部分机型上，部分有 alpha 背景部分的图会有一条很明显的黑线，这里就不上图了，这个问题目前通过白名单的方式不去做成 webp 的图来处理；</li>
 <li>在小米 2 刷成 4.xx 的手机上，未能正确识别 xml 文件中描述的 webp 图片，导致界面起来后加载 xml 布局文件，文件加载 webp 失败，报错说 resource file not found，导致 app 发生崩溃。跟踪发现是小米机器代理了类 Resource 为 MIUIResource，但是这个 MIUIResource 未能正确识别 webp，所以导致加载资源文件失败，初步判定，目前暂时没有解决方案，所以只能忍痛放弃这个优化方案。</li>
 </ul>
-<p>关于第一个目标，图片资源的优化，就写到这里了。 <strong>3.4</strong> <strong>代码优化</strong> 第二个目标已达成，剩下第三个目标，代码的优化，梳理如下优化路径： 1、开启 proguard 的代码优化 将</p>
+<p>关于第一个目标，图片资源的优化，就写到这里了。 <strong>3.4</strong> <strong> 代码优化 </strong> 第二个目标已达成，剩下第三个目标，代码的优化，梳理如下优化路径： 1、开启 proguard 的代码优化 将</p>
 <blockquote>
 <p>proguardFiles getDefaultProguardFile(‘proguard-android.txt’),’proguard-project.txt’</p>
 </blockquote>
@@ -450,8 +450,8 @@ height:50vh;
 <blockquote>
 <p>proguardFiles getDefaultProguardFile(‘proguard-android-optimize.txt’),’proguard-project.txt’</p>
 </blockquote>
-<p>开启代码优化后的注意点请参见附录。 2、去除无用的库 如果 apk 支持的最低版本是 API14, 而代码中没有用到高于 api14 的 api 就可以考虑拿掉整个 android support 库。 3、用更小的库替代方案 如果只用到了谷歌统计，那么就不要把整个 google play services 都集成进来，只集成需要的部分。 4、定期清理废弃的代码 定期删除无用的逻辑和过期的业务功能模块，以及废弃的 A/B test 代码。 5、业务模块采用插件化框架，代码动态从云端拉取 插件化，这是另外一个课题了，这里不赘述。 apk 瘦身记最终的成果 <strong>10536027</strong> <strong>字节压缩到</strong> <strong>4926912</strong> <strong>字节**</strong>,<strong> </strong>压缩了将近<strong> </strong>53%**</p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a><strong>总结</strong></h2><ol>
+<p>开启代码优化后的注意点请参见附录。 2、去除无用的库 如果 apk 支持的最低版本是 API14, 而代码中没有用到高于 api14 的 api 就可以考虑拿掉整个 android support 库。 3、用更小的库替代方案 如果只用到了谷歌统计，那么就不要把整个 google play services 都集成进来，只集成需要的部分。 4、定期清理废弃的代码 定期删除无用的逻辑和过期的业务功能模块，以及废弃的 A/B test 代码。 5、业务模块采用插件化框架，代码动态从云端拉取 插件化，这是另外一个课题了，这里不赘述。 apk 瘦身记最终的成果 <strong>10536027</strong> <strong> 字节压缩到 </strong> <strong>4926912</strong> <strong> 字节 **</strong>,<strong> </strong> 压缩了将近 <strong> </strong>53%**</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title=" 总结 "></a><strong> 总结 </strong></h2><ol>
 <li>脚本中开启资源混淆和资源压缩</li>
 <li><p>用 7zip 代替 zip</p>
 </li>
@@ -477,7 +477,7 @@ height:50vh;
 </li>
 </ol>
 <p>最后，继续学习和尝试新的优化方案 以此文献给 “唯瘦身与产品不可辜负” 的技术们！！！</p>
-<h2 id="附录"><a href="#附录" class="headerlink" title="附录"></a><strong>附录</strong></h2><p><a href="http://link.zhihu.com/?target=http%3A//blog.csdn.net/UsherFor/article/details/46827587" target="_blank" rel="noopener">如何做到将 apk 大小减少 6M</a> <a href="http://link.zhihu.com/?target=http%3A//www.jayfeng.com/2016/03/01/Android-APP%25E7%25BB%2588%25E6%259E%2581%25E7%2598%25A6%25E8%25BA%25AB%25E6%258C%2587%25E5%258D%2597/" target="_blank" rel="noopener">Android APP 终极瘦身指南</a> <a href="http://link.zhihu.com/?target=http%3A//www.jayfeng.com/2015/12/29/APK%25E7%2598%25A6%25E8%25BA%25AB%25E5%25AE%259E%25E8%25B7%25B5/" target="_blank" rel="noopener">APK 瘦身实践</a> <strong>作者：非戈 @阿里移动安全</strong></p>
+<h2 id="附录"><a href="#附录" class="headerlink" title=" 附录 "></a><strong> 附录 </strong></h2><p><a href="http://link.zhihu.com/?target=http%3A//blog.csdn.net/UsherFor/article/details/46827587" target="_blank" rel="noopener">如何做到将 apk 大小减少 6M</a> <a href="http://link.zhihu.com/?target=http%3A//www.jayfeng.com/2016/03/01/Android-APP%25E7%25BB%2588%25E6%259E%2581%25E7%2598%25A6%25E8%25BA%25AB%25E6%258C%2587%25E5%258D%2597/" target="_blank" rel="noopener">Android APP 终极瘦身指南</a> <a href="http://link.zhihu.com/?target=http%3A//www.jayfeng.com/2015/12/29/APK%25E7%2598%25A6%25E8%25BA%25AB%25E5%25AE%259E%25E8%25B7%25B5/" target="_blank" rel="noopener">APK 瘦身实践</a> <strong> 作者：非戈 @阿里移动安全 </strong></p>
 
     </article>
     <!-- license  -->
@@ -676,7 +676,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1、我是怎么思考这件事情的"><span class="toc-number">1.</span> <span class="toc-text">1、我是怎么思考这件事情的</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2、寻找问题"><span class="toc-number">2.</span> <span class="toc-text">2、寻找问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3、梳理优化目标"><span class="toc-number">3.</span> <span class="toc-text">3、梳理优化目标</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-number">4.</span> <span class="toc-text">总结</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#附录"><span class="toc-number">5.</span> <span class="toc-text">附录</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1、我是怎么思考这件事情的"><span class="toc-number">1.</span> <span class="toc-text">1、我是怎么思考这件事情的 </span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2、寻找问题"><span class="toc-number">2.</span> <span class="toc-text">2、寻找问题 </span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3、梳理优化目标"><span class="toc-number">3.</span> <span class="toc-text">3、梳理优化目标 </span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-number">4.</span> <span class="toc-text"> 总结 </span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#附录"><span class="toc-number">5.</span> <span class="toc-text"> 附录 </span></a></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
@@ -689,20 +689,6 @@ top:50vh;
     <div class="sidebar-content sidebar-content-show-archive">
           <div class="sidebar-panel-archives">
     <!-- 在ejs中将archive按照时间排序 -->
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     
@@ -3270,12 +3256,12 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/02</span><a class="archive-post-title" href= "/2017/12/02/parser-build-pl-byjs/" >[Parser] Build: PL By:JS</a>
+            <span class="archive-post-date">12/02</span><a class="archive-post-title" href= "/2017/12/02/initial-build-pl-js/" >[Initial] Build: PL By: JS</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/02</span><a class="archive-post-title" href= "/2017/12/02/initial-build-pl-js/" >[Initial] Build: PL By: JS</a>
+            <span class="archive-post-date">12/02</span><a class="archive-post-title" href= "/2017/12/02/parser-build-pl-byjs/" >[Parser] Build: PL By:JS</a>
         </li>
     
     
@@ -3285,12 +3271,12 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2017/10/14/e5-a6-82-e4-bd-95-e5-ae-9e-e7-8e-b0-e4-b8-80-e4-b8-aa-e5-ae-89-e5-85-a8-e7-9a-84web-e7-99-bb-e5-bd-95/" >如何实现一个安全的Web登录</a>
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2017/10/14/e6-84-8f-e5-a4-a7-e5-88-a9-e7-82-ae-e5-be-85-e5-91-bd-e4-b8-ad/" >意大利炮待命中（密码我 QQ）</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2017/10/14/e6-84-8f-e5-a4-a7-e5-88-a9-e7-82-ae-e5-be-85-e5-91-bd-e4-b8-ad/" >意大利炮待命中（密码我QQ）</a>
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2017/10/14/e5-a6-82-e4-bd-95-e5-ae-9e-e7-8e-b0-e4-b8-80-e4-b8-aa-e5-ae-89-e5-85-a8-e7-9a-84web-e7-99-bb-e5-bd-95/" >如何实现一个安全的 Web 登录</a>
         </li>
     
     
@@ -3325,7 +3311,7 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/06</span><a class="archive-post-title" href= "/2017/09/06/e8-bd-ac-struts2-052-e6-bc-8f-e6-b4-9e/" >(转) struts2-052漏洞</a>
+            <span class="archive-post-date">09/06</span><a class="archive-post-title" href= "/2017/09/06/e8-bd-ac-struts2-052-e6-bc-8f-e6-b4-9e/" >(转) struts2-052 漏洞</a>
         </li>
     
     
@@ -3360,12 +3346,12 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">08/01</span><a class="archive-post-title" href= "/2017/08/01/nsa-tools/" >NSA tools</a>
+            <span class="archive-post-date">08/01</span><a class="archive-post-title" href= "/2017/08/01/aquatone-a-tool-for-domain-flyovers/" >AQUATONE: A tool for domain flyovers</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">08/01</span><a class="archive-post-title" href= "/2017/08/01/aquatone-a-tool-for-domain-flyovers/" >AQUATONE: A tool for domain flyovers</a>
+            <span class="archive-post-date">08/01</span><a class="archive-post-title" href= "/2017/08/01/nsa-tools/" >NSA tools</a>
         </li>
     
     
@@ -3435,7 +3421,7 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2017/04/20/phpstorm-e9-85-8d-e7-bd-aephp7-0-e7-8e-af-e5-a2-83/" >PhpStorm 配置php7.0环境</a>
+            <span class="archive-post-date">04/20</span><a class="archive-post-title" href= "/2017/04/20/phpstorm-e9-85-8d-e7-bd-aephp7-0-e7-8e-af-e5-a2-83/" >PhpStorm 配置 php7.0 环境</a>
         </li>
     
     
@@ -3445,12 +3431,12 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">04/08</span><a class="archive-post-title" href= "/2017/04/08/https-e5-8d-87-e7-ba-a7-28free-29/" >Https 升级(free)</a>
+            <span class="archive-post-date">04/08</span><a class="archive-post-title" href= "/2017/04/08/https-e5-8d-87-e7-ba-a7-28free-29/" >Https 升级 (free)</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">04/02</span><a class="archive-post-title" href= "/2017/04/02/seleniumqzone-e7-99-bb-e9-99-86/" >Selenium Qzone登陆</a>
+            <span class="archive-post-date">04/02</span><a class="archive-post-title" href= "/2017/04/02/seleniumqzone-e7-99-bb-e9-99-86/" >Selenium Qzone 登陆</a>
         </li>
     
     
@@ -3460,7 +3446,7 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">03/18</span><a class="archive-post-title" href= "/2017/03/18/github-e9-83-a8-e7-bd-b2hexo-e5-8d-9a-e5-ae-a2-e6-97-a0-e6-95-88/" >github 部署hexo博客无效</a>
+            <span class="archive-post-date">03/18</span><a class="archive-post-title" href= "/2017/03/18/github-e9-83-a8-e7-bd-b2hexo-e5-8d-9a-e5-ae-a2-e6-97-a0-e6-95-88/" >github 部署 hexo 博客无效</a>
         </li>
     
     
@@ -3510,7 +3496,7 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">02/08</span><a class="archive-post-title" href= "/2017/02/08/e5-9b-be-e8-af-b4android/" >图说Android</a>
+            <span class="archive-post-date">02/08</span><a class="archive-post-title" href= "/2017/02/08/e5-9b-be-e8-af-b4android/" >图说 Android</a>
         </li>
     
     
@@ -3535,7 +3521,7 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">02/01</span><a class="archive-post-title" href= "/2017/02/01/28-e4-ba-8c-29manifest-e6-96-87-e4-bb-b6-e7-bb-93-e6-9e-84/" >(二)Manifest文件结构</a>
+            <span class="archive-post-date">02/01</span><a class="archive-post-title" href= "/2017/02/01/28-e4-ba-8c-29manifest-e6-96-87-e4-bb-b6-e7-bb-93-e6-9e-84/" >(二)Manifest 文件结构</a>
         </li>
     
     
@@ -3545,7 +3531,7 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">01/27</span><a class="archive-post-title" href= "/2017/01/27/fluxion-e4-bd-bf-e7-94-a8/" >fluxion使用</a>
+            <span class="archive-post-date">01/27</span><a class="archive-post-title" href= "/2017/01/27/fluxion-e4-bd-bf-e7-94-a8/" >fluxion 使用</a>
         </li>
     
     
@@ -3555,7 +3541,7 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">01/26</span><a class="archive-post-title" href= "/2017/01/26/e6-ad-a3-e5-88-99-e8-a1-a8-e8-be-be-e5-bc-8fip/" >正则表达式IP</a>
+            <span class="archive-post-date">01/26</span><a class="archive-post-title" href= "/2017/01/26/e6-ad-a3-e5-88-99-e8-a1-a8-e8-be-be-e5-bc-8fip/" >正则表达式 IP</a>
         </li>
     
     
@@ -3585,12 +3571,12 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">01/10</span><a class="archive-post-title" href= "/2017/01/10/jquery-e9-87-8d-e4-bf-ae-e5-9f-ba-e7-a1-80-e5-ad-a6-e4-b9-a0/" >Jquery重修基础学习</a>
+            <span class="archive-post-date">01/10</span><a class="archive-post-title" href= "/2017/01/10/jquery-e9-87-8d-e4-bf-ae-e5-9f-ba-e7-a1-80-e5-ad-a6-e4-b9-a0/" >Jquery 重修基础学习</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">01/04</span><a class="archive-post-title" href= "/2017/01/04/githubpush-e5-a4-b1-e8-b4-a5/" >github Push失败</a>
+            <span class="archive-post-date">01/04</span><a class="archive-post-title" href= "/2017/01/04/githubpush-e5-a4-b1-e8-b4-a5/" >github Push 失败</a>
         </li>
     
     
@@ -3609,12 +3595,12 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/10</span><a class="archive-post-title" href= "/2016/12/10/jsp-e5-86-85-e7-bd-ae-e5-af-b9-e8-b1-a1/" >JSP内置对象</a>
+            <span class="archive-post-date">12/10</span><a class="archive-post-title" href= "/2016/12/10/jsp-e5-86-85-e7-bd-ae-e5-af-b9-e8-b1-a1/" >JSP 内置对象</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/08</span><a class="archive-post-title" href= "/2016/12/08/php-e8-b6-85-e5-85-a8-e5-b1-80-e6-95-b0-e7-bb-84/" >php超全局数组</a>
+            <span class="archive-post-date">12/08</span><a class="archive-post-title" href= "/2016/12/08/php-e8-b6-85-e5-85-a8-e5-b1-80-e6-95-b0-e7-bb-84/" >php 超全局数组</a>
         </li>
     
     
@@ -3629,17 +3615,17 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">11/29</span><a class="archive-post-title" href= "/2016/11/29/python-e9-80-86-e5-90-91-e6-92-ad-e6-94-begif/" >python 逆向播放gif</a>
+            <span class="archive-post-date">11/29</span><a class="archive-post-title" href= "/2016/11/29/python-e9-80-86-e5-90-91-e6-92-ad-e6-94-begif/" >python 逆向播放 gif</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">11/27</span><a class="archive-post-title" href= "/2016/11/27/python-e9-97-af-e5-85-b3-2/" >Python闯关</a>
+            <span class="archive-post-date">11/27</span><a class="archive-post-title" href= "/2016/11/27/python-e9-97-af-e5-85-b3-2/" >Python 闯关</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">11/27</span><a class="archive-post-title" href= "/2016/11/27/python-e9-97-af-e5-85-b3pickle/" >Python闯关pickle</a>
+            <span class="archive-post-date">11/27</span><a class="archive-post-title" href= "/2016/11/27/python-e9-97-af-e5-85-b3pickle/" >Python 闯关 pickle</a>
         </li>
     
     
@@ -3649,22 +3635,22 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">11/26</span><a class="archive-post-title" href= "/2016/11/26/e5-85-b3-e4-ba-8ep-e6-a0-87-e7-ad-be-e4-b8-8d-e5-af-b9-e9-bd-90-e9-97-ae-e9-a2-98/" >关于p标签不对齐问题</a>
+            <span class="archive-post-date">11/26</span><a class="archive-post-title" href= "/2016/11/26/e5-85-b3-e4-ba-8ep-e6-a0-87-e7-ad-be-e4-b8-8d-e5-af-b9-e9-bd-90-e9-97-ae-e9-a2-98/" >关于 p 标签不对齐问题</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">11/26</span><a class="archive-post-title" href= "/2016/11/26/html-3cbase-3e-e6-a0-87-e7-ad-be/" >HTML标签</a>
+            <span class="archive-post-date">11/26</span><a class="archive-post-title" href= "/2016/11/26/html-3cbase-3e-e6-a0-87-e7-ad-be/" >HTML 标签</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">11/25</span><a class="archive-post-title" href= "/2016/11/25/python-e9-97-af-e5-85-b32/" >Python闯关2</a>
+            <span class="archive-post-date">11/25</span><a class="archive-post-title" href= "/2016/11/25/python-e9-97-af-e5-85-b32/" >Python 闯关 2</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">11/25</span><a class="archive-post-title" href= "/2016/11/25/http-e5-8f-88-e6-9d-a5-e4-ba-86/" >http又来了</a>
+            <span class="archive-post-date">11/25</span><a class="archive-post-title" href= "/2016/11/25/http-e5-8f-88-e6-9d-a5-e4-ba-86/" >http 又来了</a>
         </li>
     
     
@@ -3704,27 +3690,27 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">11/13</span><a class="archive-post-title" href= "/2016/11/13/e5-87-af-e6-92-92-e5-af-86-e7-a0-81-ef-bc-88python-ef-bc-89/" >凯撒密码（Python）</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">11/13</span><a class="archive-post-title" href= "/2016/11/13/2016-11-12/" >2016.11.12</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">11/13</span><a class="archive-post-title" href= "/2016/11/13/css-e5-ae-9a-e4-bd-8d-e5-ad-a6-e4-b9-a0/" >CSS定位学习</a>
+            <span class="archive-post-date">11/13</span><a class="archive-post-title" href= "/2016/11/13/e5-87-af-e6-92-92-e5-af-86-e7-a0-81-ef-bc-88python-ef-bc-89/" >凯撒密码（Python）</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">11/13</span><a class="archive-post-title" href= "/2016/11/13/http-e5-8d-8f-e8-ae-ae-e5-b0-8f-e7-9f-a5-e8-af-86/" >HTTP协议小知识</a>
+            <span class="archive-post-date">11/13</span><a class="archive-post-title" href= "/2016/11/13/css-e5-ae-9a-e4-bd-8d-e5-ad-a6-e4-b9-a0/" >CSS 定位学习</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">11/12</span><a class="archive-post-title" href= "/2016/11/12/e5-9e-82-e7-9b-b4-e8-8f-9c-e5-8d-95-e5-ad-a6-e4-b9-a0css/" >垂直菜单学习css</a>
+            <span class="archive-post-date">11/13</span><a class="archive-post-title" href= "/2016/11/13/http-e5-8d-8f-e8-ae-ae-e5-b0-8f-e7-9f-a5-e8-af-86/" >HTTP 协议小知识</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/12</span><a class="archive-post-title" href= "/2016/11/12/e5-9e-82-e7-9b-b4-e8-8f-9c-e5-8d-95-e5-ad-a6-e4-b9-a0css/" >垂直菜单学习 css</a>
         </li>
     
     
@@ -3764,22 +3750,22 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">11/04</span><a class="archive-post-title" href= "/2016/11/04/python-e8-a7-a347-e5-85-83-e6-96-b9-e7-a8-8b-e7-bb-84/" >python解47元方程组</a>
+            <span class="archive-post-date">11/04</span><a class="archive-post-title" href= "/2016/11/04/python-e8-a7-a347-e5-85-83-e6-96-b9-e7-a8-8b-e7-bb-84/" >python 解 47 元方程组</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">11/04</span><a class="archive-post-title" href= "/2016/11/04/http-e5-ad-a6-e4-b9-a0-e8-ae-b0-e5-bd-95/" >http学习记录</a>
+            <span class="archive-post-date">11/04</span><a class="archive-post-title" href= "/2016/11/04/http-e5-ad-a6-e4-b9-a0-e8-ae-b0-e5-bd-95/" >http 学习记录</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">11/03</span><a class="archive-post-title" href= "/2016/11/03/u-e7-9b-98-e5-bf-ab-e6-8d-b7-e6-96-b9-e5-bc-8f-e7-97-85-e6-af-92-e4-bf-ae-e5-a4-8d/" >U盘快捷方式病毒修复</a>
+            <span class="archive-post-date">11/03</span><a class="archive-post-title" href= "/2016/11/03/u-e7-9b-98-e5-bf-ab-e6-8d-b7-e6-96-b9-e5-bc-8f-e7-97-85-e6-af-92-e4-bf-ae-e5-a4-8d/" >U 盘快捷方式病毒修复</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">11/03</span><a class="archive-post-title" href= "/2016/11/03/python-e6-ad-a3-e5-88-99-e8-a1-a8-e8-be-be-e5-bc-8f-e5-ad-a6-e4-b9-a0/" >Python正则表达式学习</a>
+            <span class="archive-post-date">11/03</span><a class="archive-post-title" href= "/2016/11/03/python-e6-ad-a3-e5-88-99-e8-a1-a8-e8-be-be-e5-bc-8f-e5-ad-a6-e4-b9-a0/" >Python 正则表达式学习</a>
         </li>
     
     
@@ -3789,12 +3775,12 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">11/02</span><a class="archive-post-title" href= "/2016/11/02/e6-b1-82-e5-90-8e-e7-bc-80-e8-a1-a8-e8-be-be-e5-bc-8f/" >求后缀表达式</a>
+            <span class="archive-post-date">11/02</span><a class="archive-post-title" href= "/2016/11/02/redoorundo/" >Redo or Undo</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">11/02</span><a class="archive-post-title" href= "/2016/11/02/redoorundo/" >Redo or Undo</a>
+            <span class="archive-post-date">11/02</span><a class="archive-post-title" href= "/2016/11/02/e6-b1-82-e5-90-8e-e7-bc-80-e8-a1-a8-e8-be-be-e5-bc-8f/" >求后缀表达式</a>
         </li>
     
     
@@ -3814,22 +3800,27 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/29</span><a class="archive-post-title" href= "/2016/10/29/python-e8-a3-85-e9-a5-b0-e5-99-a8/" >Python装饰器</a>
+            <span class="archive-post-date">10/29</span><a class="archive-post-title" href= "/2016/10/29/python-e8-a3-85-e9-a5-b0-e5-99-a8/" >Python 装饰器</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/25</span><a class="archive-post-title" href= "/2016/10/25/e5-9d-90-e5-9c-a8-e9-a9-ac-e6-a1-b6-e4-b8-8a-e7-9c-8b-e7-ae-97-e6-b3-95-ef-bc-9a-e5-8f-aa-e6-9c-89-e4-ba-94-e8-a1-8c-e7-9a-84floyd-e6-9c-80-e7-9f-ad-e8-b7-af-e7-ae-97-e6-b3-95/" >坐在马桶上看算法：只有五行的Floyd最短路算法</a>
+            <span class="archive-post-date">10/25</span><a class="archive-post-title" href= "/2016/10/25/e5-9d-90-e5-9c-a8-e9-a9-ac-e6-a1-b6-e4-b8-8a-e7-9c-8b-e7-ae-97-e6-b3-95-ef-bc-9a-e5-8f-aa-e6-9c-89-e4-ba-94-e8-a1-8c-e7-9a-84floyd-e6-9c-80-e7-9f-ad-e8-b7-af-e7-ae-97-e6-b3-95/" >坐在马桶上看算法：只有五行的 Floyd 最短路算法</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/23</span><a class="archive-post-title" href= "/2016/10/23/e6-8b-93-e6-89-91-e6-8e-92-e5-ba-8f-e9-97-ae-e9-a2-98-28-e9-98-9f-e5-88-97-e5-ae-9e-e7-8e-b0-29/" >拓扑排序问题(队列实现)</a>
+            <span class="archive-post-date">10/23</span><a class="archive-post-title" href= "/2016/10/23/e6-8b-93-e6-89-91-e6-8e-92-e5-ba-8f-e9-97-ae-e9-a2-98-28-e9-98-9f-e5-88-97-e5-ae-9e-e7-8e-b0-29/" >拓扑排序问题 (队列实现)</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/23</span><a class="archive-post-title" href= "/2016/10/23/html5-28a-e6-a0-87-e7-ad-be-e7-af-87-29/" >HTML5(a标签篇)</a>
+            <span class="archive-post-date">10/23</span><a class="archive-post-title" href= "/2016/10/23/html5-28a-e6-a0-87-e7-ad-be-e7-af-87-29/" >HTML5(a 标签篇)</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/22</span><a class="archive-post-title" href= "/2016/10/22/e5-b9-b6-e6-9f-a5-e9-9b-86/" >(转) 并查集</a>
         </li>
     
     
@@ -3839,17 +3830,7 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/22</span><a class="archive-post-title" href= "/2016/10/22/e5-b9-b6-e6-9f-a5-e9-9b-86/" >(转)并查集</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">10/21</span><a class="archive-post-title" href= "/2016/10/21/e5-85-ab-e7-9a-87-e5-90-8e-e9-97-ae-e9-a2-98/" >八皇后问题</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2016/10/14/e6-a8-a1-e6-8b-9f-e7-99-bb-e9-99-86/" >模拟登陆</a>
         </li>
     
     
@@ -3877,17 +3858,22 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/13</span><a class="archive-post-title" href= "/2016/10/13/spider-e7-99-be-e5-ba-a6-e8-b4-b4-e5-90-a7-e5-b8-96-e5-ad-90/" >Spider百度贴吧帖子</a>
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2016/10/14/e6-a8-a1-e6-8b-9f-e7-99-bb-e9-99-86/" >模拟登陆</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/13</span><a class="archive-post-title" href= "/2016/10/13/e7-b3-97-e4-ba-8b-e7-99-be-e7-a7-91spider-e4-bb-a3-e7-a0-81-e4-bc-98-e5-8c-96/" >糗事百科Spider代码优化</a>
+            <span class="archive-post-date">10/13</span><a class="archive-post-title" href= "/2016/10/13/e7-b3-97-e4-ba-8b-e7-99-be-e7-a7-91spider-e4-bb-a3-e7-a0-81-e4-bc-98-e5-8c-96/" >糗事百科 Spider 代码优化</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/12</span><a class="archive-post-title" href= "/2016/10/12/e5-ae-9e-e6-88-981-e7-b3-97-e4-ba-8b-e7-99-be-e7-a7-91spider/" >实战1-糗事百科Spider</a>
+            <span class="archive-post-date">10/13</span><a class="archive-post-title" href= "/2016/10/13/spider-e7-99-be-e5-ba-a6-e8-b4-b4-e5-90-a7-e5-b8-96-e5-ad-90/" >Spider 百度贴吧帖子</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/12</span><a class="archive-post-title" href= "/2016/10/12/e5-ae-9e-e6-88-981-e7-b3-97-e4-ba-8b-e7-99-be-e7-a7-91spider/" >实战 1 - 糗事百科 Spider</a>
         </li>
     
     
@@ -3948,13 +3934,15 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="themes"><span class="iconfont-archer">&#xe606;</span>themes</span>
     
-        <span class="sidebar-tag-name" data-tags="atom"><span class="iconfont-archer">&#xe606;</span>atom</span>
-    
         <span class="sidebar-tag-name" data-tags="angular"><span class="iconfont-archer">&#xe606;</span>angular</span>
     
         <span class="sidebar-tag-name" data-tags="angularjs2"><span class="iconfont-archer">&#xe606;</span>angularjs2</span>
     
         <span class="sidebar-tag-name" data-tags="npm"><span class="iconfont-archer">&#xe606;</span>npm</span>
+    
+        <span class="sidebar-tag-name" data-tags="selector"><span class="iconfont-archer">&#xe606;</span>selector</span>
+    
+        <span class="sidebar-tag-name" data-tags="atom"><span class="iconfont-archer">&#xe606;</span>atom</span>
     
         <span class="sidebar-tag-name" data-tags="cdn"><span class="iconfont-archer">&#xe606;</span>cdn</span>
     
@@ -3962,27 +3950,21 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="网络安全"><span class="iconfont-archer">&#xe606;</span>网络安全</span>
     
-        <span class="sidebar-tag-name" data-tags="selector"><span class="iconfont-archer">&#xe606;</span>selector</span>
-    
-        <span class="sidebar-tag-name" data-tags="Big-O"><span class="iconfont-archer">&#xe606;</span>Big-O</span>
-    
         <span class="sidebar-tag-name" data-tags="classLoader"><span class="iconfont-archer">&#xe606;</span>classLoader</span>
     
         <span class="sidebar-tag-name" data-tags="findClass"><span class="iconfont-archer">&#xe606;</span>findClass</span>
     
         <span class="sidebar-tag-name" data-tags="java"><span class="iconfont-archer">&#xe606;</span>java</span>
     
+        <span class="sidebar-tag-name" data-tags="Big-O"><span class="iconfont-archer">&#xe606;</span>Big-O</span>
+    
+        <span class="sidebar-tag-name" data-tags="八皇后"><span class="iconfont-archer">&#xe606;</span>八皇后</span>
+    
         <span class="sidebar-tag-name" data-tags="html"><span class="iconfont-archer">&#xe606;</span>html</span>
     
         <span class="sidebar-tag-name" data-tags="标签"><span class="iconfont-archer">&#xe606;</span>标签</span>
     
-        <span class="sidebar-tag-name" data-tags="八皇后"><span class="iconfont-archer">&#xe606;</span>八皇后</span>
-    
         <span class="sidebar-tag-name" data-tags="凯撒密码"><span class="iconfont-archer">&#xe606;</span>凯撒密码</span>
-    
-        <span class="sidebar-tag-name" data-tags="数据结构与算法"><span class="iconfont-archer">&#xe606;</span>数据结构与算法</span>
-    
-        <span class="sidebar-tag-name" data-tags="编码"><span class="iconfont-archer">&#xe606;</span>编码</span>
     
         <span class="sidebar-tag-name" data-tags="击鼓传花"><span class="iconfont-archer">&#xe606;</span>击鼓传花</span>
     
@@ -3997,6 +3979,10 @@ top:50vh;
         <span class="sidebar-tag-name" data-tags="布局"><span class="iconfont-archer">&#xe606;</span>布局</span>
     
         <span class="sidebar-tag-name" data-tags="思维导图"><span class="iconfont-archer">&#xe606;</span>思维导图</span>
+    
+        <span class="sidebar-tag-name" data-tags="数据结构与算法"><span class="iconfont-archer">&#xe606;</span>数据结构与算法</span>
+    
+        <span class="sidebar-tag-name" data-tags="编码"><span class="iconfont-archer">&#xe606;</span>编码</span>
     
         <span class="sidebar-tag-name" data-tags="嗅事百科"><span class="iconfont-archer">&#xe606;</span>嗅事百科</span>
     
@@ -4014,6 +4000,10 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="mount"><span class="iconfont-archer">&#xe606;</span>mount</span>
     
+        <span class="sidebar-tag-name" data-tags="二叉树"><span class="iconfont-archer">&#xe606;</span>二叉树</span>
+    
+        <span class="sidebar-tag-name" data-tags="有序树"><span class="iconfont-archer">&#xe606;</span>有序树</span>
+    
         <span class="sidebar-tag-name" data-tags="login"><span class="iconfont-archer">&#xe606;</span>login</span>
     
         <span class="sidebar-tag-name" data-tags="selenium"><span class="iconfont-archer">&#xe606;</span>selenium</span>
@@ -4030,9 +4020,7 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="渗透"><span class="iconfont-archer">&#xe606;</span>渗透</span>
     
-        <span class="sidebar-tag-name" data-tags="二叉树"><span class="iconfont-archer">&#xe606;</span>二叉树</span>
-    
-        <span class="sidebar-tag-name" data-tags="有序树"><span class="iconfont-archer">&#xe606;</span>有序树</span>
+        <span class="sidebar-tag-name" data-tags="story"><span class="iconfont-archer">&#xe606;</span>story</span>
     
         <span class="sidebar-tag-name" data-tags="cocos"><span class="iconfont-archer">&#xe606;</span>cocos</span>
     
@@ -4044,13 +4032,11 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="爬虫"><span class="iconfont-archer">&#xe606;</span>爬虫</span>
     
-        <span class="sidebar-tag-name" data-tags="story"><span class="iconfont-archer">&#xe606;</span>story</span>
-    
         <span class="sidebar-tag-name" data-tags="备份"><span class="iconfont-archer">&#xe606;</span>备份</span>
     
-        <span class="sidebar-tag-name" data-tags="algorithm"><span class="iconfont-archer">&#xe606;</span>algorithm</span>
-    
         <span class="sidebar-tag-name" data-tags="数据"><span class="iconfont-archer">&#xe606;</span>数据</span>
+    
+        <span class="sidebar-tag-name" data-tags="algorithm"><span class="iconfont-archer">&#xe606;</span>algorithm</span>
     
         <span class="sidebar-tag-name" data-tags="extensions"><span class="iconfont-archer">&#xe606;</span>extensions</span>
     
@@ -4068,6 +4054,14 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="funnny"><span class="iconfont-archer">&#xe606;</span>funnny</span>
     
+        <span class="sidebar-tag-name" data-tags="php5"><span class="iconfont-archer">&#xe606;</span>php5</span>
+    
+        <span class="sidebar-tag-name" data-tags="wifi"><span class="iconfont-archer">&#xe606;</span>wifi</span>
+    
+        <span class="sidebar-tag-name" data-tags="ftp"><span class="iconfont-archer">&#xe606;</span>ftp</span>
+    
+        <span class="sidebar-tag-name" data-tags="service"><span class="iconfont-archer">&#xe606;</span>service</span>
+    
         <span class="sidebar-tag-name" data-tags="blob"><span class="iconfont-archer">&#xe606;</span>blob</span>
     
         <span class="sidebar-tag-name" data-tags="bomb"><span class="iconfont-archer">&#xe606;</span>bomb</span>
@@ -4079,14 +4073,6 @@ top:50vh;
         <span class="sidebar-tag-name" data-tags="memory"><span class="iconfont-archer">&#xe606;</span>memory</span>
     
         <span class="sidebar-tag-name" data-tags="tree"><span class="iconfont-archer">&#xe606;</span>tree</span>
-    
-        <span class="sidebar-tag-name" data-tags="ftp"><span class="iconfont-archer">&#xe606;</span>ftp</span>
-    
-        <span class="sidebar-tag-name" data-tags="service"><span class="iconfont-archer">&#xe606;</span>service</span>
-    
-        <span class="sidebar-tag-name" data-tags="php5"><span class="iconfont-archer">&#xe606;</span>php5</span>
-    
-        <span class="sidebar-tag-name" data-tags="wifi"><span class="iconfont-archer">&#xe606;</span>wifi</span>
     
         <span class="sidebar-tag-name" data-tags="github"><span class="iconfont-archer">&#xe606;</span>github</span>
     
@@ -4128,19 +4114,15 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="kali"><span class="iconfont-archer">&#xe606;</span>kali</span>
     
+        <span class="sidebar-tag-name" data-tags="medusa"><span class="iconfont-archer">&#xe606;</span>medusa</span>
+    
         <span class="sidebar-tag-name" data-tags="scan"><span class="iconfont-archer">&#xe606;</span>scan</span>
     
         <span class="sidebar-tag-name" data-tags="tools"><span class="iconfont-archer">&#xe606;</span>tools</span>
     
-        <span class="sidebar-tag-name" data-tags="medusa"><span class="iconfont-archer">&#xe606;</span>medusa</span>
-    
         <span class="sidebar-tag-name" data-tags="pip3"><span class="iconfont-archer">&#xe606;</span>pip3</span>
     
         <span class="sidebar-tag-name" data-tags="python3"><span class="iconfont-archer">&#xe606;</span>python3</span>
-    
-        <span class="sidebar-tag-name" data-tags="lvm"><span class="iconfont-archer">&#xe606;</span>lvm</span>
-    
-        <span class="sidebar-tag-name" data-tags="raid"><span class="iconfont-archer">&#xe606;</span>raid</span>
     
         <span class="sidebar-tag-name" data-tags="dev"><span class="iconfont-archer">&#xe606;</span>dev</span>
     
@@ -4156,6 +4138,10 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="user"><span class="iconfont-archer">&#xe606;</span>user</span>
     
+        <span class="sidebar-tag-name" data-tags="lvm"><span class="iconfont-archer">&#xe606;</span>lvm</span>
+    
+        <span class="sidebar-tag-name" data-tags="raid"><span class="iconfont-archer">&#xe606;</span>raid</span>
+    
         <span class="sidebar-tag-name" data-tags="firewall"><span class="iconfont-archer">&#xe606;</span>firewall</span>
     
         <span class="sidebar-tag-name" data-tags="firewalld"><span class="iconfont-archer">&#xe606;</span>firewalld</span>
@@ -4166,8 +4152,6 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="strategy"><span class="iconfont-archer">&#xe606;</span>strategy</span>
     
-        <span class="sidebar-tag-name" data-tags="acm"><span class="iconfont-archer">&#xe606;</span>acm</span>
-    
         <span class="sidebar-tag-name" data-tags="firstSet"><span class="iconfont-archer">&#xe606;</span>firstSet</span>
     
         <span class="sidebar-tag-name" data-tags="FollowSet"><span class="iconfont-archer">&#xe606;</span>FollowSet</span>
@@ -4175,6 +4159,8 @@ top:50vh;
         <span class="sidebar-tag-name" data-tags="ll1"><span class="iconfont-archer">&#xe606;</span>ll1</span>
     
         <span class="sidebar-tag-name" data-tags="table"><span class="iconfont-archer">&#xe606;</span>table</span>
+    
+        <span class="sidebar-tag-name" data-tags="acm"><span class="iconfont-archer">&#xe606;</span>acm</span>
     
         <span class="sidebar-tag-name" data-tags="msfconsole"><span class="iconfont-archer">&#xe606;</span>msfconsole</span>
     
@@ -4220,9 +4206,9 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="socket"><span class="iconfont-archer">&#xe606;</span>socket</span>
     
-        <span class="sidebar-tag-name" data-tags="zipfile"><span class="iconfont-archer">&#xe606;</span>zipfile</span>
-    
         <span class="sidebar-tag-name" data-tags="PIL"><span class="iconfont-archer">&#xe606;</span>PIL</span>
+    
+        <span class="sidebar-tag-name" data-tags="zipfile"><span class="iconfont-archer">&#xe606;</span>zipfile</span>
     
         <span class="sidebar-tag-name" data-tags="pickle"><span class="iconfont-archer">&#xe606;</span>pickle</span>
     
@@ -4256,10 +4242,6 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="sicp"><span class="iconfont-archer">&#xe606;</span>sicp</span>
     
-        <span class="sidebar-tag-name" data-tags="策略模式"><span class="iconfont-archer">&#xe606;</span>策略模式</span>
-    
-        <span class="sidebar-tag-name" data-tags="设计模式"><span class="iconfont-archer">&#xe606;</span>设计模式</span>
-    
         <span class="sidebar-tag-name" data-tags="case"><span class="iconfont-archer">&#xe606;</span>case</span>
     
         <span class="sidebar-tag-name" data-tags="condition"><span class="iconfont-archer">&#xe606;</span>condition</span>
@@ -4268,13 +4250,23 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="recursion"><span class="iconfont-archer">&#xe606;</span>recursion</span>
     
-        <span class="sidebar-tag-name" data-tags="symbol"><span class="iconfont-archer">&#xe606;</span>symbol</span>
+        <span class="sidebar-tag-name" data-tags="策略模式"><span class="iconfont-archer">&#xe606;</span>策略模式</span>
     
-        <span class="sidebar-tag-name" data-tags="webshell"><span class="iconfont-archer">&#xe606;</span>webshell</span>
+        <span class="sidebar-tag-name" data-tags="设计模式"><span class="iconfont-archer">&#xe606;</span>设计模式</span>
+    
+        <span class="sidebar-tag-name" data-tags="symbol"><span class="iconfont-archer">&#xe606;</span>symbol</span>
     
         <span class="sidebar-tag-name" data-tags="u盘"><span class="iconfont-archer">&#xe606;</span>u盘</span>
     
         <span class="sidebar-tag-name" data-tags="病毒"><span class="iconfont-archer">&#xe606;</span>病毒</span>
+    
+        <span class="sidebar-tag-name" data-tags="webshell"><span class="iconfont-archer">&#xe606;</span>webshell</span>
+    
+        <span class="sidebar-tag-name" data-tags="effective"><span class="iconfont-archer">&#xe606;</span>effective</span>
+    
+        <span class="sidebar-tag-name" data-tags="win10"><span class="iconfont-archer">&#xe606;</span>win10</span>
+    
+        <span class="sidebar-tag-name" data-tags="windows"><span class="iconfont-archer">&#xe606;</span>windows</span>
     
         <span class="sidebar-tag-name" data-tags="permission"><span class="iconfont-archer">&#xe606;</span>permission</span>
     
@@ -4318,11 +4310,9 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="http协议"><span class="iconfont-archer">&#xe606;</span>http协议</span>
     
-        <span class="sidebar-tag-name" data-tags="jvm"><span class="iconfont-archer">&#xe606;</span>jvm</span>
+        <span class="sidebar-tag-name" data-tags="jsp"><span class="iconfont-archer">&#xe606;</span>jsp</span>
     
         <span class="sidebar-tag-name" data-tags="jquery"><span class="iconfont-archer">&#xe606;</span>jquery</span>
-    
-        <span class="sidebar-tag-name" data-tags="jsp"><span class="iconfont-archer">&#xe606;</span>jsp</span>
     
         <span class="sidebar-tag-name" data-tags="ANSI"><span class="iconfont-archer">&#xe606;</span>ANSI</span>
     
@@ -4336,15 +4326,11 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="messy code"><span class="iconfont-archer">&#xe606;</span>messy code</span>
     
+        <span class="sidebar-tag-name" data-tags="jvm"><span class="iconfont-archer">&#xe606;</span>jvm</span>
+    
         <span class="sidebar-tag-name" data-tags="baidu"><span class="iconfont-archer">&#xe606;</span>baidu</span>
     
         <span class="sidebar-tag-name" data-tags="tieba"><span class="iconfont-archer">&#xe606;</span>tieba</span>
-    
-        <span class="sidebar-tag-name" data-tags="effective"><span class="iconfont-archer">&#xe606;</span>effective</span>
-    
-        <span class="sidebar-tag-name" data-tags="win10"><span class="iconfont-archer">&#xe606;</span>win10</span>
-    
-        <span class="sidebar-tag-name" data-tags="windows"><span class="iconfont-archer">&#xe606;</span>windows</span>
     
         <span class="sidebar-tag-name" data-tags="索引"><span class="iconfont-archer">&#xe606;</span>索引</span>
     
@@ -4354,11 +4340,11 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="sub-domain"><span class="iconfont-archer">&#xe606;</span>sub-domain</span>
     
-        <span class="sidebar-tag-name" data-tags="castby"><span class="iconfont-archer">&#xe606;</span>castby</span>
-    
         <span class="sidebar-tag-name" data-tags="code"><span class="iconfont-archer">&#xe606;</span>code</span>
     
         <span class="sidebar-tag-name" data-tags="regular"><span class="iconfont-archer">&#xe606;</span>regular</span>
+    
+        <span class="sidebar-tag-name" data-tags="castby"><span class="iconfont-archer">&#xe606;</span>castby</span>
     
         <span class="sidebar-tag-name" data-tags="expression"><span class="iconfont-archer">&#xe606;</span>expression</span>
     
@@ -4437,9 +4423,9 @@ jsonContent:
     
         <span class="sidebar-category-name" data-categories="Linux"><span class="iconfont-archer">&#xe60a;</span>Linux</span>
     
-        <span class="sidebar-category-name" data-categories="Algorithm"><span class="iconfont-archer">&#xe60a;</span>Algorithm</span>
-    
         <span class="sidebar-category-name" data-categories="BackStage"><span class="iconfont-archer">&#xe60a;</span>BackStage</span>
+    
+        <span class="sidebar-category-name" data-categories="Algorithm"><span class="iconfont-archer">&#xe60a;</span>Algorithm</span>
     
         <span class="sidebar-category-name" data-categories="Python"><span class="iconfont-archer">&#xe60a;</span>Python</span>
     
